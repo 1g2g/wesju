@@ -1,0 +1,115 @@
+/*테두리*/
+#login_field{
+  border:solid 1px #c3002e; padding:50px;padding-bottom: 10px;
+}
+/*로그인 시 입력사항*/
+.private_area{
+  margin-top: 20px;
+}
+.private_area> input{
+  width:450px;height:50px;margin:0 auto;font-size:15px;float: none;border-top: 0;border-left: 0;border-right:0;color:#555555;margin-bottom: 40px;border-color: #CCCCCC;
+}
+.private_area> input:focus{
+  color:#c3002e;outline:none;text-shadow: 0 0 0 black; border-color:#c3002e;
+  -webkit-text-fill-color:transparent;
+}
+.private_area>  p{
+  color:#c3002e;
+}
+/*제출버튼*/
+.submit_login_form{
+  width:450px; height:50px;border:none;text-decoration: none;background-color:#c3002e;
+  border-radius: 5px;
+}
+/*로그인하기 버튼 클릭 시 text색이 black으로 고정됨 차후 white로 수정 예정*/
+.submit_login_form:hover{
+  color:white;background-color: #c3002e;  opacity: 0.9;
+}
+/*아이디 비밀번호 찾기, 회원가입*/
+.help_login{
+  font-size: 15px;
+}
+.help_login a:hover{
+  color:#c3002e;text-decoration: none;
+}
+.signup_link{
+  float:right; margin-right:5px;
+}
+/*로그인 페이지 분리선*/
+.line{
+  border-top: 1px solid #888888;opacity: 0.5;width:450px; margin-top: 20px;
+}
+/*하단 광고 이미지*/
+.commercial{
+  margin:60px 5px 30px 1px;
+  width:450px;height:200px;overflow: hidden;display: flex;align-items: center;
+  justify-content: center;
+}
+/*홍보박스*/
+.promotion{
+		width:450px;
+
+	}
+	.pmt {
+			position: relative;
+			float: left;
+			overflow: hidden;display: flex;align-items: center;
+      justify-content: center;margin-bottom: 50px;
+	}
+  .pmt:first-child{
+    margin-right:10px;
+    width:140px;
+  }
+  .pmt:nth-child(2){
+    width:300px;
+  }
+	.pmt img {
+			width: 100%;height: 100px;	display: block;
+			margin: 0 auto;	transition: all 1s ease-in-out;
+	}
+	.content {
+			z-index: 1;	position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+	}
+	.content a {
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+			text-align: center;
+	}
+	.pmt:hover .content {
+			display: block;
+			transition: all 1s ease-in-out;
+	}
+	.pmt:hover img {
+			transform: scale(1.2);
+			transition: all 1s ease-in-out;
+	}
+	.pmt:hover {
+			display: block;
+			transition: all 0.5s ease-in-out;
+	}
+
+/*footer하단고정*/
+.prod{
+  width:450px;
+  text-align: center;
+}
+@media (max-width:768px){
+  .page_wrapper{
+    width:90%;height:auto;
+  }
+  #login_field{
+  padding-left: 5%;padding-right: 5%;
+  }
+  .private_area> input,.submit_login_form,.commercial,.prod,.line{
+    width:100%;
+  }
+  .submit_login_form{
+    background-color:#c3002e;
+  }
+  .promotion{
+    display: none;
+  }
+}
