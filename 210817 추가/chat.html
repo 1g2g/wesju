@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- when Korean is breaking -->
+    <!-- https://tysoso.tistory.com/6 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>채팅</title>
+    <script src="javascript/chat.js"defer></script>
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+/>
+<script type="text/javascript">
+document.body.scrollTop = document.body.scrollHeight;
+</script>
+
+</head>
+<body>
+  <div class="chat">
+<!--채팅 상대 이름, 나가기 버튼-->
+    <header id="chat_head">
+      <span class="contactor">이용자2
+      </span>
+      <span class="sign_out"><button id="show"><i class="fas fa-sign-out-alt"></i></button></span>
+    </header>
+<!--chat내용-->
+    <section>
+      <div class="chat_content">
+        <ul>
+<!--입장-->
+          <li class="enter">
+            <div><span class="contactor">이용자2</span>님이 입장하였습니다.</div>
+          </li>
+            <li class="left">
+              <span><img src="img/05.jpg"/></span>
+              <span class="name">이용자2</span>
+              <div class="content"><span>안녕하세요</span><span>읽음</span><div class="time">sent at 12:00</div></div>
+            </li>
+<!--날짜 구분선-->
+            <li class="date">
+              <div>2022.03.01</div>
+            </li>
+  <!--대화-->
+            <li class="right">
+              <span><img src="img/05.jpg"/></span>
+              <span class="name">이용자1</span>
+              <div class="content"><span>아</span><span>읽음</span><div class="time">sent at 13:00</div></div>
+            </li>
+            <li class="right">
+              <span><img src="img/05.jpg"/></span>
+              <span class="name">이용자1</span>
+              <div class="content"><span>안녕하세요</span><span>읽음</span><div class="time">sent at 13:00</div></div>
+            </li>
+            <li class="left">
+              <span><img src="img/05.jpg"/></span>
+              <span class="name">이용자2</span>
+              <!--ipsumlorem-->
+              <div class="content"><span>각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.
+
+모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.
+
+대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그 자격을 상실한 때에는 60일 이내에 후임자를 선거한다. 예비비는 총액으로 국회의 의결을 얻어야 한다. 예비비의 지출은 차기국회의 승인을 얻어야 한다.
+
+대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이 아니면 대통령으로 당선될 수 없다. 대통령은 필요하다고 인정할 때에는 외교·국방·통일 기타 국가안위에 관한 중요정책을 국민투표에 붙일 수 있다.
+
+모든 국민은 거주·이전의 자유를 가진다. 국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다.
+
+모든 국민은 종교의 자유를 가진다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.</span><span>안읽음</span><div class="time">sent at 14:00</div></div>
+            </li>
+        </ul>
+    </div>
+    </section>
+<!--입력-->
+    <section>
+      <div class="input">
+      <textarea placeholder="메세지를 입력하세요"></textarea>
+      </div>
+      </section>
+<!--나가기 팝업-->
+    <section>
+      <div class="background">
+        <div class="window">
+          <div class="popup">
+            <div>채팅창을 정말 나가시겠습니까?</div>
+            <button>예</button>
+            <button id="close">아니오</button>
+          </div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+  </section>
+<script>
+  function show() {
+    document.querySelector(".background").className = "background show";
+  }
+
+  function close() {
+    document.querySelector(".background").className = "background";
+  }
+
+  document.querySelector("#show").addEventListener("click", show);
+  document.querySelector("#close").addEventListener("click", close);
+</script>
+    </div>
+
+
+</body>
+</html>

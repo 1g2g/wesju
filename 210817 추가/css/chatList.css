@@ -1,0 +1,21 @@
+.chat_list img{
+  width:50px; height:50px; border-radius: 15px;
+}
+.chat_list .contactor{
+  height: 50px;
+}
+.chat_list table {
+  width:300px;border-collapse: collapse;border: 1px solid #cccccc;
+}
+.chat_list table tr{
+  height:80px;padding:20px;
+}
+.chat_list table tr:hover{
+  background-color:#E0ECE1;
+}
+.chat_list table td:nth-child(2){
+  width:80%;
+}
+.chat_list table td{
+  border-bottom: 1px solid #cccccc; border-collapse:inherit;
+}

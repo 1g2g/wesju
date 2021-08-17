@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>로그인 페이지</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/join.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="javascript/login.js"defer></script>
+</head>
+<body><div class="bck">
+  <div class="container">
+    <header>
+      <h1><a href="http://sjucomme.cafe24.com/index">위세종<span>wesju</span></a></h1>
+    </header>
+    <section id="login_field">
+
+      <!--로그인 정보 입력-->
+      <article>
+      <div class="private_area">
+        <input id="userid" type="text" placeholder="아이디 입력" required/>
+        <input id="password" type="password" placeholder="비밀번호 입력"/>
+        <input type="button" style="color:white" value="로그인" class="submit_login_form" onclick="empty_value_test_login()" />
+      </div>
+      <!--로그인 정보 분실 또는 신규회원 가입-->
+      <div class="help_login">
+        <a href="#"class="find_id_link">아이디 찾기</a>
+        <span>|</span>
+        <a href="#" class="find_pw_link">비밀번호 찾기</a>
+        <a href="#" class="signup_link">회원가입</a>
+      </div>
+    </article>
+
+    <!--분리선-->
+    <div class="line"></div>
+    <!--로그인 하단의 이미지 링크들-->
+    <article>
+      <div class="commercial">
+        <a href="#"><img src="http://placehold.it/450x200" alt="엑박"/></a>
+      </div>
+        <!--이벤트 홍보 링크 버튼,아이콘 활용한 버튼 또는 간단한 이미지 사용-->
+      <div class="promotion">
+        <div class="pmt">
+          <img src="http://placehold.it/135x100">
+          <div class="content">
+            <a href="#"><h1>글자</h1></a>
+          </div>
+        </div>
+        <div class="pmt">
+          <img src="http://placehold.it/300x100">
+          <div class="content">
+            <a href="#"><h1>글자</h1></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  <div class="prod">copyright © all rights reserved</div>
+    </section>
+    </div>
+  </div>
+</body>
+</html>
