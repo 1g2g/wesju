@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>분실</title>
+    <script src="javascript/chat.js"defer></script>
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <style>
+    #forgot header a{
+      text-decoration: none;color:black;font-family: 돋움;opacity: 0.7;
+    }
+    #forgot header h1{
+      font-size: 50px;text-align: center;
+    }
+    #forgot{
+      width:500px;
+    }
+    .forgot {
+      border:1px solid #c3200e;padding:10px;
+    }
+    .forgot h1{font-weight: lighter;}
+    .forgot .choice{
+      list-style: none;
+    }
+    .forgot .choice li{
+      float:left;padding:10px; margin:5px;background-color: #888888;color:white;
+    }
+    .forgot input{
+        width:430px;padding:10px;border: 1px solid #888888;outline: none;margin:10px;
+    }
+    .forgot button{
+      width:450px;background-color: #c3200e; color:white;padding:10px;border: none;margin:10px;
+    }
+    .forgot #email_txt,.forgot #timer{
+      color:#c3002e;font-size: 12px;margin-left: 10px;
+    }
+    .forgot #cor_mem_email,.forgot .email_cert_btn{display: none;}
+      </style>
+      <script>
+      function email_certi(){//이메일 인증
+        var email = document.getElementById('mem_email').value;
+        var pt = /[@]/;
+        if(document.querySelector('#mem_email').value=="") alert('이메일을 입력하세요.');
+        else if(!pt.test(email)){
+          alert('도메인을 입력해주세요');
+        }else if(email==""){
+          alert('이메일을 입력해주세요');
+        }else{
+        alert('인증메일이 발송되었습니다.');
+        const email=document.querySelector('#cor_mem_email');
+        const btn=document.querySelector('.email_cert_btn');
+        email.style.display="block";
+        btn.style.display="block";
+        timer();
+      }
+      }
+      function timer(){//인증 시간 제한
+        var time=300;
+        var min='';
+        var sec='';
+        var x=setInterval(function(){
+          min=parseInt(time/60);
+          sec=time%60;
+          document.getElementById("timer").innerHTML=min+"분"+sec+"초";
+          time--;
+          if(time<0){
+
+          }
+        },1000);
+      }
+      </script>
+</head>
+<body>
+    <section id="forgot">
+      <header>
+        <h1><a href="http://sjucomme.cafe24.com/index">위세종<span>wesju</span></a></h1>
+      </header>
+      <div class="forgot">
+<!--아이디 찾기-->
+          <div class="find_id">
+            <h1>아이디 찾기</h1>
+            <p>회원가입 시 입력한 이메일을 통해 아이디를 확인할 수 있습니다.</p>
+            <input type="text" placeholder="@sejong.ac.kr"/>
+            <button onclick="email_certi()">아이디 찾기</button>
+          </div>
+<!--비밀번호 찾기-->
+          <div class="find_pw">
+            <h1>비밀번호 찾기</h1>
+            <p>회원가입 시 입력한 이메일 인증을 통해 새 비밀번호를 설정할 수 있습니다.</p>
+            <input type="text"id="mem_email" placeholder="@sejong.ac.kr"/>
+            <button onclick="email_certi()">인증번호 보내기</button>
+            <p id="timer"></p>
+            <input id="cor_mem_email" type="text" placeholder="인증번호 입력"/>
+            <button class="email_cert_btn">확인하기</button>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

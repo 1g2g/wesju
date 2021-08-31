@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>page</title>
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+/>
+  <link rel="stylesheet" type="text/css" href="css/myhome.css">
+  <link rel="stylesheet" type="text/css" href="css/chat.css">
+  <link rel="stylesheet" type="text/css" href="css/chatList.css">
+  <script src="javascript/chat.js"defer></script>
+  <script src="javascript/join.js"defer></script>
+  <script src="javascript/myhome.js"defer></script>
+</head>
+<body>
+
+<section id="cont_left">
+    <div class="select_bar">
+      <ul>
+        <li onclick="edit_nickname()">editor<i class="fas fa-pencil-alt"></i></li>
+      </ul>
+    </div>
+<!--프로필-->
+  <div class="profile">
+      <div class="my_profile">
+        <label for="chooseFile"><img src="img/profile.jpg" class="profile_img" /></label>
+          <input type="file" id="chooseFile" class="choose_file" accept="image/*" onchange="loadFile(this)" disabled>
+        <div class="name"><textarea class="nickname" rows="1" maxlength="12"disabled>세종이</textarea><button class="check_nick">중복체크</button></div>
+
+
+
+          <div class="info_list">
+            <label>아이디</label>
+            <p class="id">sejong123</p>
+          </div>
+          <div class="info_list">
+            <label id="pw_">비밀번호</label>
+            <input type="password" class="pw"/>
+              <button>확인</button>
+              <div class="hidden_profile">
+              <label>새 비밀번호</label>
+              <input type="password" class="pw" id="mem_password" onkeyup="check_pw()"/>
+              <p id="pw_txt"></p>
+              <label>새 비밀번호 확인</label>
+              <input type="password" class="pw" id="cor_mem_password" onkeyup="check_cor_pw()" />
+              <p id="cor_pw_txt"></p>
+            </div>
+          </div>
+          <div class="info_list">
+            <label>이메일</label>
+            <p>sejong123@sejong.ac.kr</p>
+
+          </div>
+          <div class="info_list">
+            <label>학번</label>
+            <p class="std_num">18</p>
+          </div>
+      </div>
+      <div class="modify_profile">
+      <button onclick="edit_nickname()" class="edit_profile">수정하기</button>
+      <button onclick="submit_profile()" class="submit_profile">제출하기</button>
+    </div>
+    </div>
+
+</section>
+<!--헤더-->
+<header id="cont_top">
+  <div>
+    <i class="fas fa-home">마이홈</i>
+    </div>
+</header>
+<!---->
+<section id="cont_right">
+  <div>
+    <ul class="select_contents">
+      <li onclick="show_alarm()"><i class="fas fa-bell"></i>알림</li>
+      <li onclick="show_chat()"><i class="far fa-comment-dots"></i>채팅</li>
+      <li onclick="show_post()"><i class="fas fa-edit"></i>내가쓴글</li>
+    </ul>
+  </div>
+<!--알림목록-->
+<div class="alarm_list">
+  <table>
+    <tr>
+      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+    </tr>
+    <tr>
+      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+    </tr>
+    <tr>
+      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+    </tr>
+    <tr>
+      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+    </tr>
+    <tr>
+      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+    </tr>
+    <tr>
+      <td><span>관리자로부터 채팅이 왔습니다.</span></td>
+    </tr>
+  </table>
+</div>
+<!--채팅목록-->
+  <div class="chat_list">
+    <table>
+      <tr onclick="open_chat()">
+        <td><img src="img/08.jpg"/></td>
+        <td><span class="contactor">이용자2</span></td>
+      </tr>
+      <tr>
+        <td><img src="img/08.jpg"/></span></td>
+        <td><span class="contactor">관리자</span></td>
+      </tr>
+    </table>
+    <!--채팅창-->
+    <section>
+      <div class="chat">
+    <!--채팅 상대 이름, 나가기 버튼-->
+        <header id="chat_head">
+          <span class="contactor">이용자2
+          </span>
+          <span class="sign_out"><button id="show"><i class="fas fa-sign-out-alt"></i></button></span>
+        </header>
+    <!--chat내용-->
+        <section>
+          <div class="chat_content">
+            <ul>
+    <!--입장-->
+              <li class="enter">
+                <div><span class="contactor">이용자2</span>님이 입장하였습니다.</div>
+              </li>
+                <li class="left">
+                  <span><img src="img/05.jpg"/></span>
+                  <span class="name">이용자2</span>
+                  <div class="content"><span>안녕하세요</span><span>읽음</span><div class="time">sent at 12:00</div></div>
+                </li>
+    <!--날짜 구분선-->
+                <li class="date">
+                  <div>2022.03.01</div>
+                </li>
+      <!--대화-->
+                <li class="right">
+                  <span><img src="img/05.jpg"/></span>
+                  <span class="name">이용자1</span>
+                  <div class="content"><span>아</span><span>읽음</span><div class="time">sent at 13:00</div></div>
+                </li>
+                <li class="right">
+                  <span><img src="img/05.jpg"/></span>
+                  <span class="name">이용자1</span>
+                  <div class="content"><span>안녕하세요</span><span>읽음</span><div class="time">sent at 13:00</div></div>
+                </li>
+                <li class="left">
+                  <span><img src="img/05.jpg"/></span>
+                  <span class="name">이용자2</span>
+                  <!--ipsumlorem-->
+                  <div class="content"><span>각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.</span><span>안읽음</span><div class="time">sent at 14:00</div></div>
+                </li>
+            </ul>
+        </div>
+        </section>
+    <!--입력-->
+        <section>
+          <div class="input">
+          <textarea placeholder="메세지를 입력하세요"></textarea>
+          </div>
+          </section>
+    <!--나가기 팝업-->
+        <section>
+          <div class="background">
+            <div class="window">
+              <div class="popup">
+                <div>채팅창을 정말 나가시겠습니까?</div>
+                <button>예</button>
+                <button id="close">아니오</button>
+              </div>
+              <div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+        </div>
+    </section>
+</div>
+  <!--내가쓴글 목록-->
+  <section>
+  <div class="post_list">
+    <table>
+      <tr>
+        <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.  </td>
+        <td>2015.03.22</td>
+      </tr>
+      <tr>
+        <td><span>공지사항2</span></td>
+        <td>2015.03.22</td>
+      </tr>
+      <tr>
+        <td><span>공지사항3</span></td>
+        <td>2015.03.22</td>
+      </tr>
+    </table>
+  </div>
+</section>
+</section>
+
+
+</body>
+</html>
