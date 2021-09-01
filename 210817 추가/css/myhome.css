@@ -1,0 +1,129 @@
+
+#cont_top{
+  width:70%;height:80px;float:right;background-color: #0b7a71;color:white;font-size: 20px;text-align: center;line-height: 80px;
+}
+#cont_left{
+  width:570px;float:left;position: fixed;z-index: 100;background-color: white;
+}
+#cont_right{
+  width:70%;float:right;background-image: url('../img/모눈.jpg');min-height: 1000px;
+}
+
+.profile{/*빨간줄*/
+  width:90%;border-right: 2px solid #c3200e;height:1000px;padding-top: 100px;
+}
+/*profile,modify버튼*/
+.select_bar{
+  width:10%;float:right;
+}
+ul{
+  list-style: none;
+}
+.select_bar li{
+   font-size: 14px;font-weight: bold;margin-top: 10px;padding: 15px; writing-mode: vertical-rl;text-orientation: mixed;margin-left: -40px;border-top-right-radius: 10px;border:2px solid #c3200e;border-left: none;background-color: white;
+}
+.profile .contents1{
+   background-color:#8EB695;
+}
+.my_profile{
+  margin:0 auto;background-color:white;width:400px;
+}
+/*               프로필 목록            */
+.my_profile img{
+  display: block; margin:0px auto;width:300px; height:300px;border-radius: 300px;box-shadow: 1px 2px 3px 1px #888888;
+}
+.choose_file{
+  display: none;
+}
+/*nickname*/
+.my_profile .name{
+  width:400px;text-align: center;margin-top: 15px;
+}
+.my_profile .nickname{
+ background-color: white;border: none;margin:0 auto;margin-top: 10px; margin-bottom: 30px;width:180px;
+}
+.my_profile .name .nickname{
+    font-size: 22px;  font-weight: bold; text-align: center;display: inline-block;
+}
+.my_profile i{
+  font-size: 15px;color:gray;display: inline-block;
+}
+.check_nick{
+display: inline-block; font-size: 12px; color:white;border: none;border-radius: 10px;padding:5px; position: relative;top: -40px;display: none;
+}
+.check_nick:hover{
+  background-color:#c3200e;
+
+}
+.chat{
+
+}
+/*profile*/
+
+.info_list{
+  margin:10px 0;
+}
+.info_list  label{
+  width:130px;display: inline-block;
+}
+.info_list >p{
+ display: inline-block;
+}
+#pw_txt,#cor_pw_txt{
+  color:#c3200e; font-size: 12px; position: relative;left: 130px;
+}
+ .hidden_profile{
+   display: none;
+ }
+.pw{
+  width:165px;
+}
+ .info_list button{
+  display: none;color:white;border: none;border-radius: 10px;padding:5px;
+}
+.info_list button:hover{
+  background-color:#c3200e;
+}
+/*수정하기 버튼*/
+
+.modify_profile button{
+  display: inline-block;position: fixed; bottom:0;width:516px;height:60px;color:white;border:none;font-size: 16px;
+}
+.submit_profile{
+  z-index: -100;background-color: #0b7a71;
+}
+.edit_profile{
+  background-color:#c3200e;
+}
+.modify_profile button:hover{
+
+}
+/*헤더*/
+.top_line{
+  background-color: #c3200e;height:300px;color: white;font-size: 20px;z-index: 10;float:right;
+}
+/*cont_right*/
+.select_contents>li{
+   float:left; margin:10px; border:1px solid #c3200e; padding:10px;
+}
+.select_contents{
+
+}
+.chat_list,.alarm_list,.post_list{
+ margin:100px 50px;
+}
+ .chat_list,.post_list{
+   display: none;
+ }
+ /*cont_top*/
+ .
+
+
+/* media query 0 ~ 768px  tablet*/
+@media (max-width:768px){
+
+  #cont_left,#cont_top,#cont_right,.profile,.my_profile .name,.my_profile,.my_profile .nickname,.info_list  label,.pw,.modify_profile button,.chat_list table,.alarm_list table,.post_list table, {
+    width:100%;
+  }
+
+}
