@@ -1,0 +1,74 @@
+.profile{/*빨간border*/
+  margin:0 auto;position: relative;top:80px;
+   border : 2px solid #c3200e;min-height:650px;width:600px;padding-top: 100px;
+}
+
+.my_profile{
+  margin:0 auto;background-color:white;width:400px;
+}
+/*               프로필 목록            */
+.my_profile img{
+  display: block; margin:0px auto;width:300px; height:300px;border-radius: 300px;box-shadow: 1px 2px 3px 1px #888888;
+}
+.choose_file{
+  display: none;
+}
+/*nickname*/
+.my_profile .name{
+  width:400px;text-align: center;margin-top: 15px;
+}
+.my_profile .nickname{
+ background-color: white;border: none; margin:10px 0 30px 50px;width:180px;
+}
+.my_profile .name .nickname{
+    font-size: 22px;  font-weight: bold; text-align: center;display: inline-block;
+}
+.my_profile i{
+  font-size: 15px;color:gray;display: inline-block;
+}
+.check_nick{
+display: inline-block; font-size: 12px;border: 2px solid #CCCCCC;border-radius: 10px;padding:5px; position: relative;top: -40px; font-weight: bold; left:20px;
+}
+.check_nick:hover{
+  border-color:#c3200e;
+
+
+}
+
+.info_list{
+  margin:10px 0;
+}
+.info_list  label{
+  width:130px;display: inline-block;
+}
+.info_list >p{
+ display: inline-block;
+}
+#pw_txt,#cor_pw_txt{
+  color:#c3200e; font-size: 12px; position: relative;left: 130px;
+}
+ .hidden_profile{
+   display: none;
+ }
+ .info_list button{
+border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
+}
+.info_list button:hover{
+  border-color:#c3200e;
+}
+/*수정하기 버튼*/
+
+.modify_profile button{
+  display:block;width:100px;height:40px;color:white; font-size: 16px;border-radius: 15px; text-align: center;margin:40px auto;
+}
+.edit_profile{
+  background-color:#c3200e;
+}
+
+
+
+/* media query 0 ~ 768px  tablet*/
+@media (max-width:768px){
+ 
+
+}

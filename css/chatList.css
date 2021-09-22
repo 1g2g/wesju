@@ -1,0 +1,50 @@
+
+.chat_list img{
+  width:50px; height:50px; border-radius: 15px;
+}
+.chat_list .contactor{
+  height: 50px;
+}
+.chat_list table {  display: inline-block;
+  width:200px;max-height:300px; overflow-y: scroll;border-collapse: collapse;border: 1px solid #cccccc;background-color: white;position:absolute;
+}
+.chat_list table tr,.alarm_list table tr,.post_list table tr{
+  height:80px;padding:20px;
+}
+.chat_list table tr:hover,.alarm_list table tr:hover,.post_list table tr:hover {
+  background-color:#E0ECE1;
+}
+.chat_list table td:nth-child(1){
+  width:20%;text-align: center;
+}
+.chat_list table td:nth-child(2){
+  width:80%;
+}
+.chat_list table td {
+  border-bottom: 1px solid #cccccc; border-collapse:inherit;
+}
+/*알람리스트*/
+.alarm_list table,.post_list table{
+  display:inline-block; width:300px;max-height:500px;overflow-y: scroll;
+  border-collapse: collapse;border: 1px solid #cccccc;background-color: white;
+position:absolute;
+}
+.alarm_list table td,.post_list table td{
+  padding:10px;width:100%; border-bottom: 1px solid #cccccc;
+}
+.post_list table td:nth-child(2){
+  font-size: 12px; color:gray;
+}
+.alarm_list table td a,.post_list table td a{
+  color:#0b7a71;text-decoration: none;
+}
+.alarm_list table td a:hover,.post_list table td a:hover{
+  color:#c3200e;
+}
+.alarm_list_cmt{
+  font-style: italic;font-size: 12px;display:block;margin-top:5px;
+}
+.alarm_list_cmt :hover{
+  color:gray;
+}
+/*연한 그린 #0b7a71*/

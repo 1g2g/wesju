@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- when Korean is breaking -->
+    <!-- https://tysoso.tistory.com/6 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자유게시판</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
+    <script src="javascript/board.js"defer></script>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <style></style>
+    <script>
+        $(document).ready(function(){
+            //Toggle Button
+            //category에서 .btn 클릭시 숨김/열림 기능입니다.
+            $(".btn").click(function(e){
+                e.preventDefault();
+                $(".nav").slideToggle();
+                $('.btn').toggleClass("open");
+
+                if((".btn").hasClass("open")){
+                    //open
+                    $(".btn").find("i").attr("class","fa fa-angle-up");
+                }else{
+                    //close
+                    $(".btn").find("i").attr("class","fa fa-angle-down");
+                }
+            });
+
+
+            //mobile_sidebar
+            //mobile버전에서 hamburger 메뉴 클릭시 사이드바 나오게합니다.
+            $('.sidebarCollapse').click(function(){
+                $('.sidebar').addClass('active');
+                $('.overlay').fadeIn();
+            })
+            // mobile_overlay
+            // mobile버전에서 hamburger 메뉴 클릭해서 사이드바 나왔을때 밖에 화면 클릭하면 닫게해줍니다.
+            $('.overlay').click(function(){
+                $('.sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            })
+
+            //mobile_sidebar category open/close
+            //mobile버전에서 큰 카테고리 클릭시 하위메뉴 숨김/열림
+            $('.parent_menu_havesub').click(function(e){
+                e.preventDefault();
+                $('.sub_ul').slideToggle();
+                $('.sidebar_btn').toggleClass("open");
+            })
+
+
+            // 참고사이트 : https://www.youtube.com/watch?v=wdDqs6kadec , extension consider https://grace-go.tistory.com/95
+            // 메인화면에서 학생회 홈페이지, 과홈페이지 링크걸어놓은 부분 slide기능입니다.
+            // 한줄에 3개씩 보이게 했습니다.
+            var current = 0; //First Image Position
+            var max =0;     //image 개수입니다.
+            var maximage = 3;   //한화면에 보일 이미지 개수입니다.
+            var imagewidth=237; //한 이미지당 가로길이를 237로 임의로 설정하였습니다.
+            function init(){
+                container = $(".slide ul");
+                max = container.children().length;  //image 개수
+                events();
+            }
+            function events(){
+                $("button.prev").click(function(e){ prev(); });
+                $("button.next").click(function(e){ next(); });
+            }
+            function prev(e){
+                if(current <= 0) {return;}
+                current-=1;
+                console.log(current);
+                prevanimate();
+            }
+            function next(e){
+                //Next버튼 클릭시 마지막 이미지라면 안넘어가게하기위해서 빼기계산을 했습니다.
+                if(current > max-maximage-1) {return;}
+                current+=1;
+                console.log(current);
+                nextanimate();
+            }
+
+            function prevanimate(){
+                container.animate({
+                    "margin-left":"+="+imagewidth+"px"
+                },500);
+            }
+            function nextanimate(){
+                container.animate({
+                    "margin-left":"-="+imagewidth+"px"
+                },500);
+            }
+
+            init();
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!-- desktop header -->
+    <div class="overlay"></div>
+    <header id="header">
+        <div class="container">
+            <div class="header">
+                <div class="header_title">
+                    <a href="#" class="header_title_img"><div>위세종<span>wesju</span></div></a>
+                    <!-- <a href="#" class="header_title_img"><img src="https://via.placeholder.com/200x60" width="200" height="60" alt="wesejong"/></a> 나중에는 아마 이미지를 사용할것입니다. 이미지 관련해서 아래가 뜨는것은 https://blog.naver.com/jhc9639/222174944051-->
+                </div>
+                <div class="header_search">
+                    <input type="text" placeholder="search..."/>
+                    <button type="button">검색</button>
+                </div>
+                <div class="header_menu">
+                    <div class="header_menu_intro">
+                        <a href="#" class="header_menu_intro_a intro"><span>사이트소개</span></a>
+                        <a href="#" class="header_menu_intro_a notice"><span>공지사항</span></a>
+                        <a href="#" class="header_menu_intro_a sitepolicy"><span>사이트이용약관</span></a>
+                        <a href="#" class="header_menu_intro_a privacypolicy"><span>개인정보처리방침</span></a>
+                    </div>
+                    <div class="header_menu_signinbox">
+                        <a href="#" class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
+                        <span class="header_menu_intro header_signinbox_span">|</span>
+                        <a href="#" class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
+                    </div>
+                </div>
+                <div class="header_icon">
+                    <!-- I have no idea
+                    <ul>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                    </ul>     -->
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- mobile header -->
+    <header id="mobile_header">
+        <div class="mobile_container">
+            <div class="mobile_header">
+                <div class="mobile_header_sidebar">
+                        <!-- https://kutar37.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%99%B8%EB%B6%80%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%88%A8%EA%B8%B0%EA%B8%B0 -->
+                        <!-- http://v2.eyoom.net/bbs/board.php?bo_table=js&wr_id=7 -->
+                        <!-- https://www.youtube.com/watch?v=O9l75KOB2pE -->
+
+                    <!-- hamburger left menu -->
+                    <i class="hamburger sidebarCollapse fas fa-bars 4px"></i>
+
+                    <!-- when you click hamburger -->
+                    <div class="sidebar">
+                        <div class="sidebar_signinbox">
+                            <a href="#" class="sidebar_signinbox_span signin"><span><i class="fas fa-sign-in-alt 5px"></i>로그인</span></a>
+                            <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
+                        </div>
+
+                        <div class="sidebar_nav">
+
+                        </div>
+                        <div class="sidebar_ul">
+                            <ul>
+                                <li class="parent_menu home"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                                <li class="parent_menu parent_menu_havesub features"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_menu"><a href="#">자유게시판</a></li>
+                                        <li class="sub_menu"><a href="#">인기게시판</a></li>
+                                        <li class="sub_menu"><a href="#">세종숲</a></li>
+                                        <li class="sub_menu"><a href="#">연애</a></li>
+                                        <li class="sub_menu"><a href="#">정치</a></li>
+                                        <li class="sub_menu"><a href="#">질문</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_menu"><a href="#">세종톡</a></li>
+                                        <li class="sub_menu"><a href="#">맛집게시판</a></li>
+                                        <li class="sub_menu"><a href="#">중고거래게시판</a></li>
+                                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">고민게시판</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_menu"><a href="#">세종톡</a></li>
+                                        <li class="sub_menu"><a href="#">맛집게시판</a></li>
+                                        <li class="sub_menu"><a href="#">중고거래게시판</a></li>
+                                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">고민게시판</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="mobile_header_title">
+                    <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span class="mobile_span">wesju</span></a>
+                </div>
+
+                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"><i class="mobile_signin fas fa-sign-in-alt 4px"></i></a>
+            </div>
+        </div>
+    </header>
+
+
+    <nav id="nav">
+        <div class="container">
+            <div class="row">
+                <div class="nav">
+                    <h2 class="ir_su">Category</h2>
+                    <div>
+                        <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                        <ol>
+                            <li><a href="#"><span>자유게시판</span></a></li>
+                            <li><a href="#"><span>인기게시판</span></a></li>
+                            <li><a href="#"><span>세종숲</span></a></li>
+                            <li><a href="#"><span>정치게시판</span></a></li>
+                            <li><a href="#"><span>질문게시판</span></a></li>
+                            <li><a href="#"><span>정보게시판</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                        <ol>
+                            <li><a href="#"><span>세종톡</span></a></li>
+                            <li><a href="#"><span>맛집게시판</span></a></li>
+                            <li><a href="#"><span>중고거래게시판</span></a></li>
+                            <li><a href="#"><span>홍보게시판</span></a></li>
+                            <li><a href="#"><span>정보게시판</span></a></li>
+                            <li><a href="#"><span>고민게시판</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>대학생활</h3>
+                        <ol>
+                            <li><a href="#"><span>일상</span></a></li>
+                            <li><a href="#"><span>맛집</span></a></li>
+                            <li><a href="#"><span>중고거래</span></a></li>
+                            <li><a href="#"><span>동아리</span></a></li>
+                            <li><a href="#"><span>자취방</span></a></li>
+                            <li><a href="#"><span>새내기</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>학교정보</h3>
+                        <ol>
+                            <li><a href="#"><span>학교일정</span></a></li>
+                            <li><a href="#"><span>학생회</span></a></li>
+                            <li><a href="#"><span>세종뉴스</span></a></li>
+                            <li><a href="#"><span>고전독서</span></a></li>
+                            <li><a href="#"><span>강의평가</span></a></li>
+                            <li><a href="#"><span>졸업요건</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>안내</h3>
+                        <ol>
+                            <li><a href="#"><span>취업현황</span></a></li>
+                            <li><a href="#"><span>졸업생</span></a></li>
+                            <li><a href="#"><span>공지사항</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <article id="toggle">
+                <div class="container">
+                    <div class="toggle">
+                        <span></span>
+                        <a href="#" class="btn">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </nav>
+
+    <main>
+        <section id="contents">
+            <div class="container">
+                <!-- ir_su는 그냥 주석임 -->
+                <h2 class="ir_su">Responsive Site Content</h2>
+                <section id="cont_center">
+                  <!--게시판 헤더-->
+                  <div class="board_list_header">
+                    <!--게시판 제목-->
+                    <h1 class="board_list_title">자유게시판</h1>
+                    <ul class="board_list_keyword">
+                    <!--클릭 시 키워드에 해당하는 목록 나열-->
+                      <li>keyword</li>
+                      <li><a href="#">#전체</a></li>
+                      <li><a href="#">#공지</a></li>
+                      <li><a href="#">#이벤트</a></li>
+                      <li><a href="#">#후기</a></li>
+                      <li><a href="#">#ㅋㅋ</a></li>
+                    </ul>
+
+                  </div>
+                    <!--       게시판 목록:15줄        -->
+                    <!---------------------------------->
+                    <!--                              -->
+                    <!--         on monitor           -->
+                    <!--                              -->
+                    <!---------------------------------->
+                <div class="board_list_table">
+                  <table class="board_list_form" >
+                     <thead>
+                       <tr>
+                         <th>번호</th>
+                         <th>분류</th>
+                         <th>제목</th>
+                         <th>작성자</th>
+                         <th>날짜</th>
+                         <th>조회수</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                          <td>223010</td>
+                          <td>공지</td>
+                          <td><a href="post.html">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                          <td>관리자</td>
+                          <td>2022.02.22</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                           <td>223010</td>
+                           <td>공지</td>
+                           <td><a href="#">게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                           <td>관리자</td>
+                           <td>2022.02.22</td>
+                           <td>0</td>
+                         </tr>
+                         <tr>
+                            <td>223010</td>
+                            <td>공지</td>
+                            <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                            <td>관리자</td>
+                            <td>2022.02.22</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
+                             <td>223010</td>
+                             <td>공지</td>
+                             <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                             <td>관리자</td>
+                             <td>2022.02.22</td>
+                             <td>0</td>
+                           </tr>
+                           <tr>
+                              <td>223010</td>
+                              <td>공지</td>
+                              <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                              <td>관리자</td>
+                              <td>2022.02.22</td>
+                              <td>0</td>
+                            </tr>
+
+                            <tr>
+                               <td>223010</td>
+                               <td>공지</td>
+                               <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                               <td>관리자</td>
+                               <td>2022.02.22</td>
+                               <td>0</td>
+                             </tr> <tr>
+                                 <td>223010</td>
+                                 <td>공지</td>
+                                 <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                 <td>관리자</td>
+                                 <td>2022.02.22</td>
+                                 <td>0</td>
+                               </tr>
+                               <tr>
+                                  <td>223010</td>
+                                  <td>공지</td>
+                                  <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                  <td>관리자</td>
+                                  <td>2022.02.22</td>
+                                  <td>0</td>
+                                </tr>
+                                <tr>
+                                   <td>223010</td>
+                                   <td>공지</td>
+                                   <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                   <td>관리자</td>
+                                   <td>2022.02.22</td>
+                                   <td>0</td>
+                                 </tr>
+
+                                 <tr>
+                                    <td>223010</td>
+                                    <td>공지</td>
+                                    <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                    <td>관리자</td>
+                                    <td>2022.02.22</td>
+                                    <td>0</td>
+                                  </tr>
+                                  <tr>
+                                     <td>223010</td>
+                                     <td>공지</td>
+                                     <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                     <td>관리자</td>
+                                     <td>2022.02.22</td>
+                                     <td>0</td>
+                                   </tr> <tr>
+                                       <td>223010</td>
+                                       <td>공지</td>
+                                       <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                       <td>관리자</td>
+                                       <td>2022.02.22</td>
+                                       <td>0</td>
+                                     </tr>
+                                     <tr>
+                                        <td>223010</td>
+                                        <td>공지</td>
+                                        <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                        <td>관리자</td>
+                                        <td>2022.02.22</td>
+                                        <td>0</td>
+                                      </tr>
+                                      <tr>
+                                         <td>223010</td>
+                                         <td>공지</td>
+                                         <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                         <td>관리자</td>
+                                         <td>2022.02.22</td>
+                                         <td>0</td>
+                                       </tr>
+                                       <tr>
+                                          <td>223010</td>
+                                          <td>공지</td>
+                                          <td><a href="#">게시글 제목입니다</a>&nbsp<a href="#">(<span class="comment_num">5</span>)</a></td>
+                                          <td>관리자</td>
+                                          <td>2022.02.22</td>
+                                          <td>0</td>
+                                        </tr>
+
+
+                       </tbody>
+                       </table>
+              </div>
+              <!--       게시판 목록:10줄        -->
+              <!---------------------------------->
+              <!--                              -->
+              <!--         on mobile            -->
+              <!--                              -->
+              <!---------------------------------->
+              <div class="mb_board_list_table">
+                <table class="mb_board_list_form">
+                   <tbody>
+                     <tr>
+                        <td>
+                          <!--제목-->
+                          <div class="mb_board_title">
+                            <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                          </div>
+                          <!--닉네임, 게시일자, 조회수 순-->
+                          <div class="mb_board_title_bottom">
+                            <span class="nickname">관리자</span>
+                            <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                            <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                            <span class="date">2022.02.22</span>
+                          </div>
+                        </td>
+                        <!--이미지-->
+                        <td colspan="2">
+                          <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                         <td>
+                           <!--제목-->
+                           <div class="mb_board_title">
+                             <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                           </div>
+                           <!--제목의 하단부 : 닉네임, 게시일자, 조회수 순-->
+                           <div class="mb_board_title_bottom">
+                             <span class="nickname">관리자</span>
+                             <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                             <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                             <span class="date">2022.02.22</span>
+                           </div>
+                         </td>
+                         <!--이미지-->
+                         <td colspan="2">
+                           <span class="table_img"></span>
+                         </td>
+                       </tr>
+                       <tr>
+                          <td>
+                            <!--제목-->
+                            <div class="mb_board_title">
+                              <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                            </div>
+                            <!--닉네임, 게시일자, 조회수 순-->
+                            <div class="mb_board_title_bottom">
+                              <span class="nickname">관리자</span>
+                              <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                              <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                              <span class="date">2022.02.22</span>
+                            </div>
+                          </td>
+                          <!--이미지-->
+                          <td colspan="2">
+                            <span class="table_img"></span>
+                          </td>
+                        </tr>
+                        <tr>
+                           <td>
+                             <!--제목-->
+                             <div class="mb_board_title">
+                               <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                             </div>
+                             <!--닉네임, 게시일자, 조회수 순-->
+                             <div class="mb_board_title_bottom">
+                               <span class="nickname">관리자</span>
+                               <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                               <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                               <span class="date">2022.02.22</span>
+                             </div>
+                           </td>
+                           <!--이미지-->
+                           <td colspan="2">
+                             <span class="table_img"></span>
+                           </td>
+                         </tr>
+                         <tr>
+                            <td>
+                              <!--제목-->
+                              <div class="mb_board_title">
+                                <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                              </div>
+                              <!--닉네임, 게시일자, 조회수 순-->
+                              <div class="mb_board_title_bottom">
+                                <span class="nickname">관리자</span>
+                                <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                <span class="date">2022.02.22</span>
+                              </div>
+                            </td>
+                            <!--이미지-->
+                            <td colspan="2">
+                              <span class="table_img"></span>
+                            </td>
+                          </tr>
+                          <tr>
+                             <td>
+                               <!--제목-->
+                               <div class="mb_board_title">
+                                 <span class="mb_category">후기</span><a href="#">게시글 제목입니다</a>
+                               </div>
+                               <!--닉네임, 게시일자, 조회수 순-->
+                               <div class="mb_board_title_bottom">
+                                 <span class="nickname">관리자</span>
+                                 <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                 <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                 <span class="date">2022.02.22</span>
+                               </div>
+                             </td>
+                             <!--이미지-->
+                             <td colspan="2">
+                               <span class="table_img"></span>
+                             </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                <!--제목-->
+                                <div class="mb_board_title">
+                                  <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                                </div>
+                                <!--닉네임, 게시일자, 조회수 순-->
+                                <div class="mb_board_title_bottom">
+                                  <span class="nickname">관리자</span>
+                                  <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                  <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                  <span class="date">2022.02.22</span>
+                                </div>
+                              </td>
+                              <!--이미지-->
+                              <td colspan="2">
+                                <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                              </td>
+                            </tr>
+                            <tr>
+                               <td>
+                                 <!--제목-->
+                                 <div class="mb_board_title">
+                                   <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                                 </div>
+                                 <!--닉네임, 게시일자, 조회수 순-->
+                                 <div class="mb_board_title_bottom">
+                                   <span class="nickname">관리자</span>
+                                   <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                   <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                   <span class="date">2022.02.22</span>
+                                 </div>
+                               </td>
+                               <!--이미지-->
+                               <td colspan="2">
+                                 <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                               </td>
+                             </tr>
+                             <tr>
+                                <td>
+                                  <!--제목-->
+                                  <div class="mb_board_title">
+                                    <span class="mb_category">공지</span><a href="#">게시글 제목입니다</a>
+                                  </div>
+                                  <!--닉네임, 게시일자, 조회수 순-->
+                                  <div class="mb_board_title_bottom">
+                                    <span class="nickname">관리자</span>
+                                    <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                    <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                    <span class="date">2022.02.22</span>
+                                  </div>
+                                </td>
+                                <!--이미지-->
+                                <td colspan="2">
+                                  <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                                </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                   <!--제목-->
+                                   <div class="mb_board_title">
+                                     <span class="mb_category">이벤트</span><a href="#">게시글 제목입니다</a>
+                                   </div>
+                                   <!--닉네임, 게시일자, 조회수 순-->
+                                   <div class="mb_board_title_bottom">
+                                     <span class="nickname">관리자</span>
+                                     <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                                     <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                                     <span class="date">2022.02.22</span>
+                                   </div>
+                                 </td>
+                                 <!--이미지-->
+                                 <td colspan="2">
+                                   <span class="table_img"></span>
+                                 </td>
+                               </tr>
+                  </tbody>
+                </table>
+            </div>
+              <!--새글쓰기(모니터)-->
+              <div class="board_list_bottom">
+                <a href="#"><span class="new_post_btn">글쓰기</span></a>
+                <!--검색-(모니터)-->
+                <span class="find_post">
+                  <input type="text" class="board_list_search"onfocusin="focus_on_search_box()" onfocusout="focus_out_search_box()" /
+                  ><input type="submit" value="search" class="board_list_search_btn"/>
+                </span>
+              </div>
+
+              <!--페이지 이동-->
+                <table class="board_list_page_idx">
+                  <tr>
+                    <td><a href="#">이전</a></td>
+                    <td><a href="#">1</a></td>
+                    <td><a href="#">2</a></td>
+                    <td><a href="#">3</a></td>
+                    <td><a href="#">4</a></td>
+                    <td><a href="#">5</a></td>
+                    <td><a href="#">6</a></td>
+                    <td><a href="#">7</a></td>
+                    <td><a href="#">8</a></td>
+                    <td><a href="#">9</a></td>
+                    <td><a href="#">10</a></td>
+                    <td><a href="#">다음</a></td>
+                  </tr>
+                  </table>
+
+                    </section>
+                <section id="cont_right">
+                    <!-- <h3>Responsive Site Right Content</h3> -->
+                    <article class="column col5 mt5 account notice20">
+                            <h4 class="ir_su col_tit">로그인박스</h4>
+                            <p class="login_msg">세종대 커뮤니티사이트에 로그인해보세요.</p>
+                            <a href="#" class="link_login">LOGIN</a>
+
+                            <div class="login_sub_area">
+                                <div class="login_sub_area_find">
+                                    <a href="#">아이디 /</a>
+                                    <a href="#">비밀번호 찾기</a>
+                                </div>
+                                <div class="login_sub_area_join">
+                                    <a href="#">회원가입</a>>
+                                </div>
+                            </div>
+                    </article>
+
+                    <article class="column col6">
+                        <div class="notice21 pr5">
+                            <h5 class="ir_su">Notice1</h5>
+                            <h5>학사일정 혹은 링크</h5>
+                            <ul>
+                                <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                                <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                                <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                                <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                                <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                            </ul>
+                            <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="column col7">
+                            <h4 class="ir_su col_tit">title</h4>
+                            <p class="ir_su col_desc">설명부분</p>
+
+                            <h4 class="ir_su col_tit">공지사항이미지</h4>
+                            <p class="col_desc"><img src="http://placehold.it/250x150"></p>
+                            <!-- <p class="col_desc rainbow"></span> -->
+                            </p>
+                    </article>
+
+                    <article class="column col8">
+                            <!-- 검색어: 별점주기 스프링 star rating-->
+                            <!-- https://blog.naver.com/tnakekd/220313628830 -->
+                            <!-- https://miuus.tistory.com/2 -->
+                            <div class="notice22 star_rating pr5">
+                                <h5 class="ir_su">Notice1</h5>
+                                <h5>강의평가</h5>
+                                <ul>
+                                    <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                    <li class="star_title">강의제목-교수님</li>
+                                    <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
+                                </ul>
+
+                                <ul>
+                                    <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                    <li class="star_title">강의제목-교수님</li>
+                                    <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
+                                </ul>
+
+                                <ul>
+                                    <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                    <li class="star_title">강의제목-교수님</li>
+                                    <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
+                                </ul>
+                                <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                            </div>
+                    </article>
+
+                   <article class="column col8">
+                        <div class="notice23 pr5">
+                            <h5 class="ir_su">Notice1</h5>
+                            <h5>학사일정 혹은 링크</h5>
+                            <ul>
+                                <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                                <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                                <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                                <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                                <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                            </ul>
+                            <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                        </div>
+                    </article>
+
+                </section>
+            </div>
+
+       </section>
+       <!--내비(모바일 용) : 오른쪽 하단 글쓰기, 검색 버튼-->
+       <nav class="floating">
+         <div class="remote_control">
+           <div><a href="#"><i class="fas fa-pencil-alt"></i></a></div>
+             <div></div>
+            </div>
+               <form action="" class="search-bar">
+              	<input type="search" name="search" pattern=".*\S.*" required>
+              	<button class="search-btn" type="submit">
+              		<span>Search</span>
+              	</button>
+            </form>
+         </nav>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <h2>Footer</h2>
+        </div>
+    </footer>
+</body>
+</html>
