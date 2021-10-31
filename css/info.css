@@ -1,10 +1,14 @@
+#cont_{
+     border: 1px solid #dae1e6;
+}
 .profile{/*빨간border*/
-  margin:0 auto;position: relative;top:80px;
-   border : 2px solid #c3200e;min-height:650px;width:600px;padding-top: 100px;
+  margin:0 auto;position: relative;
+min-height:850px;width:1158px;padding-top: 100px;
+   background-color: white;
 }
 
 .my_profile{
-  margin:0 auto;background-color:white;width:400px;
+  margin:0 auto;width:400px;
 }
 /*               프로필 목록            */
 .my_profile img{
@@ -31,18 +35,21 @@ display: inline-block; font-size: 12px;border: 2px solid #CCCCCC;border-radius: 
 }
 .check_nick:hover{
   border-color:#c3200e;
-
-
 }
-
+.private_info{
+  margin:0 auto;width:500px;
+}
 .info_list{
-  margin:10px 0;
+  margin:30px 0;
 }
 .info_list  label{
   width:130px;display: inline-block;
 }
 .info_list >p{
- display: inline-block;
+ display: inline-block;font-size: 15px; width:70%; border:1px solid gray;background-color:#EEEEEE;opacity: 0.6;font-size:15px;padding:4px;
+}
+.pw{
+  padding:4px;font-size: 15px;width:55%;
 }
 #pw_txt,#cor_pw_txt{
   color:#c3200e; font-size: 12px; position: relative;left: 130px;
@@ -59,7 +66,10 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
 /*수정하기 버튼*/
 
 .modify_profile button{
-  display:block;width:100px;height:40px;color:white; font-size: 16px;border-radius: 15px; text-align: center;margin:40px auto;
+  display:block;width:150px;height:40px; font-size: 16px;font-weight: bold;border-radius: 15px; text-align: center;margin:80px auto;  background-color: #c3200e;color:white;
+}
+.modify_profile button:hover{
+  background-color: #c3200e;opacity: 0.6;
 }
 .edit_profile{
   background-color:#c3200e;
@@ -69,6 +79,39 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
 
 /* media query 0 ~ 768px  tablet*/
 @media (max-width:768px){
- 
+  #cont_{
+       border:none;
+  }
+  .profile{
+      margin:0 auto; width:100%; padding-top:20px;min-height:600px;
+  }
+  .info_list{
+    margin:20px 0;
+  }
 
+  /*               프로필 목록            */
+
+  .private_info{
+    width:70%; margin:0 auto;
+  }
+  .info_list{
+    margin:20px auto;width:400px;
+  }
+  .info_list  label{
+    width:130px;display:block;
+  }
+  .info_list >p{
+   display: inline-block; width:100%; border:1px solid gray;background-color:#EEEEEE;opacity: 0.6;font-size:15px;padding:4px;
+  }
+  .pw{
+    width:80%;padding:4px;
+  }
+  #pw_txt,#cor_pw_txt{
+    color:#c3200e; font-size: 12px; position: relative;left: 130px;
+  }
+   .hidden_profile{
+     display: none;
+   }
+  /*수정하기 버튼*/
+ 
 }
