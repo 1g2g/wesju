@@ -1,0 +1,83 @@
+
+#post_main_title{
+  width:100%; padding:10px; font-size:15px;
+}
+.editor{
+  height:400px;
+}
+.post_category button{
+  width:50px;margin:5px;height:30px; border:1px solid #555;background-color:white; float:right;border-radius: 5px;  font-weight: bold;
+}
+.post_category button:hover{
+   border:1px solid #c3200e;
+}
+  #header > .container{
+    background-color: white;
+  }
+
+  /*background-color:rgba(195, 32, 14, 0.2);*/
+
+  #contents .wrapper{
+    padding:10px;
+  }
+  a{
+    color:black;
+  }
+  a:hover{
+    color:#c3002e;text-decoration: none;
+  }
+  /*post_header*/
+  #post_header{
+      height:120px;margin-left: 5px;margin-top:20px;
+  }
+  .post_category li{
+    float:left; margin:5px;
+  }
+  .post_category{
+   height:30px;
+  }
+  .post_category li:nth-child(3) a{
+    color:#c3002e;
+  }
+  .post_category .board_categoty{
+    color:black;
+  }
+
+  /*본문 제목*/
+  .post_title{
+    font-size: 20px;height:60px;
+  }
+  .post_title h1{
+    width:90%; display:inline-block;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+  }
+
+  #cont_center{
+  width:840px;
+  }
+  .tb_btm,#cont_right{
+   border-top: 1px solid black;
+  }
+  .tb_btm{
+    padding-top:0;
+  }
+  .tb_btm h1{
+    font-size: 20px;
+  }
+  .board_list_form{
+    display:inline-block; margin-left:0;width:97%;
+  }
+    @media (max-width:768px){
+      .wrapper{
+        padding:10px;
+      }
+        #cont_center{width:100%;}
+
+      /*본문 제목*/
+      .post_title h1{
+        width:90%;font-size:23px;
+      }
+
+      .post_category button{
+
+      }
+    }
