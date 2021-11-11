@@ -90,17 +90,3 @@ function email_certi(){//이메일 인증
   timer();
 }
 }
-function timer(){//인증 시간 제한
-  var time=300;
-  var min='';
-  var sec='';
-  var x=setInterval(function(){
-    min=parseInt(time/60);
-    sec=time%60;
-    document.getElementById("timer").innerHTML=min+"분"+sec+"초";
-    time--;
-    if(time<0){
-
-    }
-  },1000);
-}
