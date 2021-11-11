@@ -1,7 +1,7 @@
 /*background-color:rgba(195, 32, 14, 0.2);*/
 
 .wrapper{
-  padding:30px;
+  padding:20px;
 }
 a{
   color:black;
@@ -171,7 +171,7 @@ margin-left: 60px;
   display: none;
 }
 .write_comment, .write_reply {
-  width:97%;height:100px;border: 1px solid #C7695E;border-radius: 10px;padding:10px;background-color: white;
+  width:97%;height:100px;border: 1px solid #C7695E;border-radius: 10px;padding:10px;
 }
 .write_comment textarea,.write_reply textarea{
     width:88%;height:80px;vertical-align: middle;padding:5px;outline: none;border:none;padding:10px;margin-right: 10px;
@@ -206,10 +206,7 @@ width:840px;
   display:inline-block; margin-left:0;width:97%;
 }
   @media (max-width:768px){
-    .wrapper{
-      padding:10px;
-    }
-      #cont_center{width:100%;}
+     #contents{width:100%;}
     /*url 복사*/
     .copy_url input{
       width:20px;
@@ -220,7 +217,7 @@ width:840px;
       width:90%;font-size:23px;
     }
     /*본문 이미지*/
-    .#post_content img{
+    #post_content img{
     }
 
     /*본문-좋아요*/
@@ -249,7 +246,7 @@ width:840px;
       width:100%;height:auto;
     }
     .write_comment>button,.write_reply>button,.edit_cmt button{
-      width:100%;height:30px;display: none;border-radius: 0;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-left: 0;
+      width:98%;height:30px;display: none;border-radius: 0;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-left: 0;
 }
 .edit_cmt button{margin:0;width:90%;margin-top: -5px;margin-left: 5px;}
       /*댓글목록*/
@@ -275,12 +272,19 @@ width:840px;
       .extra_reply{
         display: none;
       }
+      .hide_reply{
+        width:95%;
+      }
       /*답댓*/
       /*설정:post_category의 오른쪽 상단*/
       .a_o_category,.a_o_writer,.a_o_comment{
-        position: fixed;bottom:0;left:0;width:100%;margin:0;
+        position: fixed;bottom:0;left:0;width:99.5%;margin:0;
       }
       .a_o_category li,.a_o_writer li,.a_o_comment li{
         width:100%;
+      }
+
+      .mb_board_list_table{
+        width:90%;
       }
   }
