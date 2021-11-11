@@ -25,7 +25,7 @@ header span{
 }
 /*개인정보약관박스*/
 .terms_of_sevice{
-  overflow: scroll;overflow-x: hidden;width:450px;height:300px;border:solid 1px gray; padding:10px;
+  overflow: scroll;overflow-x: hidden;width:450px;height:300px;border:solid 1px gray;
   margin:0 auto;
 }
 .agree_input>label,#agreement{
@@ -59,14 +59,14 @@ header span{
 }
 /*중복확인*/
 .check_overlap_id,.check_overlap_nick{
- position: relative; top:-40px;left: 81.5%;border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;
+float:right; margin-top:-40px;  margin-right:25px;border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px
 }
 .check_overlap_id:hover,.check_overlap_nick:hover{
   border: 2px solid #c3200e;color:#c3200e;
 }
 /*이메일*/
 .email_input>span{
- position: relative; top:-40px;left: 65%;
+ position:static; margin-top:-40px;  margin-right:25px;float:right;
 }
 #cor_mem_email,.email_cert_btn{
   display: none;
@@ -75,7 +75,7 @@ header span{
   position:relative;top:-26px;
 }
 .email_input button{
-  height:30px;min-width: 30px; border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;margin-left:15px;
+  height:30px;min-width: 30px; border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;margin-left:5px;
 }
 .email_input button:hover{
   border: 2px solid #c3200e;color:#c3200e;
@@ -100,42 +100,36 @@ header span{
   width:450px;
   text-align: center;
 }﻿
-
-
 select {
-
    -webkit-appearance:none; /* for chrome */
-
    -moz-appearance:none; /*for firefox*/
-
    appearance:none;
-
 }
-
 select::-ms-expand{
-
    display:none;/*for IE10,11*/
-
 }
 
 
+@media (max-width:768px)and (min-width:320px){
 
-
-@media (max-width:980px){
+  #join_field{
+    border:solid 1px #c3002e; padding-top:50px;padding-bottom: 10px;
+      padding-left: 5%;padding-right: 5%;
+  }
+  /*개인정보약관박스*/
+  .terms_of_sevice{
+    overflow: scroll;overflow-x: hidden;
+     width:96%;
+  }
   .container{
     width:97%;
   }
-  #join_field{
-    padding-left: 5%;padding-right: 5%;
-  }
-  .terms_of_sevice,.join_input input,.join_input>div,.submit_join_form,.prod,.join_input select{
+.join_input input,.join_input>div,.submit_join_form,.prod,.join_input select{
     width:100%;
   }
   /*이메일*/
-  .email_send_btn,.email_input>span{
-left:60%;
+  .check_overlap_id,.check_overlap_nick,.email_input>span{
+    margin-right:10px;
   }
-  .email_cert_btn{
-left:80%;
-  }
+  /*이메일 인증 버튼*/
 }
