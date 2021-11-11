@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>분실</title>
+    <script src="javascript/join.js"defer></script>
     <style>
     #forgot header a{
       text-decoration: none;color:black;font-family: 돋움;opacity: 0.7;
@@ -13,7 +14,7 @@
       font-size: 50px;text-align: center;
     }
     #forgot{
-      width:500px;
+      width:500px;margin:10px;
     }
     .select_lost ul{list-style: none; margin-left: -10px;}
     .select_lost li{float:left; background-color: #c3200e; padding:10px; width:200px; color:white; border-radius: 15px;text-align: center;margin-right: 10px;}
@@ -27,7 +28,7 @@
         display: none;
       }
     .forgot {
-    margin-top:100px;border:1px solid #c3200e;padding:10px;z-index: 2;background-color: white;
+    margin-top:100px;border:1px solid #c3200e;z-index: 2;background-color: white;padding:20px;
     }
     .forgot h1{font-weight: lighter;}
     .forgot .choice{
@@ -37,15 +38,29 @@
       float:left;padding:10px; margin:5px;background-color: #888888;color:white;
     }
     .forgot input{
-        width:430px;padding:10px;border: 1px solid #888888;outline: none;margin:10px;
+        width:410px;padding:10px;border: 1px solid #888888;outline: none;margin:10px;
     }
     .forgot button{
-      width:450px;background-color: #c3200e; color:white;padding:10px;border: none;margin:10px;
+      width:450px;background-color: #c3200e; color:white;padding:10px;border: none;
     }
     .forgot #email_txt,.forgot #timer{
       color:#c3002e;font-size: 12px;margin-left: 10px;
     }
     .forgot #cor_mem_email,.forgot .email_cert_btn{display: none;}
+    .forgot .pw_input{
+      display: none;
+    }
+    .forgot .pw_input p {
+      color:#c3002e;font-size: 10px;margin-left: 10px;margin-top:-5px;
+
+    }
+      @media (max-width:768px)and (min-width:320px){
+        #forgot{width:95%;}
+        .select_lost li{width:40%; padding:10px 5px;}
+        .forgot {padding:5%;}
+        .forgot input{width:90%;margin:10px auto;}
+        .forgot button{width:95%;}
+      }
       </style>
       <script>
       function email_certi(){//이메일 인증
@@ -139,8 +154,44 @@
             <p id="timer"></p>
             <input id="cor_mem_email" type="text" placeholder="인증번호 입력"/>
             <button class="email_cert_btn">확인하기</button>
+<!--인증번호 맞을 시에 display:block-->
+            <div class="pw_input">
+              <label for="mem_password"class="join_title">새 비밀번호</label>
+              <input id="mem_password" type="password" placeholder="비밀번호 입력"onkeyup="check_pw()"/>
+              <p id="pw_txt"></p>
+              <label for="cor_mem_password"class="join_title">새 비밀번호 확인</label>
+              <input id="cor_mem_password" type="password" placeholder="비밀번호 재입력" onkeyup="check_cor_pw()" required/>
+              <p id="cor_pw_txt"></p>
+              <!--비밀번호 조건 js-->
+              <!--https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dme1004&logNo=220958840520-->
+            </div>
           </div>
         </div>
       </section>
+      <script>
+
+      function timer(){//인증 시간 제한
+        document.getElementById("timer").style.display="block";
+        var time=300;
+        var min='';
+        var sec='';  var x;
+        clearInterval(x);
+        x=setInterval(function(){
+          min=parseInt(time/60);
+          sec=time%60;
+          document.getElementById("timer").innerHTML=min+"분"+sec+"초";
+          time--;
+
+          if(time==-1){//제힌시간 초과 시 경고 뜨고 시간 카운트 다운 p 사라짐
+            alert('인증시간을 초과하였습니다.\n다시 인증해주세요.')
+            document.getElementById("timer").style.display="none";
+            clearInterval(x);
+          }
+
+        },1000);
+          document.getElementById("timer").innerHTML="";
+          return;
+      }
+      </script>
 </body>
 </html>
