@@ -18,7 +18,6 @@
       <h1><a href="http://sjucomme.cafe24.com/index">위세종<span>wesju</span></a></h1>
   </header>
   <section id="join_field">
-    <article>
       <div class="terms_of_sevice">
         <!--회원가입약관-->
         <!--https://www.privacy.go.kr/a3sc/per/inf/perInfStep14.do 에서 작성-->
@@ -42,7 +41,6 @@
 
       ※ 행정심판에 대해 자세한 사항은 중앙행정심판위원회(www.simpan.go.kr) 홈페이지를 참고하시기 바랍니다.</br></br><p class='lh6 bs4'><strong>제13조(개인정보 처리방침 변경)<em class="emphasis"></em></strong></p><br/></p><p class='sub_p'>① 이 개인정보처리방침은 2021년 1월 1부터 적용됩니다.</p><p class='sub_p'></p><p class='sub_p'></p>
       </div>
-    </article>
       <!--개인정보처리방침에 대한 동의 여부-->
     <div class="agree_input">
       <input id="agreement" type="checkbox"/>
@@ -90,14 +88,19 @@
         <div class="studentID_input">
           <label for="mem_studentID" class="join_title">학번</label>
           <select >
+            <option>22학번</option>
             <option>21학번</option>
             <option>20학번</option>
             <option>19학번</option>
             <option>18학번</option>
             <option>17학번</option>
             <option>16학번</option>
-            <option>高학번</option>
-            <option>高高학번</option>
+            <option>15학번</option>
+            <option>14학번</option>
+            <option>13학번</option>
+            <option>12학번</option>
+            <option>11학번</option>
+            <option>10학번 이하</option>
           </select>
           <p id="studentID_txt"></p>
         </div>
@@ -113,6 +116,41 @@
     </section>
     </div>
   </div>
+  <script>
+
+  function timer(){//인증 시간 제한
+    document.getElementById("timer").style.display="block";
+    var time=300;
+    var min='';
+    var sec='';  var x;
+    clearInterval(x);
+    x=setInterval(function(){
+      min=parseInt(time/60);
+      sec=time%60;
+      document.getElementById("timer").innerHTML=min+"분"+sec+"초";
+      time--;
+
+      if(time==-1){//제힌시간 초과 시 경고 뜨고 시간 카운트 다운 p 사라짐
+        alert('인증시간을 초과하였습니다.\n다시 인증해주세요.')
+        document.getElementById("timer").style.display="none";
+        clearInterval(x);
+      }
+    /*  else if(time==3){//1분 남았을 때 시간 연장 가능
+        document.querySelector(".email_send_btn").innerHTML="시간연장";
+        document.querySelector(".email_send_btn").setAttribute("onClick", "extend_time(time)");
+
+      }*/
+
+    },1000);
+      document.getElementById("timer").innerHTML="";
+      return;
+  }
+/*
+  function extend_time(time){
+    time+=2;
+      return time;
+  }*/
+</script>
 </div>
 </body>
 </html>
