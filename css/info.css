@@ -18,20 +18,20 @@ min-height:850px;width:1158px;padding-top: 100px;
   display: none;
 }
 /*nickname*/
-.my_profile .name{
+.private_info .name{
   width:400px;text-align: center;margin-top: 15px;
 }
-.my_profile .nickname{
- background-color: white;border: none; margin:10px 0 30px 50px;width:180px;
+.private_info .nickname{
+ background-color: white;border: 1px solid #888888;margin:10px 0 30px 100px;width:180px;position:relative;left:30px;
 }
-.my_profile .name .nickname{
+.private_info .name .nickname{
     font-size: 22px;  font-weight: bold; text-align: center;display: inline-block;
 }
 .my_profile i{
   font-size: 15px;color:gray;display: inline-block;
 }
 .check_nick{
-display: inline-block; font-size: 12px;border: 2px solid #CCCCCC;border-radius: 10px;padding:5px; position: relative;top: -40px; font-weight: bold; left:20px;
+display: inline-block; font-size: 12px;border: 2px solid #CCCCCC;border-radius: 10px;padding:5px; position: relative;top: -40px; font-weight: bold;  left:50px;
 }
 .check_nick:hover{
   border-color:#c3200e;
@@ -83,10 +83,34 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
        border:none;
   }
   .profile{
-      margin:0 auto; width:100%; padding-top:20px;min-height:600px;
+      margin:0 auto; width:90%; padding-top:20px;min-height:600px;
   }
   .info_list{
     margin:20px 0;
+  }
+  /*프로필 이미지 가변*/
+  .my_profile{
+    position: relative;	width:50%;height: 0;overflow: hidden;padding-bottom:50%;
+  }
+  .my_profile img{
+    position: absolute;top: 0;left: 0;width: 95%;height:95%;border-radius: 300px;box-shadow: 1px 2px 3px 1px #888888;
+  }
+  /*닉네임 변경*/
+  .name{
+     z-index: 100;
+  }
+  .private_info .name{
+    width:100%; margin-top: 15px;
+  }
+  .private_info .nickname{
+   background-color: white; width:80%;float:left;margin:5% 1% 5% 10%;position:static;
+
+  }
+  .private_info .name .nickname{
+      font-size: 22px;  font-weight: bold; text-align: center;display: inline-block;
+  }
+  .private_info  .check_nick{
+     background-color: white; position: relative;top:1px;left:-1%;
   }
 
   /*               프로필 목록            */
@@ -95,7 +119,7 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
     width:70%; margin:0 auto;
   }
   .info_list{
-    margin:20px auto;width:400px;
+    margin:20px auto;width:80%;
   }
   .info_list  label{
     width:130px;display:block;
@@ -104,7 +128,7 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
    display: inline-block; width:100%; border:1px solid gray;background-color:#EEEEEE;opacity: 0.6;font-size:15px;padding:4px;
   }
   .pw{
-    width:80%;padding:4px;
+    width:100%;padding:4px;
   }
   #pw_txt,#cor_pw_txt{
     color:#c3200e; font-size: 12px; position: relative;left: 130px;
@@ -113,5 +137,5 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
      display: none;
    }
   /*수정하기 버튼*/
- 
+
 }
