@@ -52,7 +52,16 @@
     /*참고 : https://keithclark.co.uk/articles/pure-css-parallax-websites/demo3/  */
     /*                                                                            */
     /* ************************************************************************** */
+    /*배경 스크롤*/
+    body{
+      overflow-y: hidden;scroll-behavior: smooth;
+    }
     .parallax_page{
+      height: 100vh;overflow-x: hidden;  overflow-y:  scroll;scroll-behavior: smooth;
+    }
+    .parallax_back_layer{ overflow: hidden; position: absolute; top: 0;left: 0;right: 0;bottom: 0;  background-image: url(../img/06.jpg);background-size:cover; filter: grayscale(100%);opacity: 0.2;min-height:1000px;z-index: -3;
+    }
+/*    .parallax_page{
       height: 100vh;overflow-x: hidden;  overflow-y:  scroll; -webkit-perspective: 100px;perspective: 100px;
     }
     .parallax{
@@ -67,8 +76,7 @@
       -webkit-transform: translateZ(-100px) scale(2);transform: translateZ(-100px) scale(2);
      overflow: hidden; position: absolute; top: 0;left: 0;right: 0;bottom: 0;  background-image: url(../img/06.jpg);background-size:cover; filter: grayscale(100%);opacity: 0.2;height:2000px;z-index: -3;
     }
-
-
+*/
  /* ****************************************************************** */
  /*                                                                    */
  /*                            LAYOUT                                  */
@@ -81,12 +89,12 @@
     #mobile_header{background-color:#ffffff;}
     #mobile_header > .mobile_container{background-color:blue; vertical-align:bottom;}
 
-  #nav {background-color:#c3002e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */}
+    #nav {background-color:#c3002e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */}
 
     #contents .container{border-right:1px solid #dbdbdb; border-left:1px solid #dbdbdb;    }
     #cont_center {float:left;width: 900px;background-color: white;min-height: 1000px; }
     #cont_right {width: 259px;overflow:hidden;border-left:1px solid #dbdbdb;background-color: white;}  /* #cont_right : overflow:hidden이 float:left가 작동하게 합니다. 이 속성이 없을시 아래로 내려갑니다.  */
-  #footer{border-top:1px solid #dbdbdb; background-color:#c3002e; /*radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/}
+  #footer{position:relative;border-top:1px solid #dbdbdb; background-color:#c3002e; /*radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/}
 
     /* container */
     .container{width: 1160px; height:auto; margin:0 auto; overflow:hidden;}
@@ -219,9 +227,9 @@
         /*로고 display*/
         .col3{ }
         .col3 .slide{ padding:15px;}
-        .col3 img{width:100px;height:100px;box-shadow: 2px 0.5px 5px #CCC;}
+        .col3 img{width:100px;height:100px;box-shadow: 2px 0.5px 5px #CCC;border-radius: 50px;margin:10px;}
         .col3 img:hover{transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out;    }
-        .col3 .slide ul{margin-left: 30px; margin-right: 30px;}
+        .col3 .slide ul{margin-left: 30px; margin-right: 30px;width:1000000px;}
         .col3 p{z-index: 100; font-size: 12px;text-align: center;margin-top:3px;}
         /*        .col3{background-color: #c3200e;}
                 .col3 img{width:100px;height:100px;border-radius: 50px;margin:5px;}
