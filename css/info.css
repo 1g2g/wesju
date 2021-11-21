@@ -3,7 +3,7 @@
 }
 .profile{/*빨간border*/
   margin:0 auto;position: relative;
-min-height:850px;width:1158px;padding-top: 100px;
+min-height:1000px;width:1158px;padding-top: 100px;
    background-color: white;
 }
 
@@ -48,14 +48,23 @@ display: inline-block; font-size: 12px;border: 2px solid #CCCCCC;border-radius: 
 .info_list >p{
  display: inline-block;font-size: 15px; width:70%; border:1px solid gray;background-color:#EEEEEE;opacity: 0.6;font-size:15px;padding:4px;
 }
+/*패스워드*/
 .pw{
-  padding:4px;font-size: 15px;width:55%;
+  padding:4px;font-size: 15px;margin:5px 0;
+}
+.origin_pw{
+  width:calc(70% - 72px);
+}
+.hidden_profile .pw{
+ width:70%;
 }
 #pw_txt,#cor_pw_txt{
   color:#c3200e; font-size: 12px; position: relative;left: 130px;
 }
  .hidden_profile{
-   display: none;
+   /*display: none;*/width:100%;
+ }
+ .cor_mem_password{
  }
  .info_list button{
 border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
@@ -127,9 +136,17 @@ border: 2px solid #CCCCCC;border-radius: 10px;padding:5px;
   .info_list >p{
    display: inline-block; width:100%; border:1px solid gray;background-color:#EEEEEE;opacity: 0.6;font-size:15px;padding:4px;
   }
-  .pw{
-    width:100%;padding:4px;
+  /*패스워드*/
+   .info_list button{
+    margin-left: 3px;
+   }
+  .info_list .origin_pw{
+    width:calc(100% - 82px);padding:4px;
   }
+  .hidden_profile .pw{
+    padding:4px;font-size: 15px;width:100%;margin:5px 0;
+  }
+
   #pw_txt,#cor_pw_txt{
     color:#c3200e; font-size: 12px; position: relative;left: 130px;
   }
