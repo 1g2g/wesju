@@ -88,13 +88,13 @@ body{ margin: 0; padding: 0; overflow: hidden;  }
 	content: "";	flex-grow: 1;	background-color: #CCC;	height: 1px;	font-size: 0px;		margin: 0px 16px;
 }
 /*입장 퇴장*/
-.chat .enter span{
+.chat .enter span,.chat .read_here span{
   color:black;
 }
-.chat .enter{
+.chat .enter,.chat .read_here{
 	display: flex;	flex-basis: 100%;	align-items: center;	color:#0b7a71;opacity: 0.7;	margin: 8px 0px;
 }
-.chat .enter::before,.chat .enter::after {
+.chat .enter::before,.chat .enter::after,.chat .read_here::before,.chat .read_here::after {
 	content: "";	flex-grow: 1;	background-color: #CCC;	height: 1px;	font-size: 0px;		margin: 0px 16px;
 }
 /*나가기 팝업*/
