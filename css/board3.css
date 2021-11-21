@@ -67,6 +67,7 @@ margin:20px;font-size: 25px; text-align: center;font-weight: lighter;
 /*테이블 이미지*/
 /*board_list_elem 별 이미지 크기와 제목 너비 설정*/
 .board_list_elem{float:left;}
+.board_list_elem img{object-fit: cover;}
 /*1. 400x300*/
 .board_list_elem:first-child img{
   width:400px;height:300px;
@@ -90,25 +91,31 @@ margin:20px;font-size: 25px; text-align: center;font-weight: lighter;
 display: block;  width:190px;height:70px;overflow:hidden; text-overflow:ellipsis;  white-space: normal;padding-left: 5px;
 }
 /*5,6,7 중앙line 250x250*/
-.elem_250 .board_list_elem{width:260px;height:300px;}
-.elem_250 .board_list_elem img{
+.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7){
+  width:260px;height:300px;margin:5px;
+}
+:is(.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7)) img{
   width:260px;height:250px;
 }
-.elem_250 .board_list_elem .board_title{
+:is(.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7)) .board_title{
   width:260px;height:20px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom:0;padding-bottom:0;
 }
 /*8,9,10. */
-.elem_lower .board_list_elem{
+.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10){
     width:800px; margin:0 0  5px  5px;
 }
-.elem_lower .board_list_elem  img{
+:is(.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10)) img{
   width:200px;height:100px; float:left;
 }
-.elem_lower .board_list_elem .board_title{
+:is(.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10)) .board_title{
 display: block;  width:550px;height:70px;overflow:hidden; text-overflow:ellipsis;  white-space: normal;padding-left: 5px;
 }
 /*게시글 사이 간격*/
 
+hr {
+    color: #222222;    /* IE */
+    /* 크롬, 모질라 등, 기타 브라우저 */
+}
 
 /*게시판 목록 하단*/
 .board_list_bottom{
@@ -157,7 +164,7 @@ display: block;  width:550px;height:70px;overflow:hidden; text-overflow:ellipsis
 }
 
 /*태블릿 ver (~768px)*/
-  @media (max-width:768px){
+  @media (max-width:768px) and (min-width:320px){
     /*ul 중앙정렬*/
     .board_list_keyword{
       text-align: center;
@@ -165,14 +172,39 @@ display: block;  width:550px;height:70px;overflow:hidden; text-overflow:ellipsis
     .board_list_header li{
       display: inline-block;float: none;
     }
-    /*board_list_elem 통일*/
-    .board_list_elem img{
-      width:200px; height:200px;
-    }
 
     .comments{
        color:#888888;
     }
+    .board_list_elem{
+      width:100%;
+    }
+    /*1*/
+    .board_list_elem{
+      width:100%;
+    }
+    .board_list_elem img{
+      width:100%;height:auto;
+    }
+    .board_list_elem .board_title{
+      width:100%;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    }
+    /*2,3,4*/
+    .board_list_elem:first-child,.board_list_elem:nth-child(2),.board_list_elem:nth-child(3),.board_list_elem:nth-child(4),.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7),.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10){
+      width:100%;
+    }
+    :is(.board_list_elem:first-child,.board_list_elem:nth-child(2),.board_list_elem:nth-child(3),.board_list_elem:nth-child(4),.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7),.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10)) img{
+      width:100%;display:inline;float:left;
+    }
+    :is(.board_list_elem:first-child,.board_list_elem:nth-child(2),.board_list_elem:nth-child(3),.board_list_elem:nth-child(4),.board_list_elem:nth-child(5),.board_list_elem:nth-child(6),.board_list_elem:nth-child(7),.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10)) .board_title{
+      width:100%;height:20px;
+    }
+    :is(,.board_list_elem:nth-child(2),.board_list_elem:nth-child(3),.board_list_elem:nth-child(4),.board_list_elem:nth-child(8),.board_list_elem:nth-child(9),.board_list_elem:nth-child(10)) .board_title{
+    height:20px;
+    }
+
+
+
     /*게시판 목록의 글제목 하단*/
     .mb_board_title_bottom{
       margin-left: 4px;
