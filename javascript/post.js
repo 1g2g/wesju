@@ -38,31 +38,6 @@ function show_reply_box(){//모바일 버전에서 가독성을 높이기 위해
 
 	}
 }
-function show_edit_post_box(){//글 제목post_category 오른쪽 상단 ellipsis-v 클릭 시 보이는 글 수정, 삭제 박스를 보여줌
-	const a_o_category=document.querySelector(".a_o_category");
-	if(a_o_category.style.display=='none'){
-		a_o_category.style.display='block';
-	}else{
-		a_o_category.style.display='none';
-	}
-}
-function show_chat_to_writer_box(){// post_detail의 글쓴이 클릭 시, 글쓴이에게 쪽지보내기, 채팅하기 박스를 띄우는 함수
-		const a_o_writer=document.querySelector(".a_o_writer");
-		if(a_o_writer.style.display=='none'){
-			a_o_writer.style.display='block';
-		}else{
-			a_o_writer.style.display='none';
-		}
-}
-
-function show_edit_comment_box(){// post_detail의 글쓴이 클릭 시, 글쓴이에게 쪽지보내기, 채팅하기 박스를 띄우는 함수
-		const a_o_comment=document.querySelector(".a_o_comment");
-		if(a_o_comment.style.display=='none'){
-			a_o_comment.style.display='block';
-		}else{
-			a_o_comment.style.display='none';
-		}
-}
 function show_reply(){
 	const reply=document.querySelector(".reply");
 	if(reply.style.display=='none'){
