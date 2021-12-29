@@ -21,7 +21,7 @@ header span{
   font-size: 30px;
 }
 #join_field{
-  border:solid 1px #c3002e; padding:50px;padding-bottom: 10px;
+  border:solid 1px #c3002e; padding:50px;padding-bottom: 10px;font-size: 12px;
 }
 /*개인정보약관박스*/
 .terms_of_sevice{
@@ -55,11 +55,15 @@ header span{
   outline:none;
 }
 .join_input p{
-  color:#c3002e;margin:0 5px;
+  color:#c3002e;margin:0 5px;font-size: 12px;padding:5px 0px;
+}
+/*아이디 중복 알림 텍스트-초록*/
+#id_dup_txt{
+  color:green; display:none;
 }
 /*중복확인*/
 .check_overlap_id,.check_overlap_nick{
-float:right; margin-top:-40px;  margin-right:25px;border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px
+float:right; margin-top:-40px;  margin-right:25px;border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;background-color: white;
 }
 .check_overlap_id:hover,.check_overlap_nick:hover{
   border: 2px solid #c3200e;color:#c3200e;
@@ -75,7 +79,7 @@ float:right; margin-top:-40px;  margin-right:25px;border: 2px solid #CCCCCC;colo
   position:relative;top:-26px;
 }
 .email_input button{
-  height:30px;min-width: 30px; border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;margin-left:5px;
+  height:30px;min-width: 30px; border: 2px solid #CCCCCC;color:#555555;border-radius: 10px;padding:3px;margin-left:5px;background-color: white;
 }
 .email_input button:hover{
   border: 2px solid #c3200e;color:#c3200e;
