@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- when Korean is breaking -->
+    <!-- https://tysoso.tistory.com/6 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mypost</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/info_list.css">
+    <script src="javascript/join.js"defer></script>
+    <script src="javascript/info.js"defer></script>
+    <script src="javascript/link.js"defer></script>
+    <script src="javascript/chat.js"defer></script>
+    <link rel="stylesheet" type="text/css" href="css/link.css">
+    <link rel="stylesheet" type="text/css" href="css/chatList.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <style>
+      .link_box>.chat,.link_box>.alarm{
+        background-color: white;color:#c3200e;border: 1px solid #c3200e;
+      }
+      .link_box>.my_post{
+        background-color:#c3200e; color:white;
+      }
+    </style>
+
+
+</head>
+<body>
+<!-- desktop header -->
+  <div class="parallax_page">
+    <div id="group2" class="parallax">
+    <div class="overlay"></div>
+    <header id="header">
+        <div class="container">
+            <div class="header">
+                <div class="header_title">
+                    <a href="#" class="header_title_img"><div>위세종<span>wesju</span></div></a>
+                    <!-- <a href="#" class="header_title_img"><img src="https://via.placeholder.com/200x60" width="200" height="60" alt="wesejong"/></a> 나중에는 아마 이미지를 사용할것입니다. 이미지 관련해서 아래가 뜨는것은 https://blog.naver.com/jhc9639/222174944051-->
+                </div>
+                <div class="header_search">
+                    <input type="text" placeholder="search..."/>
+                    <button type="button">검색</button>
+                </div>
+                <div class="header_menu">
+                    <div class="header_menu_intro">
+                        <a href="#" class="header_menu_intro_a notice"onclick="show_alarm()"><span>알림<span class="unread">˚</span></span></a>
+                        <a href="#" class="header_menu_intro_a chat"onclick="show_chat()"><span>채팅</span></a>
+                        <a href="#" class="header_menu_intro_a mypost"onclick="show_post()"><span>내가쓴글</span></a>
+                        <a href="#" class="header_menu_intro_a privacypolicy"><span>정보수정</span></a>
+
+          <div class="header_menu_signinbox">
+<!--로그인 전-->
+              <a href="#" class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
+                      <span class="header_menu_intro header_signinbox_span">|</span>
+                      <a href="#" class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
+<!--로그인 후
+          <span class="header_menu_intro_a header_signinbox_span enter_wesju">"<a href="#">어린이대공원</a>"님 환영합니다.</span>-->
+          </div>
+        </div>
+<!--알림목록-->
+                <section>
+                  <div class="alarm_list">
+                    <table>
+                      <tr>
+                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                      </tr>
+                      <tr>
+                        <td><span>관리자로부터 채팅이 왔습니다.</span></td>
+                      </tr>
+                    </table>
+                  </div>
+                </section>
+<!--채팅목록-->
+                <section>
+                  <div class="chat_list">
+                    <table>
+                      <tr onclick="open_chat()">
+                        <td><img src="img/profile.jpg"/></td>
+                        <td><span class="contactor">이용자2</span></td>
+                      </tr>
+                      <tr>
+                        <td><img src="img/profile.jpg"/></td>
+                        <td><span class="contactor">관리자</span></td>
+                      </tr>
+                    </table>
+                    </div>
+                    </section>
+<!--내가쓴글 목록-->
+                    <section>
+                    <div class="post_list">
+                      <table>
+                        <tr>
+                          <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.  </td>
+                          <td>2015.03.22</td>
+                        </tr>
+                        <tr>
+                          <td><span>공지사항2</span></td>
+                          <td>2015.03.22</td>
+                        </tr>
+                        <tr>
+                          <td><span>공지사항3</span></td>
+                          <td>2015.03.22</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </section>
+
+              </div>
+                <div class="header_icon">
+                    <!-- I have no idea
+                    <ul>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                        <li><a href="#"><span>HTML5</span></a></li>
+                    </ul>     -->
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- mobile header -->
+    <header id="mobile_header">
+        <div class="mobile_container">
+            <div class="mobile_header">
+                <div class="mobile_header_sidebar">
+                        <!-- https://kutar37.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%99%B8%EB%B6%80%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%88%A8%EA%B8%B0%EA%B8%B0 -->
+                        <!-- http://v2.eyoom.net/bbs/board.php?bo_table=js&wr_id=7 -->
+                        <!-- https://www.youtube.com/watch?v=O9l75KOB2pE -->
+
+                    <!-- hamburger left menu -->
+                    <a href="#" onclick="drop_down_mobile_menu()"><i class="hamburger sidebarCollapse fas fa-bars 4px"></i></a>
+
+                    <!-- when you click hamburger -->
+                    <div class="sidebar">
+                        <div class="sidebar_signinbox">
+                            <a href="#" class="sidebar_signinbox_span signin"><span><i class="fas fa-sign-in-alt 5px"></i>로그인</span></a>
+                            <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
+                        </div>
+
+                        <div class="sidebar_nav">
+
+                        </div>
+<!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
+                        <div class="sidebar_img">
+                          <img src="img/교포1.jpg">
+                          </div>
+                        <div class="sidebar_ul">
+                            <ul>
+                                <li class="parent_menu home"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                                <li class="parent_menu parent_menu_havesub features"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul sub1">
+                                        <li class="sub_menu"><a href="https://www.naver.com/">자유게시판</a></li>
+                                        <li class="sub_menu"><a href="#">인기게시판</a></li>
+                                        <li class="sub_menu"><a href="#">세종숲</a></li>
+                                        <li class="sub_menu"><a href="#">연애</a></li>
+                                        <li class="sub_menu"><a href="#">정치</a></li>
+                                        <li class="sub_menu"><a href="#">질문</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul sub2">
+                                        <li class="sub_menu"><a href="#">세종톡</a></li>
+                                        <li class="sub_menu"><a href="#">맛집게시판</a></li>
+                                        <li class="sub_menu"><a href="#">중고거래게시판</a></li>
+                                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                                        <li class="sub_menu"><a href="#">고민게시판</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_menu parent_menu_havesub Information"><a href="#"><i class="fas fa-smile"></i>Information<i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul sub3">
+                                        <li class="sub_menu"><a href="#">학교일정</a></li>
+                                        <li class="sub_menu"><a href="#">학생회</a></li>
+                                        <li class="sub_menu"><a href="#">세종뉴스</a></li>
+                                        <li class="sub_menu"><a href="#">고전독서</a></li>
+                                        <li class="sub_menu"><a href="#">강의평가</a></li>
+                                        <li class="sub_menu"><a href="#">졸업요건</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_menu parent_menu_havesub Guide"><a href="#"><i class="fas fa-smile"></i>Guide<i class="fas fa-angle-up"></i></a>
+                                    <ul class="sub_ul sub4">
+                                        <li class="sub_menu"><a href="#">취업현황</a></li>
+                                        <li class="sub_menu"><a href="#">졸업생</a></li>
+                                        <li class="sub_menu"><a href="#">공지사항</a></li>
+                                        <li class="sub_menu"><a href="#">기타</a></li>
+                                        <li class="sub_menu"><a href="#">기타</a></li>
+                                        <li class="sub_menu"><a href="#">기타</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="overlay" ></div>
+                </div>
+                <div class="mobile_header_title">
+                    <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span class="mobile_span">wesju</span></a>
+                </div>
+
+                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"><i class="mobile_signin fas fa-sign-in-alt 4px"></i></a>
+            </div>
+        </div>
+    </header>
+
+
+    <nav id="nav">
+        <div class="container">
+            <div class="row">
+                <div class="nav">
+                    <h2 class="ir_su">Category</h2>
+                    <div>
+                        <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                        <ol>
+                            <li><a href="#"><span>자유게시판</span></a></li>
+                            <li><a href="#"><span>인기게시판</span></a></li>
+                            <li><a href="#"><span>세종숲</span></a></li>
+                            <li><a href="#"><span>정치게시판</span></a></li>
+                            <li><a href="#"><span>질문게시판</span></a></li>
+                            <li><a href="#"><span>정보게시판</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                        <ol>
+                            <li><a href="#"><span>세종톡</span></a></li>
+                            <li><a href="#"><span>맛집게시판</span></a></li>
+                            <li><a href="#"><span>중고거래게시판</span></a></li>
+                            <li><a href="#"><span>홍보게시판</span></a></li>
+                            <li><a href="#"><span>정보게시판</span></a></li>
+                            <li><a href="#"><span>고민게시판</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>대학생활</h3>
+                        <ol>
+                            <li><a href="#"><span>일상</span></a></li>
+                            <li><a href="#"><span>맛집</span></a></li>
+                            <li><a href="#"><span>중고거래</span></a></li>
+                            <li><a href="#"><span>동아리</span></a></li>
+                            <li><a href="#"><span>자취방</span></a></li>
+                            <li><a href="#"><span>새내기</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>학교정보</h3>
+                        <ol>
+                            <li><a href="#"><span>학교일정</span></a></li>
+                            <li><a href="#"><span>학생회</span></a></li>
+                            <li><a href="#"><span>세종뉴스</span></a></li>
+                            <li><a href="#"><span>고전독서</span></a></li>
+                            <li><a href="#"><span>강의평가</span></a></li>
+                            <li><a href="#"><span>졸업요건</span></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                            <h3><i class="fas fa-university"></i>안내</h3>
+                        <ol>
+                            <li><a href="#"><span>취업현황</span></a></li>
+                            <li><a href="#"><span>졸업생</span></a></li>
+                            <li><a href="#"><span>공지사항</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                            <li><a href="#"><span>Html 태그</span></a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <article id="toggle">
+                <div class="container">
+                    <div class="toggle">
+                        <span></span>
+                        <a href="#" class="btn" onclick="drop_down_monitor_menu()">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="container" class="parallax_base_layer">
+            <section id="cont_alarm">
+              <div class="info_list">
+                <!--링크-->
+                <div class="link_box">
+                  <div class="alarm" onclick="location.href='info_alarm.html';">알림</div>
+                  <div class="chat" onclick="location.href='info_chat.html';">채팅</div>
+                  <div class="my_post" onclick="location.href='info_mypost.html';">내가쓴글</div>
+                </div>
+                <!--내가쓴글 목록-->
+                <section>
+                <div class="info_post_list">
+                  <table>
+                    <tr>
+                      <td><a href="#">선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. </a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항2</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+
+
+
+              </div>
+            </section>
+        </div>
+    </main>
+      <footer id="footer">
+          <div class="container">
+              <h2>Footer</h2>
+          </div>
+      </footer>
+    </div>
+  <div class="parallax_back_layer">
+  </div>
+</div>
+<script>
+  </script>
+</body>
+</html>
