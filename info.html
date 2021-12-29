@@ -319,7 +319,12 @@
                       <div class="private_info">
                         <!--닉네임 변경-->
                         <div class="name">
-                          <textarea class="nickname" rows="1" maxlength="12">어린이대공원</textarea><button class="check_nick">중복확인</button>
+                          <!--<textarea class="nickname" rows="1" maxlength="12">어린이대공원</textarea><button class="check_nick">중복확인</button>-->
+                          <textarea class="nickname" onkeyup="nick_length_test()">어린이대공원</textarea>
+                          <!--닉네임 글자 수 제한-->
+                          <p id="nickname_txt"></p>
+                          <!--닉네임 중복확인-->
+                          <p id="nick_dup_txt">이미 존재하는 닉네임입니다</p>
                           <!--alert로 중복 알림-->
                         </div>
                         <div class="info_list">
@@ -362,6 +367,10 @@
 
 
               </section>
+<!--탈퇴하기 버튼-->
+              <section>
+                <div class="secession"onclick="open_secession()">탈퇴하기</div>
+              </section>
               </div>
 
     </main>
@@ -374,5 +383,7 @@
   <div class="parallax_back_layer">
   </div>
 </div>
+<script>
+  </script>
 </body>
 </html>
