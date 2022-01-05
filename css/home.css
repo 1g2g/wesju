@@ -91,11 +91,20 @@
 
     #nav {background-color:#c3002e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */}
 
-    #contents .container{border-right:1px solid #dbdbdb; border-left:1px solid #dbdbdb; margin-top:30px;   }
+    #contents .container{border-right:1px solid #dbdbdb; border-left:1px solid #dbdbdb;}
     #cont_center {float:left;width: 900px;background-color: white;min-height: 1000px; }
     #cont_right {width: 259px;overflow:hidden;border-left:1px solid #dbdbdb;background-color: white;}  /* #cont_right : overflow:hidden이 float:left가 작동하게 합니다. 이 속성이 없을시 아래로 내려갑니다.  */
-  #footer{position:relative;border-top:1px solid #dbdbdb; background-color:#c3002e; /*radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/}
+  #footer{position:relative;border-top:1px solid #dbdbdb; background-color:#c3002e; /*height:40px; line-height:40px;radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/}
+    #footer .container>.copyright{font-size: 12px; color:white;display: block;clear:both;display: inline-block;width:80%;margin-top:6px;}
+    #footer a{ color:white;}
+    #footer ul{display: block;margin:6px 0;}
+    #footer li{float:left;color:white;margin-right:10px;}
+    #footer li::after{content:"";}
 
+    .sns_link{float:right; margin:5px;display: inline-block;}
+    .sns_link img{ margin:0 10px; float:left;width:35px; height:35px; border-radius: 20px;}
+
+    #footer .black{position:relative;bottom:-5px; background-color: black;height:5px;width:100%;}
     /* container */
     .container{width: 1160px; height:auto; margin:0 auto; overflow:hidden;}
     .mobile_container{width: 1160px; height:auto; margin:0 auto; overflow:hidden;}
@@ -118,7 +127,7 @@
     .header > .header_search input[type=text]{width: 350px;height: 20px; border-radius:4px; font-size:12px; padding: 2px 2px 2px 2px; border:2px solid var(--background-color)}
     .header > .header_search button{background-color: var(--background-color); width: 30px;height: 25px;line-height:25px;border:1px solid gray; color:white;}
 
-    .header > .header_menu .header_menu_intro>a {color:#7c7c7c; padding: 12px 14px 2px 14px; display:inline-block; transition:color 0.3s ease}
+    .header > .header_menu .header_menu_intro>a {color:#7c7c7c;  display:inline-block; transition:color 0.3s ease; padding:4px 14px;height:32px;line-height: 32px; text-align: center;margin:5px; }
 
     .header > .header_menu .header_menu_intro {display:inline-block; height:10px;}   /* display:inlie-block 이 header_menu_signinbox를 float:left 없이 옆으로 정렬하게 합니다.*/
     .header > .header_menu .header_menu_intro_a { font-size:11px; font-family:"돋움",Dotum,"돋움체",DotumChe;}
@@ -129,10 +138,11 @@
     /* mobile_header */
     #mobile_header{display:none; position:static;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
     .mobile_container{height: 50px; width: 100%;}
-    .mobile_header{height:100%; background-color:var(--background-color);background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); }
+  .mobile_header{height:100%; background-color:#c3200e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/ }
 
     .mobile_container{position:fixed; z-index:999999;}  /* position:fixed 에서 z-index는 필수입니다.  */
-    .mobile_header > .mobile_header_sidebar{ float:left; font-size:30px; color:#f7f7f7; width: 15%; height:100%; vertical-align:middle;} /* float를 사용하기 위해서는 height를 설정해야합니다. */
+    .mobile_header > .mobile_header_sidebar{ float:left; font-size:30px;  width: 15%; height:100%; vertical-align:middle;} /* float를 사용하기 위해서는 height를 설정해야합니다. */
+    .mobile_header > .mobile_header_sidebar>a{color:white;}
     .mobile_header > .mobile_header_sidebar > .hamburger {text-align:center; position:absolute; left:5px;top:7px;}
 
 
@@ -221,7 +231,7 @@
 
     /*col별*/
      /*이미지->비디오*/
-        .col1 iframe{width:890px;height:400px;display:none;}
+        .col1 iframe{width:890px;height:400px;}
         .col1 img{height:150px;width:890px;}
 
         /*로고 display*/
@@ -280,6 +290,7 @@
     .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23{position:relative; float:left; width: 32%;}
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:5px; padding-left:8px;}
+    /*text로 이뤄진 제목에만 list style 적용*/
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; }
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
@@ -293,7 +304,6 @@
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) ul {display:inline-block; width:49%;  height:140px;}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; padding-top:3px; padding-left:8px;height:100%;}/* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
-    :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; }
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) img{width:200px;height:100px;}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
@@ -305,8 +315,8 @@
     .notice17.photo8 h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     .notice17.photo8 ul {display:inline-block; width:24%;  height:240px;}
     .notice17.photo8 li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; padding-top:3px; padding-left:8px;height:100%;}/* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
-    .notice17.photo8 li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; }
     .notice17.photo8 .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
+    .notice17.photo8 img{width:200px; height:400px;}
     /* 이미지 슬라이드 */
     img{display:block;border:0; }
     button{border:0; background:none;}
@@ -357,11 +367,20 @@
     .notice25 ol{ list-style-position:inside; }
 
 
-    /*column 7학교 관련 링크*/
+    /*column 7학교 관련 링크
     .col10 img{
       width:80px;height:80px;float:left;overflow: hidden;
+    }*/
+    .col10 .img10{
+      width:80px;float:left;
     }
+    .innerimg10{
+      position: relative; padding-top: 100%; /* 1:1 ratio */ overflow: hidden;
 
+    }
+    .innerimg10 img{position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%;object-fit: cover;
+
+    }
     /* 게시판20 */
     /* .notice20{position:relative; float:left; width: 98%;}
     .notice20 h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
@@ -373,7 +392,6 @@
     :is(.notice25,.notice26) {position:relative; float:left; width: 98%;}
     :is(.notice25,.notice26) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     :is(.notice25,.notice26) li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:5px; padding-left:8px;}
-    :is(.notice25,.notice26) li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; }
     :is(.notice25,.notice26) .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
     /* 게시판27:강의평가 */
@@ -426,15 +444,31 @@
     /* content */
     .col1 img{width:100%; height:150px;}
     .col1 iframe{width:100%;height:300px;}
-    #contents .container{border-left:0; border-right:0;}
+    #contents .container{border-left:0; border-right:0;margin-top:32px;}
   /*  #contents .board_list_header{margin-top:130px;}*/
     #cont_center{float:none; clear:both; width: 100%;height:auto;}  /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
     #cont_right{float:none; clear:both;width: 100%;height:auto;}
     .col3 .slide ul{margin-left: 0px; margin-right: 10px;}
 
     .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10,.notice17.photo8{float:none;clear:both;width: 100%;}
-    .notice10,.notice11,.notice12,.notice13,.notice14,.notice15,.notice16,.notice17,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23,.notice24,.notice25,.notice26,.notice27,.notice28{float:none;clear:both;width: 100%;}
+    .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23,.notice24{float:none;clear:both;width: 100%;}
 
     .notice24, .cont_right_img{display:none;}
     .notice17.photo8 ul {display:inline-block; width:49%;  height:240px;}
+
+    /***************************/
+    /*      이미지 반응형     */
+    /***************************/
+    /* 게시판7,8,12,13 for Photo */
+    :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) img{width:100%;height:100px;object-fit: cover;}
+    /*게시판 17:홍보게시판*/
+    .notice17.photo8 img{width:100%; height:400px; object-fit: cover;}
+    /*학교 관련 링크*/
+    .col10 .img10{ width:33%;}
+    .innerimg10{position: relative; padding-top: 100%;overflow: hidden; }
+    .innerimg10 img{position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%;object-fit: cover;}
+
+    /*footer*/
+     #footer .container>.copyright{width:100%;}
+     #footer .sns_link{display: none;}
     }
