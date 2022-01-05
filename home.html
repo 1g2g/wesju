@@ -44,10 +44,10 @@
                 </div>
                 <div class="header_menu">
                     <div class="header_menu_intro">
-                        <a href="#" class="header_menu_intro_a notice"onclick="show_alarm()"><span>알림<span class="unread">˚</span></span></a>
-                        <a href="#" class="header_menu_intro_a chat"onclick="show_chat()"><span>채팅</span></a>
-                        <a href="#" class="header_menu_intro_a mypost"onclick="show_post()"><span>내가쓴글</span></a>
-                        <a href="#" class="header_menu_intro_a privacypolicy"><span>정보수정</span></a>
+                        <a href="#" class="header_menu_intro_a notice"onmouseover="show_alarm()">알림<span class="unread">˚</span></a>
+                        <a href="#" class="header_menu_intro_a chat"onmouseover="show_chat()">채팅</a>
+                        <a href="#" class="header_menu_intro_a mypost"onmouseover="show_post()">내가쓴글</a>
+                        <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
 
           <div class="header_menu_signinbox">
 <!--로그인 전-->
@@ -318,7 +318,7 @@
                     <h3 class="ir_su">Response Site Left Content</h3>
                     <article class="column col1">
                        <h4 class="ir_su col_tit">공지사항이미지</h4>
-                        <p class="col_desc"><span class="ir_su">공지사항 이미지가 들어갈곳입니다.<br/></span><!--<img src="http://placehold.it/890x100">--><img src="img\main.png">
+                        <p class="col_desc"><span class="ir_su">공지사항 이미지가 들어갈곳입니다.<br/></span><!--<img src="img\main.png">-->
                         </p>
                         <!-- <p class="col_desc rainbow"></span>
                         </p> -->
@@ -785,12 +785,12 @@
                       <div class="notice26 pr5">
                       <h5 class="ir_su">Notice1</h5>
                       <h5>바로가기</h5>
-                            <a href="#"><img src="img/대양.png"></a>
-                            <a href="#"><img src="http://placehold.it/80x80"></a>
-                            <a href="#"><img src="http://placehold.it/80x80"></a>
-                            <a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img src="img/학사정보시스템.png"></a>
-                            <a href="#"><img src="img/두드림.png"></a>
-                            <a href="#"><img src="http://placehold.it/80x80"></a>
+                            <div class="img10"><div class="innerimg10"><a href="#"><img src="img/대양.png"></a></div></div>
+                            <div class="img10"><div class="innerimg10"><a href="#"><img src="http://placehold.it/80x80"></a></div></div>
+                            <div class="img10"><div class="innerimg10"><a href="#"><img src="http://placehold.it/80x80"></a></div></div>
+                            <div class="img10"><div class="innerimg10"><a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img src="img/학사정보시스템.png"></a></div></div>
+                            <div class="img10"><div class="innerimg10"><a href="#"><img src="img/두드림.png"></a></div></div>
+                          <div class="img10"><div class="innerimg10">  <a href="#"><img src="http://placehold.it/80x80"></a></div></div>
 
                             <!-- <p class="col_desc rainbow"></span> -->
                       </div>
@@ -847,13 +847,22 @@
     </main>
     <footer id="footer">
         <div class="container">
-            <h2>Footer</h2>
+            <ul>
+               <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
+               <li>|</li>
+               <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
+               <li>|</li>
+               <li><a href="#">이용약관</a></li>
+           </ul>
+           <div class="sns_link">
+                     <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png"/></a><a href="https://www.facebook.com/sejongpr/"><img src="img/facebook.png"/></a><a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png"/></a>
+           </div>
+           <span class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</span>
         </div>
-    </footer>      </div>
-                <div class="parallax_back_layer">
-                </div>
-        </div>
-        <script>
-          </script>
+        <div class="black"></div>
+    </footer>
+    </div>
+    <div class="parallax_back_layer"></div>
+  </div>
 </body>
 </html>
