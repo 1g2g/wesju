@@ -66,7 +66,7 @@ main>.container{
 }
 @media (max-width:768px) and (min-width:319px){
   #cont_alarm .info_list{
-    width:100%;padding:1%;padding-top:80px;
+    width:100%;padding:1%;padding-top:80px;min-height: 900px;
   }
   /*링크*/
   .link_box{
@@ -77,6 +77,6 @@ main>.container{
   }
   /*알람리스트*/
 .info_alarm_list,.info_chat_list,.info_post_list{
-    display: block;margin:2%;margin-top:80px;width:92%;
+    display: block;margin:2%;margin-top:80px;width:92%;margin-bottom:150px;
   }
 }
