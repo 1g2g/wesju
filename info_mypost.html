@@ -46,10 +46,10 @@
                 </div>
                 <div class="header_menu">
                     <div class="header_menu_intro">
-                        <a href="#" class="header_menu_intro_a notice"onclick="show_alarm()"><span>알림<span class="unread">˚</span></span></a>
-                        <a href="#" class="header_menu_intro_a chat"onclick="show_chat()"><span>채팅</span></a>
-                        <a href="#" class="header_menu_intro_a mypost"onclick="show_post()"><span>내가쓴글</span></a>
-                        <a href="#" class="header_menu_intro_a privacypolicy"><span>정보수정</span></a>
+                        <a href="#" class="header_menu_intro_a notice"onmouseover="show_alarm()">알림<span class="unread">˚</span></a>
+                        <a href="#" class="header_menu_intro_a chat"onmouseover="show_chat()">채팅</a>
+                        <a href="#" class="header_menu_intro_a mypost"onmouseover="show_post()">내가쓴글</a>
+                        <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
 
           <div class="header_menu_signinbox">
 <!--로그인 전-->
@@ -169,9 +169,7 @@
                             <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
                         </div>
 
-                        <div class="sidebar_nav">
-
-                        </div>
+                        <div class="sidebar_nav"></div>
 <!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
                         <div class="sidebar_img">
                           <img src="img/교포1.jpg">
@@ -224,14 +222,30 @@
                         </div>
 
                     </div>
-                    <div class="overlay" ></div>
                 </div>
                 <div class="mobile_header_title">
                     <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span class="mobile_span">wesju</span></a>
                 </div>
 
-                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"><i class="mobile_signin fas fa-sign-in-alt 4px"></i></a>
+              <div class="mobile_header_sidebar2">
+                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin" onclick="drop_down_mobile_menu_right()"><i class="fas fa-fingerprint"></i></a>
+                <div class="sidebar_right">
+                <!--  <div><a href="info_alarm_list.html">알림</a></div>
+                  <div><a href="info.html">채팅</a></div>
+                  <div><a href="info.html">내가쓴글</a></div>
+                  <div><a href="info.html">정보수정</a></div>-->
+                      <ul>
+                          <li><a href="#"><i class="fa fa-bell-o"></i>알림</a></li>
+                          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>채팅</a></li>
+                          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내가쓴글</a></li>
+                          <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>정보수정</a></li>
+                        </ul>
+                  <div class="sidebar_img2"><img src="img/교포1.jpg"></div>
+
+                </div>
+                <!--<i class="far fa-bell"></i>-->
             </div>
+          </div>
         </div>
     </header>
 
@@ -311,7 +325,6 @@
         </div>
     </nav>
 
-
     <main>
         <div class="container" class="parallax_base_layer">
             <section id="cont_alarm">
@@ -338,6 +351,62 @@
                       <td><a href="#">공지사항3</a></td>
                       <td>2015.03.22</td>
                     </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">공지사항3</a></td>
+                      <td>2015.03.22</td>
+                    </tr>
                   </table>
                 </div>
               </section>
@@ -348,16 +417,44 @@
             </section>
         </div>
     </main>
-      <footer id="footer">
-          <div class="container">
-              <h2>Footer</h2>
-          </div>
-      </footer>
+    <footer id="footer">
+        <div class="container">
+            <ul>
+               <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
+               <li>|</li>
+               <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
+               <li>|</li>
+               <li><a href="#">이용약관</a></li>
+           </ul>
+           <div class="sns_link">
+                     <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png"/></a><a href="https://www.facebook.com/sejongpr/"><img src="img/facebook.png"/></a><a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png"/></a>
+           </div>
+           <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
+        </div>
+        <div class="black"></div>
+    </footer>
     </div>
-  <div class="parallax_back_layer">
   </div>
-</div>
 <script>
+/*스크롤 이벤트 : info_list table에 열추가*/
+  document.querySelector('.info_post_list').addEventListener('scroll',function(){
+
+          let scrollLocation =document.querySelector('.info_post_list').scrollTop;
+          let fullHeight = document.querySelector('.info_post_list table').scrollHeight;
+          console.log("위치"+scrollLocation+"높이"+fullHeight);
+
+          if(scrollLocation+801>=fullHeight){
+
+            setTimeout(function(){
+              const table = document.querySelector('.info_post_list table');
+
+              const newRow = table.insertRow();//행 추가
+              const newCell1 = newRow.insertCell(0);//newRow에 열추가
+              const newCell2 = newRow.insertCell(1);
+            }, 1000)
+
+          }
+        });
   </script>
 </body>
 </html>
