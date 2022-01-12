@@ -165,9 +165,7 @@
                             <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
                         </div>
 
-                        <div class="sidebar_nav">
-
-                        </div>
+                        <div class="sidebar_nav"></div>
 <!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
                         <div class="sidebar_img">
                           <img src="img/교포1.jpg">
@@ -220,14 +218,30 @@
                         </div>
 
                     </div>
-                    <div class="overlay" ></div>
                 </div>
                 <div class="mobile_header_title">
                     <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span class="mobile_span">wesju</span></a>
                 </div>
 
-                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"><i class="mobile_signin fas fa-sign-in-alt 4px"></i></a>
+              <div class="mobile_header_sidebar2">
+                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin" onclick="drop_down_mobile_menu_right()"><i class="fas fa-fingerprint"></i></a>
+                <div class="sidebar_right">
+                <!--  <div><a href="info_alarm_list.html">알림</a></div>
+                  <div><a href="info.html">채팅</a></div>
+                  <div><a href="info.html">내가쓴글</a></div>
+                  <div><a href="info.html">정보수정</a></div>-->
+                      <ul>
+                          <li><a href="#"><i class="fa fa-bell-o"></i>알림</a></li>
+                          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>채팅</a></li>
+                          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내가쓴글</a></li>
+                          <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>정보수정</a></li>
+                        </ul>
+                  <div class="sidebar_img2"><img src="img/교포1.jpg"></div>
+
+                </div>
+                <!--<i class="far fa-bell"></i>-->
             </div>
+          </div>
         </div>
     </header>
 
