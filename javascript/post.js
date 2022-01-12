@@ -23,19 +23,60 @@ function show_comment_box(){//모바일 버전에서 가독성을 높이기 위�
 
 	}
 }
-function show_reply_box(){//모바일 버전에서 가독성을 높이기 위해 댓글창 크기를 최소화시킴. input 클릭 시 댓글 창 크기가 커짐
+function modify_comment(){//댓글 수정 누르면 해당댓글 수정폼으로 바뀜
+	const txt=document.querySelector(".cmt");
+	if(txt.disabled==true){
+		txt.disabled=false;
+		txt.style.outline="1px solid";
+		document.querySelector(".edit_cmt button").style.display="block";
+
+			if (window.matchMedia("(min-width: 768px)").matches){// 768px 이상
+			txt.style.width="90%";
+		}
+		else{
+			txt.style.width="97%";
+			txt.style.marginLeft="2.3%";
+		}
+}
+}
+function submit_comment(){//제출버튼 누르면 수정폼이 사라짐
+	const txt=document.querySelector(".cmt");
+	if(txt.disabled==false){
+		txt.disabled=true;
+		txt.style.outline="none";
+		txt.style.width="92%";
+		document.querySelector(".edit_cmt button").style.display="none";
+}
+}
+
+function show_reply_box(){//가독성을 높이기 위해 댓글창 크기를 최소화시킴. input 클릭 시 댓글 창 크기가 커짐
 	const hide_reply=document.querySelector(".hide_reply");
+	const box=document.querySelector(".write_reply");
 	const text=document.querySelector(".write_reply textarea");
 	const button=document.querySelector(".write_reply button");
-	if(hide_reply.style.display=='none'){//댓글박스가 보인다면
-		hide_reply.style.display='block';
-		text.style.display='none';
-		button.style.display='none'
-	}else{//댓글박스가 닫혀있다면
+
+	if (window.matchMedia("(min-width: 768px)").matches){// 768px 이상
+		if(hide_reply.style.display=='none'){//댓글박스가 보인다면
+			hide_reply.style.display='block';
+			box.style.display='none';
+		}else{//댓글박스가 닫혀있다면
+			hide_reply.style.display='none';
+			box.style.display='block';
+		}
+}else{//모바일 버전
+		if(hide_reply.style.display=='none'){//댓글박스가 보인다면
+			hide_reply.style.display='block';
+			text.style.display='none';
+			button.style.display='none';
+			box.style.backgroundColor="transparent";
+		}else{//댓글박스가 닫혀있다면
 			hide_reply.style.display='none';
 			text.style.display='block';
 			button.style.display='block';
+			box.style.backgroundColor="white";
+			console.log(matchMedia("screen and (min-width:769px)".matches));
 
+		}
 	}
 }
 function show_reply(){
@@ -49,7 +90,11 @@ function show_reply(){
 function hide_reply_list(){
 	const reply=document.querySelector(".reply");
 	const arrow=document.querySelector('.reply_arrow');
-	if(reply.style.display=='none'){
+	if(reply.style.display==''){
+		reply.style.display='block';
+		arrow.innerHTML='<i class="fa fa-chevron-up" aria-hidden="true"></i>';
+	}
+	else if(reply.style.display=='none'){
 		reply.style.display='block';
 		arrow.innerHTML='<i class="fa fa-chevron-up" aria-hidden="true"></i>';
 	}else{
@@ -71,20 +116,3 @@ window.addEventListener('scroll', () => {//스크롤 다운 시, header shadow �
 	}else{
 		header.style.boxShadow='1px 1px 8px #555555';}
 });
-function edit_comment(){//댓글 수정하기
-	const cmt=document.querySelector(".cmt");
-  const btn=document.querySelector(".edit_cmt button");
-
-	cmt.disabled = false;
-	cmt.style.border="1px solid #C7695E";
-	cmt.style.outline="none";
-	cmt.style.padding="3px";
-	cmt.style.borderRadius="5px";
-	btn.style.display="inline-block";
-	if(matchMedia("screen and(max-width:768px)").matches){//768px이상에서 적용
-		cmt.style.width="100%";
-	}else{
-		cmt.style.width="88%";
-
-	}
-}
