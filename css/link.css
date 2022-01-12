@@ -6,7 +6,7 @@
 .header_menu>.header_menu_intro .unread{font-size:15px; color:#c3200e;}
 .header_menu .header_menu_signinbox{margin-left: 80px;padding:0 5px;}
 .header_menu .enter_wesju a{color:black;font-weight: bolder;padding:0;}
-/*스크롤바*/
+/*스크롤바
 ::-webkit-scrollbar {
   width: 10px;  height: 5px;
   background: white;
@@ -20,3 +20,4 @@
 ::-webkit-scrollbar-track {
   background: #ffffff;
 }
+*/
