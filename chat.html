@@ -117,6 +117,19 @@
     window.addEventListener('DOMContentLoaded',()=>{
       var objDiv = document.getElementById("app_chat_list");
        objDiv.scrollTop = objDiv.scrollHeight;
+       console.log(objDiv.scrollTop+"높이"+objDiv.scrollHeight);
+    });
+
+    document.getElementById("app_chat_list").addEventListener('scroll',function(){
+      let windowHeight = window.innerHeight; // 스크린 창
+      let scrollHeight = document.getElementById("app_chat_list").scrollHeight;
+      let scrollLocation =document.getElementById("app_chat_list").scrollTop; // 현재 스크롤바 위치
+      console.log("창"+windowHeight+"높이"+scrollHeight+"soqn"+scrollLocation);
+      console.log(scrollLocation+scrollHeight);
+      //scroll 최상단으로 올리면 기능 실행
+      if(scrollLocation==0){
+        console.log("df");
+      }
     });
     </script>
 </section>
