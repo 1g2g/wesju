@@ -8,7 +8,7 @@
 .editor textarea{
   height:400px;
 }
-.post_category button{
+.submit_post,.preview_post{
   width:50px;margin:5px;height:30px; border:1px solid #555;background-color:white; float:right;border-radius: 5px;  font-weight: bold;
 }
 .ck-editor__editable {
@@ -16,6 +16,9 @@
 	}
 .post_category button:hover{
    border:1px solid #c3200e;
+}
+.backward{
+border:1px solid #c3200e; color:#c3200e;width:50px;margin:5px;height:30px;  background-color:white; float:right;border-radius: 5px;  font-weight: bold;
 }
   #header > .container{
     background-color: white;
