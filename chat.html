@@ -18,14 +18,13 @@
   <div class="chat"id="app_chat_list">
 <!--채팅 상대 이름, 나가기 버튼-->
     <header id="chat_head">
-      <span class="contactor">이용자2
-      </span>
+      <span class="contactor">이용자2</span>
       <span class="sign_out"><button id="show"><i class="fas fa-sign-out-alt"></i></button></span>
     </header>
 <!--chat내용-->
     <section>
       <div class="chat_content" >
-        <ul>
+        <ul class="chat_content_ul">
 <!--입장-->
           <li class="enter">
             <div><span class="contactor">이용자2</span>님이 입장하였습니다.</div>
@@ -86,6 +85,11 @@
 
 모든 국민은 종교의 자유를 가진다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.</span><span>안읽음</span><div class="time">14:00</div></div>
             </li>
+            <li class="right">
+              <span><img src="img/profile.jpg"/></span>
+              <span class="name">이용자1</span>
+              <div class="content"><span>안녕하세요</span><span>읽음</span><div class="time">13:00</div></div>
+            </li>
         </ul>
     </div>
 <!--입력-->
@@ -121,14 +125,18 @@
     });
 
     document.getElementById("app_chat_list").addEventListener('scroll',function(){
-      let windowHeight = window.innerHeight; // 스크린 창
-      let scrollHeight = document.getElementById("app_chat_list").scrollHeight;
+      //let windowHeight = window.innerHeight; // 스크린 창
+    //  let scrollHeight = document.getElementById("app_chat_list").scrollHeight;
       let scrollLocation =document.getElementById("app_chat_list").scrollTop; // 현재 스크롤바 위치
-      console.log("창"+windowHeight+"높이"+scrollHeight+"soqn"+scrollLocation);
-      console.log(scrollLocation+scrollHeight);
+  //    console.log("창"+windowHeight+"높이"+scrollHeight+"soqn"+scrollLocation);
       //scroll 최상단으로 올리면 기능 실행
       if(scrollLocation==0){
         console.log("df");
+        var upperli = document.createElement('li');
+        var innerText = document.createTextNode('안녕');
+        upperli.append(innerText);
+        document.querySelector(".chat_content_ul").prepend( upperli );
+
       }
     });
     </script>
