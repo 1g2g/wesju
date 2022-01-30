@@ -243,6 +243,9 @@ width:860px;
     .hide_comment,.hide_reply{
       display: block; width:100%; height:30px;padding:5px;
     }
+    .hide_reply{
+      width:96%;
+    }
     .hide_comment{
       width:97%;
     }
@@ -304,9 +307,6 @@ width:860px;
       }
       .reply_arrow{
         display:inline-block;  width:10px;float:left; margin-left: 8px;
-      }
-      .hide_reply{
-        width:95%;
       }
       /*답댓*/
       .a_o_comment{
