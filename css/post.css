@@ -186,6 +186,10 @@ margin-left: 60px;
 .write_comment>button,.write_reply button,.edit_cmt button{
   width:60px; height:60px; background-color:#c3002e;vertical-align: middle;border-radius: 60px;color:white;box-shadow: 2px 2px 8px #888888;font-size: 20px;margin-left: 10px;
 }
+
+.reply_arrow{
+display: none;
+}
 /*수정댓글 제출*/
 .edit_cmt button{
   width:40px;height:40px;float:right;display: none;
@@ -289,10 +293,18 @@ width:860px;
       .reply{
         margin-left:0;padding-left: 0;
       }
-      .reply_list .cmt{
-          display:inline-block; width:100%;
+      .reply_list{
+        margin-top:-20px;
       }
-
+      .reply_list .comment{
+          margin-left:30px;
+        }
+      .reply_list .cmt{
+        display:inline-block; width:100%;
+      }
+      .reply_arrow{
+        display:inline-block;  width:10px;float:left; margin-left: 8px;
+      }
       .hide_reply{
         width:95%;
       }
