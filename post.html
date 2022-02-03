@@ -387,13 +387,17 @@
                   <div class="evaluate_post">
                       <div class="like_it">
                         <button onclick="thumbs_up()"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><div class="like_it_num">3053</div></button>
-                        <!--클릭 시 : border: 2px solid #c3002e;-->
-                        </div>
-                        <div class="hate_it">
-                          <button onclick="thumbs_down()"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><div class="hate_it_num">10</div></button>
-                          <!--클릭 시 변화 :   border: 2px solid #283598;-->
-                          </div>
-                    </div>
+                        <!--좋아요 버튼 클릭 시
+                        <button onclick="thumbs_up()" style="background-color:#c3200e"><i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:white"></i><div class="like_it_num" style="color:white">3053</div></button>-->
+                      </div>
+                      <div class="hate_it">
+                        <button onclick="thumbs_down()"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><div class="hate_it_num">10</div></button>
+                        <!--싫어요 버튼 클릭 시
+                        <button onclick="thumbs_down()" style="background-color:#283598"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color:white"></i><div class="hate_it_num" style="color:white">10</div></button>
+                        -->
+                        <!--클릭 시 변화 :   border: 2px solid #283598;-->
+                      </div>
+                  </div>
                     <span class="edit_post right_ver">
                       <!--post_category 오른쪽 상단 ellipsis-v 클릭-->
                       <div class="a_o_category">
@@ -438,15 +442,16 @@
                         <table class="comment_per" height="20">
                           <tr>
                             <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
+                            <!--댓 좋아요 클릭 시
+                              <td><button class="like" style="color:#c3200e"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
+                              -->
                             <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
+                            <!--댓 싫어요 클릭 시
+                          <td><button class="dislike" style="color:#283598"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
+                        -->
                             <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
                           </tr>
                         </table>
-<!--<ul class="comment_per">
-  <li><button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>22</span></button></li>
-  <li><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></li>
-  <li><button class="comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span class="commnet">10</span></button></li>-->
-<!--답댓, 답댓에 대한 추가답댓(reply)을 달수 없음-->
                     <article>
                     <div  class="reply">
                       <input type="text" value="답댓 달기" class="hide_reply" onclick="show_reply_box()"/>
