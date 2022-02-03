@@ -57,7 +57,10 @@
       overflow-y: hidden;scroll-behavior: smooth;
     }
     .parallax_page{
-      height: 100vh;overflow-x: hidden;  overflow-y:  scroll;scroll-behavior: smooth;
+      height: 100vh;min-height: -webkit-fill-available;
+
+      overflow-x: hidden;  overflow-y:  scroll;scroll-behavior: smooth;
+
     }
     .parallax_back_layer{ overflow: hidden; position: absolute; top: 0;left: 0;right: 0;bottom: 0;  background-image: url(../img/06.jpg);background-size:cover; filter: grayscale(100%);opacity: 0.2;min-height:1000px;z-index: -3;
     }
