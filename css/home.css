@@ -53,27 +53,20 @@
     /*                                                                            */
     /* ************************************************************************** */
     /*배경 스크롤*/
-    html{
-      -webkit-backface-visibility:hidden;
-      -moz-backface-visibility:hidden;
-      -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);
-    }
     body{
-      -webkit-backface-visibility:hidden;
-      -moz-backface-visibility:hidden;
-      -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);
       overflow-y: hidden;scroll-behavior: smooth;
-
-    }
-    body::-webkit-scrollbar{
-      display:none;
     }
     .parallax_page{
-      height: 100vh;min-height: -webkit-fill-available;
+      height: 100vh;/*height:calc(var(--vh,1vh)*100);*/
+      min-height: -webkit-fill-available;
 
       overflow-x: hidden;  overflow-y:  scroll;scroll-behavior: smooth;
--webkit-overflow-scrolling: touch;
-    }
+
+    }/* iOS only */
+
+@supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
     .parallax_back_layer{ overflow: hidden; position: absolute; top: 0;left: 0;right: 0;bottom: 0;  background-image: url(../img/06.jpg);background-size:cover; filter: grayscale(100%);opacity: 0.2;min-height:1000px;z-index: -3;
     }
 /*    .parallax_page{
