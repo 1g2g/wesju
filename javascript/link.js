@@ -24,10 +24,25 @@ function drop_down_mobile_menu(){
 
     }
 }
+function drop_down_mobile_menu_right(){
+      let click = document.querySelector(".sidebar_right");
+      const overlay=document.querySelector('.overlay');
+      click.style.marginLeft="80%";
+      if(click.style.display == "none"){
+          click.style.display = "block";
+          overlay.style.display="block";
+
+      }else{
+          click.style.display = "none";
+          overlay.style.display="none";
+
+    }
+}
 //사이드바 외부영역 클릭 시 사이드 바 닫음
 document.querySelector('.overlay').addEventListener('click',function(){
     document.querySelector('.overlay').style.display="none";
     document.querySelector(".sidebar").style.display = "none";
+    document.querySelector(".sidebar_right").style.display = "none";
 });
 
 //메뉴바의 소메뉴 숨기기+보이기
