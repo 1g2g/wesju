@@ -103,8 +103,8 @@
   #footer{position:relative;border-top:1px solid #dbdbdb; background-color:#c3002e; /*height:40px; line-height:40px;radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/}
     #footer .container>.copyright{font-size: 12px; color:white;display: block;clear:both;display: inline-block;width:80%;margin-top:6px;}
     #footer a{ color:white;}
-    #footer ul{display: block;margin:6px 0;}
-    #footer li{float:left;color:white;margin-right:10px;}
+    #footer ul{display: block;margin:6px 0;list-style: none;}
+    #footer li{float:left;color:white;margin-right:10px;list-style: none;}
     /*#footer li::after{content:"";}*/
 
     .sns_link{float:right; margin:5px;display: inline-block;}
