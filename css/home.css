@@ -54,8 +54,11 @@
     /* ************************************************************************** */
     /*배경 스크롤*/
     body{
-      overflow-y: hidden;scroll-behavior: smooth;transform: translate3d(0,0,0); -webkit-transform: translateZ(0);
- 
+      overflow-y: hidden;scroll-behavior: smooth;
+      -webkit-backface-visibility:hidden;
+      -moz-backface-visibility:hidden;
+      -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);
+
     }
     .parallax_page{
       height: 100vh;min-height: -webkit-fill-available;
