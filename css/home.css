@@ -105,6 +105,7 @@
     #footer a{ color:white;}
     #footer ul{display: block;margin:6px 0;list-style: none;}
     #footer li{float:left;color:white;margin-right:10px;list-style: none;}
+    #footer li::marker{display: none;list-style: none;}
     /*#footer li::after{content:"";}*/
 
     .sns_link{float:right; margin:5px;display: inline-block;}
@@ -437,7 +438,6 @@
     .notice28 .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
 
-    #footer{list-style: none;}
     /* media query 0 ~ 768px  tablet*/
     @media (max-width:768px){
       /*배경*/
@@ -469,7 +469,7 @@
     /* content */
     .col1 img{width:100%; height:150px;}
     .col1 iframe{width:100%;height:300px;}
-  #contents .container{border-left:0; border-right:0;/*margin-top:32px;*/}
+  #contents .container{border-left:0; border-right:0;margin-top:32px;}
   /*  #contents .board_list_header{margin-top:130px;}*/
     #cont_center{float:none; clear:both; width: 100%;height:auto;}  /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
     #cont_right{float:none; clear:both;width: 100%;height:auto;}
