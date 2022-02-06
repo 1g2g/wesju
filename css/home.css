@@ -322,7 +322,7 @@
     .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10 {position:relative; float:left; width: 49%;}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) ul {display:inline-block; width:49%;  height:140px;}
-    :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li{font-size:12px; position:relative; overflow:hidden; margin-left: 6px;text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; height:143px;isolation: isolate;
+    html[xmlns*=""] body:last-child :is(.notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li{font-size:12px; position:relative; overflow:hidden; margin-left: 6px;text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; height:143px;isolation: isolate;
      width:100%; overflow: hidden;
       transform: translate3d(0,0,0);
       -webkit-transform:translateZ(0);
