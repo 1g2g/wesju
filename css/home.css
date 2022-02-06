@@ -438,6 +438,7 @@
     .notice28 .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
 
+    #footer{list-style: none;}
     /* media query 0 ~ 768px  tablet*/
     @media (max-width:768px){
       /*배경*/
@@ -499,4 +500,6 @@
     /*footer*/
      #footer .container>.copyright{width:100%;}
      #footer .sns_link{display: none;}
+
+     tml[xmlns*=""] body:last-child .mobile_container{margin-top:-30px;}
     }
