@@ -53,18 +53,21 @@
     /*                                                                            */
     /* ************************************************************************** */
     /*배경 스크롤*/
-    body{
-      overflow-y: hidden;scroll-behavior: smooth;
+    html{
       -webkit-backface-visibility:hidden;
       -moz-backface-visibility:hidden;
       -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);
+    }
+    body{
+      overflow-y: hidden;scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch;
+
 
     }
     .parallax_page{
       height: 100vh;min-height: -webkit-fill-available;
 
       overflow-x: hidden;  overflow-y:  scroll;scroll-behavior: smooth;
--webkit-overflow-scrolling: touch;
     }
     .parallax_back_layer{ overflow: hidden; position: absolute; top: 0;left: 0;right: 0;bottom: 0;  background-image: url(../img/06.jpg);background-size:cover; filter: grayscale(100%);opacity: 0.2;min-height:1000px;z-index: -3;
     }
