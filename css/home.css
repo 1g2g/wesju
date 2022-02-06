@@ -64,7 +64,7 @@
       -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);
       overflow-y: hidden;scroll-behavior: smooth;
 -webkit-overflow-scrolling: touch;
-
+pointer-events: none;
 
     }
     .parallax_page{
