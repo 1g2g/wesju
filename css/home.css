@@ -321,7 +321,8 @@
     .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10 {position:relative; float:left; width: 49%;}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) ul {display:inline-block; width:49%;  height:140px;}
-    :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; padding-top:3px; padding-left:8px;height:100%;}/* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
+    :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li{font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; padding-top:3px; padding-left:8px;height:143px;-webkit-backface-visibility: hidden;-moz-backface-visibility: hidden;
+      -webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);}/* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) img{width:200px;height:100px;}
     :is(  .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) .more{position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px;}
 
