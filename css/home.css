@@ -54,7 +54,9 @@
     /* ************************************************************************** */
     /*배경 스크롤*/
     html,body{
-    position:relative;height:100%;  overflow-y: hidden;scroll-behavior: smooth;/*height: -webkit-fill-available;*/
+    position:fixed;height:100%; width:100%; overflow-y: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-transform:translateZ(0);scroll-behavior: smooth;/*height: -webkit-fill-available;*/
     }
     .parallax_page{
       height: 100vh;/*height:calc(var(--vh,1vh)*100);*/
