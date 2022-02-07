@@ -153,50 +153,51 @@
     .mobile_header > .mobile_header_sidebar>a{color:white;margin-left:10px;}
     .mobile_header > .mobile_header_sidebar > .hamburger {}
 
-/*title*/
-    .mobile_header > .mobile_header_title {float:left; text-align:center;  width: 70%; height:80%; padding-top:5px; }
-    .mobile_header > .mobile_header_title > a {width: 100%; color:#f7f7f7; font-size:25px; text-align:center; margin:0 auto;}
-    .mobile_header > .mobile_header_title a:hover{color:black;}
 
-    /*.mobile_header > .mobile_signin_a {position:absolute; right:5px; top:2px; font-size:30px; color:white}*/
+      /*title*/
+          .mobile_header > .mobile_header_title {float:left; text-align:center;  width: 70%; height:80%; padding-top:5px; }
+          .mobile_header > .mobile_header_title > a {width: 100%; color:#f7f7f7; font-size:25px; text-align:center; margin:0 auto;}
+          .mobile_header > .mobile_header_title a:hover{color:black;}
 
-    /* 반응형웹에서는  width height를 Percentage(%)로 표현해주어야 모바일에서 기기의 크기에 맞게 세팅됩니다. */
-    .mobile_header > .mobile_header_sidebar > .sidebar{font-family:'Open Sans',sans-serif; width: 70%; overflow:auto; position:fixed;top: 0;left: -80%;height: 100%; z-index:999;background-color: white; color:#fff;transition: all 0.3s;} /* To make a scroll when Position is fixed(Position:fixed), add overflow:auto */
+          /*.mobile_header > .mobile_signin_a {position:absolute; right:5px; top:2px; font-size:30px; color:white}*/
 
-
-    .mobile_header > .mobile_header_sidebar > .sidebar.active{left: 0;}
-
-    .overlay,.overlay2{position:fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,0.7); z-index:997;display:none;}  /* Overlay 는 mobile_sidebar를 닫을 수 있게 해줍니다. */
-
-    /* To make width height working, display:block or float:left is needed*/
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .signin{font-size:55%; float:left; margin-left:4.9%; border-radius:5px; text-align:center; line-height:50px; width: 45%;height: 50px; color:white; border-right:0.5px dotted gray; background-color:var(--background-color);}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .join{font-size:55%;float:left; border-radius:5px; text-align:center; line-height:50px; width: 45%;height: 50px; color:white; background-color:var(--background-color);}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_nav{clear:both; width: 100%; height: 40px; background-color: white;}
+          /* 반응형웹에서는  width height를 Percentage(%)로 표현해주어야 모바일에서 기기의 크기에 맞게 세팅됩니다. */
+          .mobile_header > .mobile_header_sidebar > .sidebar{font-family:'Open Sans',sans-serif; width: 70%; overflow:auto; position:fixed;top: 0;left: -80%;height: 100%; z-index:999;background-color: white; color:#fff;transition: all 0.3s;} /* To make a scroll when Position is fixed(Position:fixed), add overflow:auto */
 
 
+          .mobile_header > .mobile_header_sidebar > .sidebar.active{left: 0;}
 
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu {  font-size:50%; display:block;border-top:1px solid var(--background-color);}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul  i { color:var(--background-color); margin-right:5px;}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul  .fa-angle-up { float:right; padding-top:5px;}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a {border-bottom:1px solid var(--background-color);}
-    /* box-sizing:border-box makes a padding or margin in the box */
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu > a{padding:3px 8px; width: 100%;display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;}
+          .overlay,.overlay2{position:fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,0.7); z-index:998;display:none;}  /* Overlay 는 mobile_sidebar를 닫을 수 있게 해줍니다. */
 
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a{display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;}
+          /* To make width height working, display:block or float:left is needed*/
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .signin{font-size:55%; float:left; margin-left:4.9%; border-radius:5px; text-align:center; line-height:50px; width: 45%;height: 50px; color:white; border-right:0.5px dotted gray; background-color:var(--background-color);}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .join{font-size:55%;float:left; border-radius:5px; text-align:center; line-height:50px; width: 45%;height: 50px; color:white; background-color:var(--background-color);}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_nav{clear:both; width: 100%; height: 40px; background-color: white;}
 
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul {padding-left:30px;}
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li{border:1px solid #e5e5e5; vertical-align:middle; }
-    .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li > a{padding:3px 8px;  width: 100%; display:inline-block; background-color: var(--white-gray); box-sizing:border-box;}
 
-    /*오른쪽 알림,채팅,내가쓴글*/
-    .mobile_signin_a{margin-right: -25px;color:white;text-align: center;}
-    .mobile_header > .mobile_header_sidebar >.sidebar_right{font-family:'Open Sans',sans-serif; width: 40%; overflow:auto; position:fixed;top: 0;right:0%;height: 100%; z-index:998;background-color: white; color:#fff;transition: all 0.3s; display: none;margin-top: 50px; }
-    .mobile_header_sidebar2{ float:right; font-size:30px;  width: 15%; vertical-align:middle;text-align: center;}
-    .sidebar_right {text-align: left;}
-    /*sidebar_rigt의 ul*/
-    .sidebar_right li {font-size:15px;display:block;}
-    .sidebar_right  i { color:var(--background-color); margin-right:5px;}
-    .sidebar_right li a{padding:10px;; width: 100%;display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;border-bottom:1px solid var(--background-color);}
+
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu {  font-size:50%; display:block;border-top:1px solid var(--background-color);}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul  i { color:var(--background-color); margin-right:5px;}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul  .fa-angle-up { float:right; padding-top:5px;}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a {border-bottom:1px solid var(--background-color);}
+          /* box-sizing:border-box makes a padding or margin in the box */
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu > a{padding:3px 8px; width: 100%;display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;}
+
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a{display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;}
+
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul {padding-left:30px;}
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li{border:1px solid #e5e5e5; vertical-align:middle; }
+          .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li > a{padding:3px 8px;  width: 100%; display:inline-block; background-color: var(--white-gray); box-sizing:border-box;}
+
+          /*오른쪽 알림,채팅,내가쓴글*/
+          .mobile_signin_a{margin-right: -25px;color:white;text-align: center;}
+          .sidebar_right{font-family:'Open Sans',sans-serif; width: 40%; overflow:auto; position:fixed;top: 0;right:0%;height: 100%; z-index:999;background-color: white; color:#fff;transition: all 0.3s; display: none;margin-top: 50px; }
+          .mobile_header_sidebar2{ float:right; font-size:30px;  width: 15%; vertical-align:middle;text-align: center;}
+          .sidebar_right {text-align: left;}
+          /*sidebar_rigt의 ul*/
+          .sidebar_right li {font-size:15px;display:block;}
+          .sidebar_right  i { color:var(--background-color); margin-right:5px;}
+          .sidebar_right li a{padding:10px;; width: 100%;display:inline-block; background-color:white;box-sizing:border-box; border-left:1px solid #e5e5e5;border-bottom:1px solid var(--background-color);}
  /* ****************************************************************** */
  /*                                                                    */
  /*                            NAV                                    */
@@ -310,7 +311,7 @@
     .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23{position:relative; float:left; width: 32%;}
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);margin-bottom:5px;}
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li{
-      font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;padding-left:8px;display: inline-block; width: 88%;height:20px;line-height: 20px;}
+      font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;padding-left:8px;display: inline-block;width:100%; height:20px;line-height: 20px;}
     .new_post{ display: inline-block;    height: 20px;position: relative; top: -5px;}
     /*text로 이뤄진 제목에만 list style 적용*/
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute;
