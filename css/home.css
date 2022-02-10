@@ -121,9 +121,11 @@
       position:fixed;width:100%;/*margin-top:-50px;*/z-index: 100;box-shadow: 2px 2px 5px #888888;
     }
     nav {
-     /* margin-top:50px;*/
+     /* margin-top:50px;*/position:relative;top:50px;
     }
-
+    main{
+      position:relative;top:50px;
+    }
     .header{height: 50px; background-color:#ffffff;}
     .header > .header_title {float:left;  width: 150px;height: 50px;background-color:white;}
     .header > .header_title a{width: 150px;height: 50px;background-color:white; font-size:30px; font-family:'Open Sans',sans-serif;}
