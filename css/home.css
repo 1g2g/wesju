@@ -118,7 +118,7 @@
 
     /* desktopheader */
     #header{
-      width:100%;/*margin-top:-50px;*/z-index: 100;box-shadow: 2px 2px 5px #888888;
+      /*position:fixed;*/width:100%;/*margin-top:-50px;*/z-index: 100;box-shadow: 2px 2px 5px #888888;
     }
     nav {
      /* margin-top:50px;*/position:relative;top:50px;
@@ -149,7 +149,7 @@
     .mobile_container{height: 50px; width: 100%;}
   .mobile_header{height:100%; background-color:#c3200e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/ }
 
-    .mobile_container{position:fixed;top:0; z-index:999999;}  /* position:fixed 에서 z-index는 필수입니다.  */
+    .mobile_container{/*position:fixed;*/top:0; z-index:999999;}  /* position:fixed 에서 z-index는 필수입니다.  */
     .mobile_header > .mobile_header_sidebar{ float:left; font-size:30px;  width: 15%; height:100%; vertical-align:middle;} /* float를 사용하기 위해서는 height를 설정해야합니다. */
     /*햄버거 버튼*/
     .mobile_header > .mobile_header_sidebar>a{color:white;margin-left:10px;}
