@@ -99,7 +99,8 @@
  .header > .header_menu .header_menu_intro { display:inline-block; height:10px; } /* display:inlie-block 이 header_menu_signinbox를 float:left 없이 옆으로 정렬하게 합니다.*/
  .header > .header_menu .header_menu_intro_a { font-size:11px; font-family:"돋움",Dotum,"돋움체",DotumChe; } 
  .header > .header_menu a:hover { color:black; } 
- .header > .header_menu .header_menu_signinbox { clear:both; background-color:white; display:inline-block; border:1px solid grey; border-radius:5px; position:relative; left:20%; } 
+ .header > .header_menu .header_menu_signinbox { clear:both; background-color:white; display:inline-block; border:1px solid grey; border-radius:5px; position:relative;  } 
+ /*.header_menu_signinbox_span{width:80px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); }*/
  .header > .header_menu .header_menu_signinbox a { padding:4px; } 
  /*로그인 후*/
  .enter_wesju { margin-left: -20px; } 
