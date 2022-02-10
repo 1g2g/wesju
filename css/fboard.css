@@ -21,8 +21,6 @@
 .board_list_form tr { border-bottom:1px solid #EEEE;}
 .board_list_form>tbody>tr:hover { background-color: #EEEE; text-decoration: none; } 
 .board_list_form tr a:hover { color:black; text-decoration: underline; } 
-.top_notice { border-bottom:1px solid #FCB2B2; color:#c3200e; } 
-.top_notice a { color:#c3200e; } 
 /*표머리*/
 .board_list_form th { padding:10px; border-bottom:1px solid #c3002e; } 
 
@@ -31,6 +29,8 @@
 /*번호*/
 .board_list_form th:first-child { border-top-left-radius: 5px; } 
 /*제목*/
+ /*공지*/
+.color_notice{ color:#c3002e; font-weight: bold; padding-right: 5px; } 
 .board_list_form td:nth-child(2) { text-align: left; margin-left: 5px; line-height: 15px; } 
 .board_list_form td:nth-child(2) .title_ellipsis { max-width:280px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display: inline-block; } 
 /*날짜*/
