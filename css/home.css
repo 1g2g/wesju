@@ -118,10 +118,10 @@
 
     /* desktopheader */
     #header{
-      position:fixed;width:100%;margin-top:-50px;z-index: 100;box-shadow: 2px 2px 5px #888888;
+      position:fixed;width:100%;/*margin-top:-50px;*/z-index: 100;box-shadow: 2px 2px 5px #888888;
     }
     nav {
-      margin-top:50px;
+     /* margin-top:50px;*/
     }
 
     .header{height: 50px; background-color:#ffffff;}
@@ -143,7 +143,7 @@
     .header > .header_menu .header_menu_signinbox a{padding:4px;}
     .signin{}
     /* mobile_header */
-    #mobile_header{display:none; position:absolute;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
+    #mobile_header{display:none; position:static;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
     .mobile_container{height: 50px; width: 100%;}
   .mobile_header{height:100%; background-color:#c3200e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/ }
 
@@ -458,9 +458,9 @@
     #mobile_header .sidebar_img {background-color: red;margin-top:-30px;}
     #mobile_header :is(.sidebar_img,.sidebar_img2) img{width:100%;height:auto;}
     /* nav menu */
-    nav {
+    /*nav {
       margin-top:0px;
-    }
+    }*/
     #toggle {display:none;}
     .nav {display:none;}
 
@@ -503,6 +503,4 @@
     /*footer*/
      #footer .container>.copyright{width:100%;}
      #footer .sns_link{display: none;}
-
-     tml[xmlns*=""] body:last-child .mobile_container{margin-top:-30px;}
     }
