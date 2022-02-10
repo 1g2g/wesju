@@ -143,7 +143,7 @@
     .header > .header_menu .header_menu_signinbox a{padding:4px;}
     .signin{}
     /* mobile_header */
-    #mobile_header{display:none; position:static;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
+    #mobile_header{display:none; position:fixed;top:0;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
     .mobile_container{height: 50px; width: 100%;}
   .mobile_header{height:100%; background-color:#c3200e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/ }
 
@@ -233,7 +233,8 @@
     .column .col_tit {font-size:20px; color:black; padding-bottom:5px;}
     .column .col_desc {border-bottom: 1px dashed #dbdbdb; padding-bottom:0px; margin-bottom:0px; color:#878787; line-height:18px;}
 
-    #contents .new_post{font-size:12px; font-weight:bold;color:#c3200e;}
+    #contents .new_post{font-size:12px; font-weight:bolder;color:#c3200e;    font-variant-caps: petite-caps;}
+  .new_post{ display: inline-block;   }
 
     /* it makes div auto control  */
     /* http://uxuiz.cafe24.com/wp/archives/1445 */
@@ -312,7 +313,6 @@
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) h5{font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color);margin-bottom:5px;}
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li{
       font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;padding-left:8px;display: inline-block;width:100%; height:20px;line-height: 20px;}
-    .new_post{ display: inline-block;    height: 20px;position: relative; top: -5px;}
     /*text로 이뤄진 제목에만 list style 적용*/
     :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li:before{content:''; width: 3px;height: 3px;border-radius:50%; background-color: var(--content-li-before-color); position:absolute;
     left:0;top:9px; }
