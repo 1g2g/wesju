@@ -143,7 +143,7 @@
     .header > .header_menu .header_menu_signinbox a{padding:4px;}
     .signin{}
     /* mobile_header */
-    #mobile_header{display:none; position:fixed;top:0;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
+    #mobile_header{display:none; position:absolute;}      /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
     .mobile_container{height: 50px; width: 100%;}
   .mobile_header{height:100%; background-color:#c3200e;/*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%);*/ }
 
@@ -472,7 +472,7 @@
 
     /* content */
     .col1 img{width:100%; height:150px;}
-    .col1 iframe{width:100%;height:300px;}
+    .col1 iframe{width:100%;height:200px;}
   #contents .container{border-left:0; border-right:0;margin-top:32px;}
   /*  #contents .board_list_header{margin-top:130px;}*/
     #cont_center{float:none; clear:both; width: 100%;height:auto;}  /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
