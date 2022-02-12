@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>공지게시판</title>
+  <title>자유게시판</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
   <script src="javascript/board.js" defer></script>
@@ -48,135 +48,133 @@
                 <a href="#" class="header_menu_intro_a mypost" onmouseover="show_post()">내가쓴글</a>
                 <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
 
-                <!--로그인 전
-                              <div class="header_menu_signinbox">
-                                  <a href="#"
-                                      class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
-                                  <span class="header_menu_intro header_signinbox_span">|</span>
-                                  <a href="#"
-                                      class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
-                                  </div>
-                              -->
-                <!--로그인 후-->
-                <div class="header_menu_signinbox enter_wesju">
-                  <span class="header_menu_intro_a header_signinbox_span">"<a href="#">어린이대공원</a>"님
-                    환영합니다.</span>
-
+                <!--로그인 전-->
+                <div class="header_menu_signinbox">
+                  <a href="#" class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
+                  <span class="header_menu_intro header_signinbox_span">|</span>
+                  <a href="#" class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
                 </div>
-                <!--알림목록-->
-                <section>
-                  <div class="alarm_list">
-                    <table>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.
-                          </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과
-                            18학번 세종대왕입니다."
-                          </a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.
-                          </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과
-                            18학번 세종대왕입니다."
-                          </a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.
-                          </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과
-                            18학번 세종대왕입니다."
-                          </a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.
-                          </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과
-                            18학번 세종대왕입니다."
-                          </a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                            남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>관리자로부터 채팅이 왔습니다.</span></td>
-                      </tr>
-                    </table>
-                  </div>
-                </section>
-                <!--채팅목록-->
-                <section>
-                  <div class="chat_list">
-                    <table>
-                      <tr onclick="open_chat()">
-                        <td><img src="img/profile.jpg" /></td>
-                        <td><span class="contactor">이용자2</span></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/profile.jpg" /></td>
-                        <td><span class="contactor">관리자</span></td>
-                      </tr>
-                    </table>
-                  </div>
-                </section>
-                <!--내가쓴글 목록-->
-                <section>
-                  <div class="post_list">
-                    <table>
-                      <tr>
-                        <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. </td>
-                        <td>2015.03.22</td>
-                      </tr>
-                      <tr>
-                        <td><span>공지사항2</span></td>
-                        <td>2015.03.22</td>
-                      </tr>
-                      <tr>
-                        <td><span>공지사항3</span></td>
-                        <td>2015.03.22</td>
-                      </tr>
-                    </table>
-                  </div>
-                </section>
+
+                <!--로그인 후
+                              <div class="header_menu_signinbox enter_wesju">
+                                  <span class="header_menu_intro_a header_signinbox_span">"<a href="#">어린이대공원</a>"님
+                                      환영합니다.</span>-->
 
               </div>
-              <div class="header_icon">
-                <!-- I have no idea
+              <!--알림목록-->
+              <section>
+                <div class="alarm_list">
+                  <table>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.
+                        </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번
+                          세종대왕입니다."
+                        </a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.
+                        </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번
+                          세종대왕입니다."
+                        </a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.
+                        </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번
+                          세종대왕입니다."
+                        </a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.
+                        </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번
+                          세종대왕입니다."
+                        </a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
+                          남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>관리자로부터 채팅이 왔습니다.</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+              <!--채팅목록-->
+              <section>
+                <div class="chat_list">
+                  <table>
+                    <tr onclick="open_chat()">
+                      <td><img src="img/profile.jpg" /></td>
+                      <td><span class="contactor">이용자2</span></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/profile.jpg" /></td>
+                      <td><span class="contactor">관리자</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+              <!--내가쓴글 목록-->
+              <section>
+                <div class="post_list">
+                  <table>
+                    <tr>
+                      <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. </td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><span>공지사항2</span></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><span>공지사항3</span></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+
+            </div>
+            <div class="header_icon">
+              <!-- I have no idea
                   <ul>
                       <li><a href="#"><span>HTML5</span></a></li>
                       <li><a href="#"><span>HTML5</span></a></li>
                       <li><a href="#"><span>HTML5</span></a></li>
                       <li><a href="#"><span>HTML5</span></a></li>
                   </ul>     -->
-              </div>
-
             </div>
+
           </div>
+        </div>
       </header>
 
       <!-- mobile header -->
@@ -212,12 +210,15 @@
                     <li class="parent_menu parent_menu_havesub features"><a href="#"><i
                           class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
                       <ul class="sub_ul sub1">
-                        <li class="sub_menu"><a href="https://www.naver.com/">자유게시판</a></li>
+                        <li class="sub_menu"><a href="#">자유게시판<span class="new_post mb_new_post">&nbspnew</span></a>
+                        </li>
+                        <!--새로운 게시글 없는 자유게시판-->
+                        <!--<li class="sub_menu"><a href="#">자유게시판</a></li>-->
                         <li class="sub_menu"><a href="#">인기게시판</a></li>
                         <li class="sub_menu"><a href="#">세종숲</a></li>
-                        <li class="sub_menu"><a href="#">연애</a></li>
-                        <li class="sub_menu"><a href="#">정치</a></li>
-                        <li class="sub_menu"><a href="#">질문</a></li>
+                        <li class="sub_menu"><a href="#">질문게시판</a></li>
+                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
                       </ul>
                     </li>
                     <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i
@@ -226,14 +227,25 @@
                         <li class="sub_menu"><a href="#">세종톡</a></li>
                         <li class="sub_menu"><a href="#">맛집게시판</a></li>
                         <li class="sub_menu"><a href="#">중고거래게시판</a></li>
-                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
-                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                        <li class="sub_menu"><a href="#">연애게시판</a></li>
                         <li class="sub_menu"><a href="#">고민게시판</a></li>
+                        <li class="sub_menu"><a href="#">정치게시판</a></li>
+                      </ul>
+                    </li>
+                    <li class="parent_menu parent_menu_havesub Information"><a href="#"><i
+                          class="fas fa-smile"></i>College Life<i class="fas fa-angle-up"></i></a>
+                      <ul class="sub_ul sub3">
+                        <li class="sub_menu"><a href="#">새내기</a></li>
+                        <li class="sub_menu"><a href="#">동아리</a></li>
+                        <li class="sub_menu"><a href="#">맛집</a></li>
+                        <li class="sub_menu"><a href="#">중고거래</a></li>
+                        <li class="sub_menu"><a href="#">자취방</a></li>
+                        <li class="sub_menu"><a href="#">일상</a></li>
                       </ul>
                     </li>
                     <li class="parent_menu parent_menu_havesub Information"><a href="#"><i
                           class="fas fa-smile"></i>Information<i class="fas fa-angle-up"></i></a>
-                      <ul class="sub_ul sub3">
+                      <ul class="sub_ul sub5">
                         <li class="sub_menu"><a href="#">학교일정</a></li>
                         <li class="sub_menu"><a href="#">학생회</a></li>
                         <li class="sub_menu"><a href="#">세종뉴스</a></li>
@@ -244,13 +256,12 @@
                     </li>
                     <li class="parent_menu parent_menu_havesub Guide"><a href="#"><i class="fas fa-smile"></i>Guide<i
                           class="fas fa-angle-up"></i></a>
-                      <ul class="sub_ul sub4">
+                      <ul class="sub_ul sub5">
                         <li class="sub_menu"><a href="#">취업현황</a></li>
                         <li class="sub_menu"><a href="#">졸업생</a></li>
                         <li class="sub_menu"><a href="#">공지사항</a></li>
-                        <li class="sub_menu"><a href="#">기타</a></li>
-                        <li class="sub_menu"><a href="#">기타</a></li>
-                        <li class="sub_menu"><a href="#">기타</a></li>
+                        <li class="sub_menu"><a href="#">질문하기</a></li>
+                        <li class="sub_menu"><a href="#">피드백하기</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -285,7 +296,6 @@
       </header>
 
 
-
       <nav id="nav">
         <div class="container">
           <div class="row">
@@ -294,12 +304,14 @@
               <div>
                 <h3><i class="fas fa-university"></i>커뮤니티</h3>
                 <ol>
-                  <li><a href="#"><span>자유게시판</span></a></li>
+                  <li><a href="#"><span>자유게시판<span class="new_post">&nbspnew</span></span></a></li>
+                  <!--새로운 글 없는 자게-->
+                  <!--<li><a href="#"><span>자유게시판</span></a></li>-->
                   <li><a href="#"><span>인기게시판</span></a></li>
                   <li><a href="#"><span>세종숲</span></a></li>
-                  <li><a href="#"><span>정치게시판</span></a></li>
                   <li><a href="#"><span>질문게시판</span></a></li>
                   <li><a href="#"><span>정보게시판</span></a></li>
+                  <li><a href="#"><span>홍보게시판</span></a></li>
                 </ol>
               </div>
               <div>
@@ -308,26 +320,26 @@
                   <li><a href="#"><span>세종톡</span></a></li>
                   <li><a href="#"><span>맛집게시판</span></a></li>
                   <li><a href="#"><span>중고거래게시판</span></a></li>
-                  <li><a href="#"><span>홍보게시판</span></a></li>
-                  <li><a href="#"><span>정보게시판</span></a></li>
+                  <li><a href="#"><span>연애게시판</span></a></li>
                   <li><a href="#"><span>고민게시판</span></a></li>
+                  <li><a href="#"><span>정치게시판</span></a></li>
                 </ol>
               </div>
               <div>
                 <h3><i class="fas fa-university"></i>대학생활</h3>
                 <ol>
-                  <li><a href="#"><span>일상</span></a></li>
+                  <li><a href="#"><span>새내기</span></a></li>
+                  <li><a href="#"><span>동아리</span></a></li>
                   <li><a href="#"><span>맛집</span></a></li>
                   <li><a href="#"><span>중고거래</span></a></li>
-                  <li><a href="#"><span>동아리</span></a></li>
                   <li><a href="#"><span>자취방</span></a></li>
-                  <li><a href="#"><span>새내기</span></a></li>
+                  <li><a href="#"><span>일상</span></a></li>
                 </ol>
               </div>
               <div>
                 <h3><i class="fas fa-university"></i>학교정보</h3>
                 <ol>
-                  <li><a href="#"><span>학교일정</span></a></li>
+                  <li><a href="#"><span>학사일정</span></a></li>
                   <li><a href="#"><span>학생회</span></a></li>
                   <li><a href="#"><span>세종뉴스</span></a></li>
                   <li><a href="#"><span>고전독서</span></a></li>
@@ -341,9 +353,9 @@
                   <li><a href="#"><span>취업현황</span></a></li>
                   <li><a href="#"><span>졸업생</span></a></li>
                   <li><a href="#"><span>공지사항</span></a></li>
-                  <li><a href="#"><span>Html 태그</span></a></li>
-                  <li><a href="#"><span>Html 태그</span></a></li>
-                  <li><a href="#"><span>Html 태그</span></a></li>
+                  <li><a href="#"><span>질문하기</span></a></li>
+                  <li><a href="#"><span>피드백하기</span></a></li>
+                  <li><a href="#"><span></span></a></li>
                 </ol>
               </div>
             </div>
@@ -764,7 +776,7 @@
             <section id="cont_right">
               <!-- <h3>Responsive Site Right Content</h3> -->
               <article class="column col5 mt5 account notice24">
-                  <!--    <h4 class="ir_su col_tit">로그인박스</h4>
+                <!--    <h4 class="ir_su col_tit">로그인박스</h4>
               <p class="login_msg">세종대 커뮤니티사이트에 로그인해보세요.</p>
               <a href="#" class="link_login">LOGIN</a>
 
@@ -777,164 +789,166 @@
                       <a href="#">회원가입</a>>
                   </div>
               </div>-->
-                  <!--로그인 후 로그인박스 변경-->
-                  <h4 class="ir_su col_tit">로그인박스</h4>
-                  <img src="img\profile.jpg" alt="" />
-                  <p class="login_msg"><span>어린이대공원</span>님</p>
-                  <table>
-                      <tr>
-                          <td><a href="#">알림</a></td>
-                          <td>채팅</td>
-                      </tr>
-                      <tr>
-                          <td>내가쓴글</td>
-                          <td>정보수정</td>
-                      </tr>
-                  </table>
-                  <div class="box_logout"><a href="#" class="link_logout">LOGOUT</a></div>
-                  <!--logout박스는 임시로 넣어놓은 것-->
+                <!--로그인 후 로그인박스 변경-->
+                <h4 class="ir_su col_tit">로그인박스</h4>
+                <img src="img\profile.jpg" alt="" />
+                <p class="login_msg"><span>어린이대공원</span>님</p>
+                <table>
+                  <tr>
+                    <td><a href="#">알림</a></td>
+                    <td>채팅</td>
+                  </tr>
+                  <tr>
+                    <td>내가쓴글</td>
+                    <td>정보수정</td>
+                  </tr>
+                </table>
+                <div class="box_logout"><a href="#" class="link_logout">LOGOUT</a></div>
+                <!--logout박스는 임시로 넣어놓은 것-->
               </article>
               <article class="column col6">
-                  <h4 class="ir_su col_tit">title</h4>
-                  <p class="ir_su col_desc">설명부분</p>
+                <h4 class="ir_su col_tit">title</h4>
+                <p class="ir_su col_desc">설명부분</p>
 
-                  <h4 class="ir_su col_tit">공지사항이미지</h4>
-                  <p class="col_desc"><img src="img/event_banner.gif" class="cont_right_img"></p>
-                  <!-- <p class="col_desc rainbow"></span> -->
+                <h4 class="ir_su col_tit">공지사항이미지</h4>
+                <p class="col_desc"><img src="img/event_banner.gif" class="cont_right_img"></p>
+                <!-- <p class="col_desc rainbow"></span> -->
               </article>
               <article class="column col7">
-                  <div class="notice25 pr5">
-                      <h5 class="ir_su">Notice1</h5>
-                      <h5>인기글</h5>
-                      <ol type="1">
-                          <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                          <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                          <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                          <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                          <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                      </ol>
-                      <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                  </div>
+                <div class="notice25 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>인기글</h5>
+                  <ol type="1">
+                    <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                    <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                  </ol>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                </div>
               </article>
               <article class="column col10">
-                  <div class="notice26 pr5">
-                      <h5 class="ir_su">Notice1</h5>
-                      <h5>바로가기</h5>
-                      <div class="img10">
-                          <div class="innerimg10"><a href="http://www.sejong.ac.kr/"><img src="img/short_cut1.PNG">
-                                  <div class="txt_on_img">세종대</div>
-                              </a></div>
-                      </div>
-                      <div class="img10">
-                          <div class="innerimg10"><a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img src="img/short_cut2.PNG">
-                                  <div class="txt_on_img">학사정보</div>
-                              </a>
-                          </div>
-                      </div>
-                      <div class="img10">
-                          <div class="innerimg10"><a href="https://do.sejong.ac.kr/"><img src="img/short_cut3.PNG">
-                                  <div class="txt_on_img">두드림</div>
-                              </a>
-                          </div>
-                      </div>
-                      <div class="img10">
-                          <div class="innerimg10"><a href="http://classic.sejong.ac.kr/"><img src="img/short_cut4.PNG">
-                                  <div class="txt_on_img">대양<br />휴머니티</div>
-                              </a></div>
-                      </div>
-                      <div class="img10">
-                          <div class="innerimg10"><a href="https://library.sejong.ac.kr/index.ax"><img src="img/short_cut5.PNG">
-                                  <div class="txt_on_img">학술<br />정보원</div>
-                              </a></div>
-                      </div>
-                      <div class="img10">
-                          <div class="innerimg10"> <a href="https://portal.sejong.ac.kr/jsp/login/loginSSL.jsp?rtUrl=portal.sejong.ac.kr/comm/member/user/ssoLoginProc.do"><img src="img/short_cut6.PNG">
-                                  <div class="txt_on_img">세종포탈</div>
-                              </a>
-                          </div>
-                      </div>
-
-                      <!-- <p class="col_desc rainbow"></span> -->
+                <div class="notice26 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>바로가기</h5>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="http://www.sejong.ac.kr/"><img src="img/short_cut1.PNG">
+                        <div class="txt_on_img">세종대</div>
+                      </a></div>
                   </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img
+                          src="img/short_cut2.PNG">
+                        <div class="txt_on_img">학사정보</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://do.sejong.ac.kr/"><img src="img/short_cut3.PNG">
+                        <div class="txt_on_img">두드림</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="http://classic.sejong.ac.kr/"><img src="img/short_cut4.PNG">
+                        <div class="txt_on_img">대양<br />휴머니티</div>
+                      </a></div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://library.sejong.ac.kr/index.ax"><img
+                          src="img/short_cut5.PNG">
+                        <div class="txt_on_img">학술<br />정보원</div>
+                      </a></div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"> <a
+                        href="https://portal.sejong.ac.kr/jsp/login/loginSSL.jsp?rtUrl=portal.sejong.ac.kr/comm/member/user/ssoLoginProc.do"><img
+                          src="img/short_cut6.PNG">
+                        <div class="txt_on_img">세종포탈</div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- <p class="col_desc rainbow"></span> -->
+                </div>
               </article>
 
 
               <article class="column col8">
-                  <!-- 검색어: 별점주기 스프링 star rating-->
-                  <!-- https://blog.naver.com/tnakekd/220313628830 -->
-                  <!-- https://miuus.tistory.com/2 -->
-                  <div class="notice27 star_rating pr5">
-                      <h5 class="ir_su">Notice1</h5>
-                      <h5>강의평가</h5>
+                <!-- 검색어: 별점주기 스프링 star rating-->
+                <!-- https://blog.naver.com/tnakekd/220313628830 -->
+                <!-- https://miuus.tistory.com/2 -->
+                <div class="notice27 star_rating pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>강의평가</h5>
 
-                      <ul>
-                          <li class="star_title">강의제목-OOO교수님</li>
-                          <li class="star_content">
-                              <<span class="star_rate">
-                                  3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                          </li>
-                      </ul>
-                      <ul>
-                          <li class="star_title">강의제목-OOO교수님</li>
-                          <li class="star_content">
-                              <<span class="star_rate">
-                                  3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                          </li>
-                      </ul>
-                      <ul>
-                          <li class="star_title">강의제목-OOO교수님</li>
-                          <li class="star_content">
-                              <<span class="star_rate">
-                                  3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                          </li>
-                      </ul>
-                      <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                  </div>
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                </div>
               </article>
 
               <article class="column col8">
-                  <div class="notice28 pr5">
-                      <h5 class="ir_su">Notice1</h5>
-                      <h5>학사일정</h5>
-                      <ul>
-                          <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                          <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                          <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                          <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                          <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                      </ul>
-                      <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                  </div>
+                <div class="notice28 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>학사일정</h5>
+                  <ul>
+                    <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                    <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                  </ul>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                </div>
               </article>
 
-          </section>
-      </div>
+            </section>
+          </div>
 
-  </section>
-</main>
-<footer id="footer">
-  <div class="container">
-      <ul>
-          <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
-          <li>|</li>
-          <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
-          <li>|</li>
-          <li><a href="#">이용약관</a></li>
-      </ul>
-      <div class="sns_link">
-          <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img
-                  src="img/blog.png" /></a><a href="https://www.facebook.com/sejongpr/"><img
-                  src="img/FACEBOOK.png" /></a><a
-              href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img
-                  src="img/youtube.png" /></a>
-      </div>
-      <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
+        </section>
+      </main>
+      <footer id="footer">
+        <div class="container">
+          <ul>
+            <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
+            <li>|</li>
+            <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
+            <li>|</li>
+            <li><a href="#">이용약관</a></li>
+          </ul>
+          <div class="sns_link">
+            <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png" /></a><a
+              href="https://www.facebook.com/sejongpr/"><img src="img/FACEBOOK.png" /></a><a
+              href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png" /></a>
+          </div>
+          <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
+        </div>
+        <div class="black"></div>
+      </footer>
+    </div>
+    <div class="parallax_back_layer"></div>
   </div>
-  <div class="black"></div>
-</footer>
-</div>
-<div class="parallax_back_layer"></div>
-</div>
 </body>
 
 </html>
