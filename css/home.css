@@ -446,6 +446,7 @@
  .innerimg10 img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%; object-fit: cover; } 
 
  /*footer*/
+ #footer .container,#footer .black{padding:0 5px;}
  #footer .container>.copyright { width:100%; } 
  #footer .sns_link { display: none; } 
  }
