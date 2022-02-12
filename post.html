@@ -1,475 +1,549 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- when Korean is breaking -->
-    <!-- https://tysoso.tistory.com/6 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>게시글</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css/fboard.css">
-    <link rel="stylesheet" type="text/css" href="css/link.css">
-    <link rel="stylesheet" type="text/css" href="css/chatList.css">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <link rel="stylesheet" type="text/css" href="css/post.css">
-    <script src="javascript/chat.js"defer></script>
-    <script src="javascript/join.js"defer></script>
-    <script src="javascript/link.js"defer></script>
-    <script src="javascript/post.js"></script>
-    <style></style>
+  <!-- when Korean is breaking -->
+  <!-- https://tysoso.tistory.com/6 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>게시글</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/fboard.css">
+  <link rel="stylesheet" type="text/css" href="css/link.css">
+  <link rel="stylesheet" type="text/css" href="css/chatList.css">
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link rel="stylesheet" type="text/css" href="css/post.css">
+  <script src="javascript/chat.js" defer></script>
+  <script src="javascript/join.js" defer></script>
+  <script src="javascript/link.js" defer></script>
+  <script src="javascript/post.js"></script>
+  <style></style>
 
 
 </head>
 
 <body>
-<!-- desktop header -->
+  <!-- desktop header -->
   <div class="parallax_page">
     <div id="group2" class="parallax">
-    <div class="overlay"></div>
-    <header id="header">
+      <div class="overlay"></div>
+      <header id="header">
         <div class="container">
-            <div class="header">
-                <div class="header_title">
-                    <a href="#" class="header_title_img"><div>위세종<span>wesju</span></div></a>
-                    <!-- <a href="#" class="header_title_img"><img src="https://via.placeholder.com/200x60" width="200" height="60" alt="wesejong"/></a> 나중에는 아마 이미지를 사용할것입니다. 이미지 관련해서 아래가 뜨는것은 https://blog.naver.com/jhc9639/222174944051-->
-                </div>
-                <div class="header_search">
-                    <input type="text" placeholder="search..."/>
-                    <button type="button">검색</button>
-                </div>
-                <div class="header_menu">
-                    <div class="header_menu_intro">
-                        <a href="#" class="header_menu_intro_a notice"onmouseover="show_alarm()">알림<span class="unread">˚</span></a>
-                        <a href="#" class="header_menu_intro_a chat"onmouseover="show_chat()">채팅</a>
-                        <a href="#" class="header_menu_intro_a mypost"onmouseover="show_post()">내가쓴글</a>
-                        <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
+          <div class="header">
+            <div class="header_title">
+              <a href="#" class="header_title_img">
+                <div>위세종<span>wesju</span></div>
+              </a>
+              <!-- <a href="#" class="header_title_img"><img src="https://via.placeholder.com/200x60" width="200" height="60" alt="wesejong"/></a> 나중에는 아마 이미지를 사용할것입니다. 이미지 관련해서 아래가 뜨는것은 https://blog.naver.com/jhc9639/222174944051-->
+            </div>
+            <div class="header_search">
+              <input type="text" placeholder="search..." />
+              <button type="button">검색</button>
+            </div>
+            <div class="header_menu">
+              <div class="header_menu_intro">
+                <a href="#" class="header_menu_intro_a notice" onmouseover="show_alarm()">알림<span
+                    class="unread">˚</span></a>
+                <a href="#" class="header_menu_intro_a chat" onmouseover="show_chat()">채팅</a>
+                <a href="#" class="header_menu_intro_a mypost" onmouseover="show_post()">내가쓴글</a>
+                <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
 
-          <div class="header_menu_signinbox">
-<!--로그인 전-->
-              <a href="#" class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
-                      <span class="header_menu_intro header_signinbox_span">|</span>
-                      <a href="#" class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
-<!--로그인 후
-          <span class="header_menu_intro_a header_signinbox_span enter_wesju">"<a href="#">어린이대공원</a>"님 환영합니다.</span>-->
+                <div class="header_menu_signinbox">
+                  <!--로그인 전-->
+                  <a href="#" class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
+                  <span class="header_menu_intro header_signinbox_span">|</span>
+                  <a href="#" class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
+                  <!--로그인 후
+              <span class="header_menu_intro_a header_signinbox_span enter_wesju">"<a href="#">어린이대공원</a>"님 환영합니다.</span>-->
+                </div>
+              </div>
+              <!--알림목록-->
+              <section>
+                <div class="alarm_list">
+                  <table>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#"
+                          class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#"
+                          class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#"
+                          class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#"
+                          class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>관리자로부터 채팅이 왔습니다.</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+              <!--채팅목록-->
+              <section>
+                <div class="chat_list">
+                  <table>
+                    <tr onclick="open_chat()">
+                      <td><img src="img/profile.jpg" /></td>
+                      <td><span class="contactor">이용자2</span></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/profile.jpg" /></td>
+                      <td><span class="contactor">관리자</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+              <!--내가쓴글 목록-->
+              <section>
+                <div class="post_list">
+                  <table>
+                    <tr>
+                      <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. </td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><span>공지사항2</span></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                    <tr>
+                      <td><span>공지사항3</span></td>
+                      <td>2015.03.22</td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+
+            </div>
+            <div class="header_icon">
+              <!-- I have no idea
+                        <ul>
+                            <li><a href="#"><span>HTML5</span></a></li>
+                            <li><a href="#"><span>HTML5</span></a></li>
+                            <li><a href="#"><span>HTML5</span></a></li>
+                            <li><a href="#"><span>HTML5</span></a></li>
+                        </ul>     -->
+            </div>
+
           </div>
         </div>
-<!--알림목록-->
-                <section>
-                  <div class="alarm_list">
-                    <table>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다. </span><a href="#" class="alarm_list_cmt"><i class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다." </a></td><td></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을 남겼습니다.</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>관리자로부터 채팅이 왔습니다.</span></td>
-                      </tr>
-                    </table>
-                  </div>
-                </section>
-<!--채팅목록-->
-                <section>
-                  <div class="chat_list">
-                    <table>
-                      <tr onclick="open_chat()">
-                        <td><img src="img/profile.jpg"/></td>
-                        <td><span class="contactor">이용자2</span></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/profile.jpg"/></td>
-                        <td><span class="contactor">관리자</span></td>
-                      </tr>
-                    </table>
-                    </div>
-                    </section>
-<!--내가쓴글 목록-->
-                    <section>
-                    <div class="post_list">
-                      <table>
-                        <tr>
-                          <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.  </td>
-                          <td>2015.03.22</td>
-                        </tr>
-                        <tr>
-                          <td><span>공지사항2</span></td>
-                          <td>2015.03.22</td>
-                        </tr>
-                        <tr>
-                          <td><span>공지사항3</span></td>
-                          <td>2015.03.22</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </section>
+      </header>
+
+      <!-- mobile header -->
+      <header id="mobile_header">
+        <div class="mobile_container">
+          <div class="mobile_header">
+            <div class="mobile_header_sidebar">
+              <!-- https://kutar37.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%99%B8%EB%B6%80%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%88%A8%EA%B8%B0%EA%B8%B0 -->
+              <!-- http://v2.eyoom.net/bbs/board.php?bo_table=js&wr_id=7 -->
+              <!-- https://www.youtube.com/watch?v=O9l75KOB2pE -->
+
+              <!-- hamburger left menu -->
+              <a href="#" onclick="drop_down_mobile_menu()"><i
+                  class="hamburger sidebarCollapse fas fa-bars 4px"></i></a>
+
+              <!-- when you click hamburger -->
+              <div class="sidebar">
+                <div class="sidebar_signinbox">
+                  <a href="#" class="sidebar_signinbox_span signin"><span><i
+                        class="fas fa-sign-in-alt 5px"></i>로그인</span></a>
+                  <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
+                </div>
+
+                <div class="sidebar_nav"></div>
+                <!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
+                <div class="sidebar_img">
+                  <img src="img/교포1.jpg">
+                </div>
+                <div class="sidebar_ul">
+                  <ul>
+                    <li class="parent_menu home"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                    <li class="parent_menu parent_menu_havesub features"><a href="#"><i
+                          class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                      <ul class="sub_ul sub1">
+                        <li class="sub_menu"><a href="https://www.naver.com/">자유게시판</a></li>
+                        <li class="sub_menu"><a href="#">인기게시판</a></li>
+                        <li class="sub_menu"><a href="#">세종숲</a></li>
+                        <li class="sub_menu"><a href="#">연애</a></li>
+                        <li class="sub_menu"><a href="#">정치</a></li>
+                        <li class="sub_menu"><a href="#">질문</a></li>
+                      </ul>
+                    </li>
+                    <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i
+                          class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
+                      <ul class="sub_ul sub2">
+                        <li class="sub_menu"><a href="#">세종톡</a></li>
+                        <li class="sub_menu"><a href="#">맛집게시판</a></li>
+                        <li class="sub_menu"><a href="#">중고거래게시판</a></li>
+                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
+                        <li class="sub_menu"><a href="#">정보게시판</a></li>
+                        <li class="sub_menu"><a href="#">고민게시판</a></li>
+                      </ul>
+                    </li>
+                    <li class="parent_menu parent_menu_havesub Information"><a href="#"><i
+                          class="fas fa-smile"></i>Information<i class="fas fa-angle-up"></i></a>
+                      <ul class="sub_ul sub3">
+                        <li class="sub_menu"><a href="#">학교일정</a></li>
+                        <li class="sub_menu"><a href="#">학생회</a></li>
+                        <li class="sub_menu"><a href="#">세종뉴스</a></li>
+                        <li class="sub_menu"><a href="#">고전독서</a></li>
+                        <li class="sub_menu"><a href="#">강의평가</a></li>
+                        <li class="sub_menu"><a href="#">졸업요건</a></li>
+                      </ul>
+                    </li>
+                    <li class="parent_menu parent_menu_havesub Guide"><a href="#"><i class="fas fa-smile"></i>Guide<i
+                          class="fas fa-angle-up"></i></a>
+                      <ul class="sub_ul sub4">
+                        <li class="sub_menu"><a href="#">취업현황</a></li>
+                        <li class="sub_menu"><a href="#">졸업생</a></li>
+                        <li class="sub_menu"><a href="#">공지사항</a></li>
+                        <li class="sub_menu"><a href="#">기타</a></li>
+                        <li class="sub_menu"><a href="#">기타</a></li>
+                        <li class="sub_menu"><a href="#">기타</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                </div>
 
               </div>
-                <div class="header_icon">
-                    <!-- I have no idea
-                    <ul>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                    </ul>     -->
-                </div>
-
             </div>
-        </div>
-    </header>
+            <div class="mobile_header_title">
+              <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span
+                  class="mobile_span">wesju</span></a>
+            </div>
 
-    <!-- mobile header -->
-    <header id="mobile_header">
-        <div class="mobile_container">
-            <div class="mobile_header">
-                <div class="mobile_header_sidebar">
-                        <!-- https://kutar37.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%99%B8%EB%B6%80%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%88%A8%EA%B8%B0%EA%B8%B0 -->
-                        <!-- http://v2.eyoom.net/bbs/board.php?bo_table=js&wr_id=7 -->
-                        <!-- https://www.youtube.com/watch?v=O9l75KOB2pE -->
-
-                    <!-- hamburger left menu -->
-                    <a href="#" onclick="drop_down_mobile_menu()"><i class="hamburger sidebarCollapse fas fa-bars 4px"></i></a>
-
-                    <!-- when you click hamburger -->
-                    <div class="sidebar">
-                        <div class="sidebar_signinbox">
-                            <a href="#" class="sidebar_signinbox_span signin"><span><i class="fas fa-sign-in-alt 5px"></i>로그인</span></a>
-                            <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
-                        </div>
-
-                        <div class="sidebar_nav"></div>
-<!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
-                        <div class="sidebar_img">
-                          <img src="img/교포1.jpg">
-                          </div>
-                        <div class="sidebar_ul">
-                            <ul>
-                                <li class="parent_menu home"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
-                                <li class="parent_menu parent_menu_havesub features"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
-                                    <ul class="sub_ul sub1">
-                                        <li class="sub_menu"><a href="https://www.naver.com/">자유게시판</a></li>
-                                        <li class="sub_menu"><a href="#">인기게시판</a></li>
-                                        <li class="sub_menu"><a href="#">세종숲</a></li>
-                                        <li class="sub_menu"><a href="#">연애</a></li>
-                                        <li class="sub_menu"><a href="#">정치</a></li>
-                                        <li class="sub_menu"><a href="#">질문</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i class="fas fa-smile"></i>Community><i class="fas fa-angle-up"></i></a>
-                                    <ul class="sub_ul sub2">
-                                        <li class="sub_menu"><a href="#">세종톡</a></li>
-                                        <li class="sub_menu"><a href="#">맛집게시판</a></li>
-                                        <li class="sub_menu"><a href="#">중고거래게시판</a></li>
-                                        <li class="sub_menu"><a href="#">홍보게시판</a></li>
-                                        <li class="sub_menu"><a href="#">정보게시판</a></li>
-                                        <li class="sub_menu"><a href="#">고민게시판</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent_menu parent_menu_havesub Information"><a href="#"><i class="fas fa-smile"></i>Information<i class="fas fa-angle-up"></i></a>
-                                    <ul class="sub_ul sub3">
-                                        <li class="sub_menu"><a href="#">학교일정</a></li>
-                                        <li class="sub_menu"><a href="#">학생회</a></li>
-                                        <li class="sub_menu"><a href="#">세종뉴스</a></li>
-                                        <li class="sub_menu"><a href="#">고전독서</a></li>
-                                        <li class="sub_menu"><a href="#">강의평가</a></li>
-                                        <li class="sub_menu"><a href="#">졸업요건</a></li>
-                                    </ul>
-                                </li>
-                                <li class="parent_menu parent_menu_havesub Guide"><a href="#"><i class="fas fa-smile"></i>Guide<i class="fas fa-angle-up"></i></a>
-                                    <ul class="sub_ul sub4">
-                                        <li class="sub_menu"><a href="#">취업현황</a></li>
-                                        <li class="sub_menu"><a href="#">졸업생</a></li>
-                                        <li class="sub_menu"><a href="#">공지사항</a></li>
-                                        <li class="sub_menu"><a href="#">기타</a></li>
-                                        <li class="sub_menu"><a href="#">기타</a></li>
-                                        <li class="sub_menu"><a href="#">기타</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="mobile_header_title">
-                    <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span class="mobile_span">wesju</span></a>
-                </div>
-
-              <div class="mobile_header_sidebar2">
-                <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin" onclick="drop_down_mobile_menu_right()"><i class="fas fa-fingerprint"></i></a>
-                <div class="sidebar_right">
+            <div class="mobile_header_sidebar2">
+              <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"
+                onclick="drop_down_mobile_menu_right()"><i class="fas fa-fingerprint"></i></a>
+              <div class="sidebar_right">
                 <!--  <div><a href="info_alarm_list.html">알림</a></div>
-                  <div><a href="info.html">채팅</a></div>
-                  <div><a href="info.html">내가쓴글</a></div>
-                  <div><a href="info.html">정보수정</a></div>-->
-                      <ul>
-                          <li><a href="#"><i class="fa fa-bell-o"></i>알림</a></li>
-                          <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>채팅</a></li>
-                          <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내가쓴글</a></li>
-                          <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>정보수정</a></li>
-                        </ul>
-                  <div class="sidebar_img2"><img src="img/교포1.jpg"></div>
+                      <div><a href="info.html">채팅</a></div>
+                      <div><a href="info.html">내가쓴글</a></div>
+                      <div><a href="info.html">정보수정</a></div>-->
+                <ul>
+                  <li><a href="#"><i class="fa fa-bell-o"></i>알림</a></li>
+                  <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>채팅</a></li>
+                  <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내가쓴글</a></li>
+                  <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>정보수정</a></li>
+                </ul>
+                <div class="sidebar_img2"><img src="img/교포1.jpg"></div>
 
-                </div>
-                <!--<i class="far fa-bell"></i>-->
+              </div>
+              <!--<i class="far fa-bell"></i>-->
             </div>
           </div>
         </div>
-    </header>
+      </header>
 
 
-    <nav id="nav">
+      <nav id="nav">
         <div class="container">
-            <div class="row">
-                <div class="nav">
-                    <h2 class="ir_su">Category</h2>
-                    <div>
-                        <h3><i class="fas fa-university"></i>커뮤니티</h3>
-                        <ol>
-                            <li><a href="#"><span>자유게시판</span></a></li>
-                            <li><a href="#"><span>인기게시판</span></a></li>
-                            <li><a href="#"><span>세종숲</span></a></li>
-                            <li><a href="#"><span>정치게시판</span></a></li>
-                            <li><a href="#"><span>질문게시판</span></a></li>
-                            <li><a href="#"><span>정보게시판</span></a></li>
-                        </ol>
-                    </div>
-                    <div>
-                            <h3><i class="fas fa-university"></i>커뮤니티</h3>
-                        <ol>
-                            <li><a href="#"><span>세종톡</span></a></li>
-                            <li><a href="#"><span>맛집게시판</span></a></li>
-                            <li><a href="#"><span>중고거래게시판</span></a></li>
-                            <li><a href="#"><span>홍보게시판</span></a></li>
-                            <li><a href="#"><span>정보게시판</span></a></li>
-                            <li><a href="#"><span>고민게시판</span></a></li>
-                        </ol>
-                    </div>
-                    <div>
-                            <h3><i class="fas fa-university"></i>대학생활</h3>
-                        <ol>
-                            <li><a href="#"><span>일상</span></a></li>
-                            <li><a href="#"><span>맛집</span></a></li>
-                            <li><a href="#"><span>중고거래</span></a></li>
-                            <li><a href="#"><span>동아리</span></a></li>
-                            <li><a href="#"><span>자취방</span></a></li>
-                            <li><a href="#"><span>새내기</span></a></li>
-                        </ol>
-                    </div>
-                    <div>
-                            <h3><i class="fas fa-university"></i>학교정보</h3>
-                        <ol>
-                            <li><a href="#"><span>학교일정</span></a></li>
-                            <li><a href="#"><span>학생회</span></a></li>
-                            <li><a href="#"><span>세종뉴스</span></a></li>
-                            <li><a href="#"><span>고전독서</span></a></li>
-                            <li><a href="#"><span>강의평가</span></a></li>
-                            <li><a href="#"><span>졸업요건</span></a></li>
-                        </ol>
-                    </div>
-                    <div>
-                            <h3><i class="fas fa-university"></i>안내</h3>
-                        <ol>
-                            <li><a href="#"><span>취업현황</span></a></li>
-                            <li><a href="#"><span>졸업생</span></a></li>
-                            <li><a href="#"><span>공지사항</span></a></li>
-                            <li><a href="#"><span>Html 태그</span></a></li>
-                            <li><a href="#"><span>Html 태그</span></a></li>
-                            <li><a href="#"><span>Html 태그</span></a></li>
-                        </ol>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="nav">
+              <h2 class="ir_su">Category</h2>
+              <div>
+                <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                <ol>
+                  <li><a href="#"><span>자유게시판</span></a></li>
+                  <li><a href="#"><span>인기게시판</span></a></li>
+                  <li><a href="#"><span>세종숲</span></a></li>
+                  <li><a href="#"><span>정치게시판</span></a></li>
+                  <li><a href="#"><span>질문게시판</span></a></li>
+                  <li><a href="#"><span>정보게시판</span></a></li>
+                </ol>
+              </div>
+              <div>
+                <h3><i class="fas fa-university"></i>커뮤니티</h3>
+                <ol>
+                  <li><a href="#"><span>세종톡</span></a></li>
+                  <li><a href="#"><span>맛집게시판</span></a></li>
+                  <li><a href="#"><span>중고거래게시판</span></a></li>
+                  <li><a href="#"><span>홍보게시판</span></a></li>
+                  <li><a href="#"><span>정보게시판</span></a></li>
+                  <li><a href="#"><span>고민게시판</span></a></li>
+                </ol>
+              </div>
+              <div>
+                <h3><i class="fas fa-university"></i>대학생활</h3>
+                <ol>
+                  <li><a href="#"><span>일상</span></a></li>
+                  <li><a href="#"><span>맛집</span></a></li>
+                  <li><a href="#"><span>중고거래</span></a></li>
+                  <li><a href="#"><span>동아리</span></a></li>
+                  <li><a href="#"><span>자취방</span></a></li>
+                  <li><a href="#"><span>새내기</span></a></li>
+                </ol>
+              </div>
+              <div>
+                <h3><i class="fas fa-university"></i>학교정보</h3>
+                <ol>
+                  <li><a href="#"><span>학교일정</span></a></li>
+                  <li><a href="#"><span>학생회</span></a></li>
+                  <li><a href="#"><span>세종뉴스</span></a></li>
+                  <li><a href="#"><span>고전독서</span></a></li>
+                  <li><a href="#"><span>강의평가</span></a></li>
+                  <li><a href="#"><span>졸업요건</span></a></li>
+                </ol>
+              </div>
+              <div>
+                <h3><i class="fas fa-university"></i>안내</h3>
+                <ol>
+                  <li><a href="#"><span>취업현황</span></a></li>
+                  <li><a href="#"><span>졸업생</span></a></li>
+                  <li><a href="#"><span>공지사항</span></a></li>
+                  <li><a href="#"><span>Html 태그</span></a></li>
+                  <li><a href="#"><span>Html 태그</span></a></li>
+                  <li><a href="#"><span>Html 태그</span></a></li>
+                </ol>
+              </div>
             </div>
-            <article id="toggle">
-                <div class="container">
-                    <div class="toggle">
-                        <span></span>
-                        <a href="#" class="btn" onclick="drop_down_monitor_menu()">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </nav>
-
-    <main>
-        <section id="contents">
+          </div>
+          <article id="toggle">
             <div class="container">
-              <div class="wrapper">
-<!--제목 및 본문 정보-->
+              <div class="toggle">
+                <span></span>
+                <a href="#" class="btn" onclick="drop_down_monitor_menu()">
+                  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </nav>
+
+      <main>
+        <section id="contents">
+          <div class="container">
+            <div class="wrapper">
+              <!--제목 및 본문 정보-->
               <section id="post_header">
-                  <ul class="post_category">
-                    <li><a href="board.html">자유게시판</a></li>
-                    <li></li>
-                    <li></li>
-                    <li class="edit_post">
-                      <!--post_category 오른쪽 상단 ellipsis-v 클릭-->
-                      <div class="a_o_category">
-                        <a href="#" class="com1"><span>수정</span></a>
-                        <span>|</span>
-                        <a href="#" class="com2"><span>삭제</span></a>
-                      </div>
-                    </li>
-                  </ul>
-<br/>
-                  <div class="post_title"><h1><a href="#">세종 글로벌 버디, 17기 신입버디 모집세종 글로벌 버디, 17기 신입버디 모집</a></h1></div>
-                  <div>
+                <ul class="post_category">
+                  <li><a href="board.html">자유게시판</a></li>
+                  <li></li>
+                  <li></li>
+                  <li class="edit_post">
+                    <!--post_category 오른쪽 상단 ellipsis-v 클릭-->
+                    <div class="a_o_category">
+                      <a href="#" class="com1"><span>수정</span></a>
+                      <span>|</span>
+                      <a href="#" class="com2"><span>삭제</span></a>
+                    </div>
+                  </li>
+                </ul>
+                <br />
+                <div class="post_title">
+                  <h1><a href="#">세종 글로벌 버디, 17기 신입버디 모집세종 글로벌 버디, 17기 신입버디 모집</a></h1>
+                </div>
+                <div>
 
                   <ul class="post_detail">
-                    <li class="chat_writer"><a onclick="open_chat()" href="#" ><i class="fa fa-user" aria-hidden="true"></i>&nbsp<span class="user_name">관리자</span></a><!--글쓴이 클릭 시, 채팅하기 기능-->
+                    <li class="chat_writer"><a onclick="open_chat()" href="#"><i class="fa fa-user"
+                          aria-hidden="true"></i>&nbsp<span class="user_name">관리자</span></a>
+                      <!--글쓴이 클릭 시, 채팅하기 기능-->
                     </li>
                     <li><a href="#"><i class="fas fa-eye"></i></a>&nbsp<span class="views_">35</span></li>
-                    <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>&nbsp<span class="comment_num_">25</span></li>
-                    <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a>&nbsp<span class="writing_time_">2015.03.22 15:30</span></li>
+                    <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>&nbsp<span
+                        class="comment_num_">25</span></li>
+                    <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i></a>&nbsp<span
+                        class="writing_time_">2015.03.22 15:30</span></li>
                   </ul>
-<!--url복사-->
-                  <span class="copy_url"><input type="text" id = "text_url"><button OnClick="copy_url_to_clipboard()"><i class="fa fa-clone" aria-hidden="true" style="font-size:20px;"></i></button></span>
+                  <!--url복사-->
+                  <span class="copy_url"><input type="text" id="text_url"><button OnClick="copy_url_to_clipboard()"><i
+                        class="fa fa-clone" aria-hidden="true" style="font-size:20px;"></i></button></span>
                   <!--출처: https://doolyit.tistory.com/111 [동해둘리의 IT Study]-->
-                </section>
-<hr/>
-<!--본문-->
-                <section>
+              </section>
+              <hr />
+              <!--본문-->
+              <section>
                 <article id="post_content">
-                    <img src=" http://www.sejongpr.ac.kr/dataview/sejong_pr/temp/DEI20210723100722.jpg"/>
-                    <img src="https://i.pinimg.com/originals/e2/0e/11/e20e116c0d645047f2570263611e1970.jpg"/>
-                    <p><br/><br/>
+                  <img src=" http://www.sejongpr.ac.kr/dataview/sejong_pr/temp/DEI20210723100722.jpg" />
+                  <img src="https://i.pinimg.com/originals/e2/0e/11/e20e116c0d645047f2570263611e1970.jpg" />
+                  <p><br /><br />
                     세종 글로벌 버디는 7월 28일부터 8월 4일까지 17기 신입 버디를 모집한다.
-                    <br/><br/>
+                    <br /><br />
                     글로벌 버디는 국제교류센터(CISS) 산하 봉사 자치단체이다. 외국인 학생들과 문화 교류를 통해 친밀한 관계를 형성하는 활동을 한다.
-                    <br/><br/>
+                    <br /><br />
                     활동은 △소모임 운영 △Welcoming Party △무도회 등 매 학기 다양한 활동과 행사를 진행한다.
-                    <br/><br/>
+                    <br /><br />
                     선발은 1차 서류 전형과 2차 면접전형으로 진행된다. 7월 23일에 웹엑스로 진행되는 모집 설명회 참석시 선발 가산점을 받을 수 있다.
-                    <br/><br/>
+                    <br /><br />
                     지원 자격은 1년 동안 활동 가능한 재학생이다. 휴학생과 복학생도 지원이 가능하다.
-                    <br/><br/>
+                    <br /><br />
                     지원 분야는 총 4가지이다. 기획팀, 홍보팀, 행정팀과 영상팀이다. 이 중 하나를 선택하여 지원하면 된다.
-                    <br/><br/>
+                    <br /><br />
                     식활동에 의한 봉사 시간을 인정해 준다. 해외 교환학생 선발 시 가산점의 혜택도 주어진다.
-                    <br/><br/>
+                    <br /><br />
                     접수는 학교 홈페이지 대외협력처 공지 게시판(www.sejong.ac.kr)에서 지원서를 다운한 후 메일(gbsejong16@gmail.com)로 보내면 된다.
-                    <br/><br/>
+                    <br /><br />
                     자세한 내용은 글로벌버디 16기 회장(010-4999-6437)에게 문의하면 된다.
-                    <br/><br/><br/><br/>
+                    <br /><br /><br /><br />
                     취재/ 이유리 홍보기자(yuri4258@naver.com)
-                    <br/><br/></p>
+                    <br /><br />
+                  </p>
                   <div class="evaluate_post">
-                      <div class="like_it">
-                        <button onclick="thumbs_up()"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><div class="like_it_num">3053</div></button>
-                        <!--좋아요 버튼 클릭 시
+                    <div class="like_it">
+                      <button onclick="thumbs_up()"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <div class="like_it_num">3053</div>
+                      </button>
+                      <!--좋아요 버튼 클릭 시
                         <button onclick="thumbs_up()" style="background-color:#c3200e"><i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:white"></i><div class="like_it_num" style="color:white">3053</div></button>-->
-                      </div>
-                      <div class="hate_it">
-                        <button onclick="thumbs_down()"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><div class="hate_it_num">10</div></button>
-                        <!--싫어요 버튼 클릭 시
+                    </div>
+                    <div class="hate_it">
+                      <button onclick="thumbs_down()"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        <div class="hate_it_num">10</div>
+                      </button>
+                      <!--싫어요 버튼 클릭 시
                         <button onclick="thumbs_down()" style="background-color:#283598"><i class="fa fa-thumbs-o-down" aria-hidden="true" style="color:white"></i><div class="hate_it_num" style="color:white">10</div></button>
                         -->
-                        <!--클릭 시 변화 :   border: 2px solid #283598;-->
-                      </div>
+                      <!--클릭 시 변화 :   border: 2px solid #283598;-->
+                    </div>
                   </div>
-                  <span class="edit_post left_ver">
-                  <div class="a_o_category">
-                    <a href="#" class="com1"><i class="fa fa-history" aria-hidden="true"></i><span>목록</span></a>
-                  </div>
-                </span>
-                    <span class="edit_post right_ver">
-                      <!--post_category 오른쪽 상단 ellipsis-v 클릭-->
-                      <div class="a_o_category">
-                        <a href="#" class="com1"><span>수정</span></a>
-                        <span>|</span>
-                        <a href="#" class="com2"><span>삭제</span></a>
-                      </div>
-                    </span>
-                  </article>
-                </section>
+                  <!--<span class="edit_post left_ver">
+                    <div class="a_o_category">
+                      <a href="#" class="com1"><span>목록보기</span></a>
+                    </div>
+                  </span>-->
+                  <span class="edit_post right_ver">
+                    <!--post_category 오른쪽 상단 ellipsis-v 클릭-->
+                    <div class="a_o_category">
+                      <a href="#" class="com1"><span>목록보기</span></a>
+                      <!--<span>|</span>
+                      <a href="#" class="com2"><span>삭제</span></a>-->
+                    </div>
+                  </span>
+                </article>
+              </section>
 
-<hr/>
-<!--댓글-->
-                <section id="post_comments">
-                  <div>
-                    <h1>댓글</h1>
-<!--댓글쓰기-->
-                <div class="write_comment">
-                  <input type="text" value="댓글을 작성해주세요. 비방이나 욕설은 삭제될 수 있습니다." class="hide_comment" onclick="show_comment_box()"/>
-                  <textarea name="name" rows="8" cols="80" ></textarea>
-                  <button onclick="submit_comment"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                </div>
-<!--댓글목록-->      <article>
-<!--베댓은 댓글 목록 상단 노출(ex유튜브 댓글)-->
-<!--예시댓글1-->        <div class="comment">
-                          <span class="img"><img src="http://placehold.it/50x50"/></span>
-                          <span class="writer_name"><a href="#">관리자관리자관리자관리자관리자관리자35</a>
-                          </span>
-                          <div class="writing_time">2021.04.24 15:30</div>
-                          <span class="comm">
-                            <!--댓글 ellipsis-v-->
-                            <div class="a_o_comment">
-                              <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
-                              <span>|</span>
-                              <a href="#" class="com2"><span>삭제</span></a>
-                            </div>
-                          </span>
-                          <div class="edit_cmt">
-<!--댓내용-->              <textarea class="cmt" height="auto" disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
-                        <button onclick="submit_comment()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+              <hr />
+              <!--댓글-->
+              <section id="post_comments">
+                <div>
+                  <h1>댓글</h1>
+                  <!--댓글쓰기-->
+                  <div class="write_comment">
+                    <input type="text" value="댓글을 작성해주세요. 비방이나 욕설은 삭제될 수 있습니다." class="hide_comment"
+                      onclick="show_comment_box()" />
+                    <textarea name="name" rows="8" cols="80"></textarea>
+                    <button onclick="submit_comment"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                  </div>
+                  <!--댓글목록-->
+                  <article>
+                    <!--베댓은 댓글 목록 상단 노출(ex유튜브 댓글)-->
+                    <!--예시댓글1-->
+                    <div class="comment">
+                      <span class="img"><img src="http://placehold.it/50x50" /></span>
+                      <span class="writer_name"><a href="#">관리자관리자관리자관리자관리자관리자35</a>
+                      </span>
+                      <div class="writing_time">2021.04.24 15:30</div>
+                      <span class="comm">
+                        <!--댓글 ellipsis-v-->
+                        <div class="a_o_comment">
+                          <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
+                          <span>|</span>
+                          <a href="#" class="com2"><span>삭제</span></a>
                         </div>
-                        <table class="comment_per" height="20">
-                          <tr>
-                            <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
-                            <!--댓 좋아요 클릭 시
+                      </span>
+                      <div class="edit_cmt">
+                        <!--댓내용--> <textarea class="cmt" height="auto"
+                          disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
+                        <button onclick="submit_comment()"><i class="fa fa-paper-plane-o"
+                            aria-hidden="true"></i></button>
+                      </div>
+                      <table class="comment_per" height="20">
+                        <tr>
+                          <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span
+                                class="good">33</span></button></td>
+                          <!--댓 좋아요 클릭 시
                               <td><button class="like" style="color:#c3200e"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
                               -->
-                            <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
-                            <!--댓 싫어요 클릭 시
+                          <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span
+                                class="bad">10</span></button></td>
+                          <!--댓 싫어요 클릭 시
                           <td><button class="dislike" style="color:#283598"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
                         -->
-                            <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
-                          </tr>
-                        </table>
-                    <article>
-                    <div  class="reply">
-                      <input type="text" value="답댓 달기" class="hide_reply" onclick="show_reply_box()"/>
-                        <div class="write_reply">
-                          <textarea name="name" rows="8" cols="80" ></textarea>
-                          <button onclick="submit_reply"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                      </div>
-  <!--동적생성,댓글 예시-->
-                        <div class="reply_list">
-                          <div>
+                          <td><button class="cmt_comment" onclick="hide_reply_list()"><i
+                                class="far fa-comment-dots"></i><span>10</span></button></td>
+                        </tr>
+                      </table>
+                      <article>
+                        <div class="reply">
+                          <input type="text" value="답댓 달기" class="hide_reply" onclick="show_reply_box()" />
+                          <div class="write_reply">
+                            <textarea name="name" rows="8" cols="80"></textarea>
+                            <button onclick="submit_reply"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                          </div>
+                          <!--동적생성,댓글 예시-->
+                          <div class="reply_list">
+                            <div>
+                              <span class="reply_arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                              <!--예시대댓글1-->
+                              <div class="comment">
+                                <span><img src="http://placehold.it/50x50" /></span>
+                                <span class="writer_name"><a href="#">관리자1</a></span>
+                                <span class="writing_time">2021.04.24 15:30</span>
+                                <span class="comm">
+                                  <!--댓글 ellipsis-v-->
+                                  <div class="a_o_comment">
+                                    <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
+                                    <span>|</span>
+                                    <a href="#" class="com2"><span>삭제</span></a>
+                                  </div>
+                                </span>
+                                <div class="edit_cmt">
+                                  <!--댓내용--> <textarea class="cmt" height="auto"
+                                    disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
+                                  <button onclick="submit_comment()"><i class="fa fa-paper-plane-o"
+                                      aria-hidden="true"></i></button>
+                                </div>
+                                <table class="comment_per" height="20">
+                                  <tr>
+                                    <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span
+                                          class="good">33</span></button></td>
+                                    <td><button class="dislike"><i class="fa fa-thumbs-o-down"
+                                          aria-hidden="true"></i><span class="bad">10</span></button></td>
+                                    <td><button class="cmt_comment" onclick="hide_reply_list()"><i
+                                          class="far fa-comment-dots"></i><span>10</span></button></td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
                             <span class="reply_arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-    <!--예시대댓글1-->        <div class="comment">
-                              <span><img src="http://placehold.it/50x50"/></span>
+                            <!--예시대댓글2-->
+                            <div class="comment">
+                              <span><img src="http://placehold.it/50x50" /></span>
                               <span class="writer_name"><a href="#">관리자1</a></span>
                               <span class="writing_time">2021.04.24 15:30</span>
                               <span class="comm">
@@ -481,609 +555,688 @@
                                 </div>
                               </span>
                               <div class="edit_cmt">
-    <!--댓내용-->              <textarea class="cmt" height="auto" disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
-                            <button onclick="submit_comment()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                                <!--댓내용--> <textarea class="cmt" height="auto"
+                                  disabled="disabled">글로벌 버디는 국제교류센터(CISS) 산하 봉사 자치단체이다. 외국인 학생들과 문화 교류를 통해 친밀한 관계를 형성하는 활동을 한다.글로벌 버디는 국제교류센터(CISS) 산하 봉사 자치단체이다. 외국인 학생들과 문화 교류를 통해 친밀한 관계를 형성하는 활동을 한다.</textarea>
+                                <button onclick="submit_comment()"><i class="fa fa-paper-plane-o"
+                                    aria-hidden="true"></i></button>
+                              </div>
+                              <table class="comment_per" height="20">
+                                <tr>
+                                  <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span
+                                        class="good">33</span></button></td>
+                                  <td><button class="dislike"><i class="fa fa-thumbs-o-down"
+                                        aria-hidden="true"></i><span class="bad">10</span></button></td>
+                                  <td><button class="cmt_comment" onclick="hide_reply_list()"><i
+                                        class="far fa-comment-dots"></i><span>10</span></button></td>
+                                </tr>
+                              </table>
                             </div>
-                            <table class="comment_per" height="20">
-                              <tr>
-                                <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
-                                <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
-                                <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
-                              </tr>
-                            </table>
+
+                            <button onclick="hide_reply_list()" class="extra_reply"><i class="fa fa-angle-double-up"
+                                aria-hidden="true"></i></button>
                           </div>
-</div>
-                              <span class="reply_arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-    <!--예시대댓글2-->        <div class="comment">
-                          <span><img src="http://placehold.it/50x50"/></span>
-                          <span class="writer_name"><a href="#">관리자1</a></span>
-                          <span class="writing_time">2021.04.24 15:30</span>
-                          <span class="comm">
-                            <!--댓글 ellipsis-v-->
-                            <div class="a_o_comment">
-                              <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
-                              <span>|</span>
-                              <a href="#" class="com2"><span>삭제</span></a>
-                            </div>
-                          </span>
-                          <div class="edit_cmt">
-                  <!--댓내용-->              <textarea class="cmt" height="auto" disabled="disabled">글로벌 버디는 국제교류센터(CISS) 산하 봉사 자치단체이다. 외국인 학생들과 문화 교류를 통해 친밀한 관계를 형성하는 활동을 한다.글로벌 버디는 국제교류센터(CISS) 산하 봉사 자치단체이다. 외국인 학생들과 문화 교류를 통해 친밀한 관계를 형성하는 활동을 한다.</textarea>
-                        <button onclick="submit_comment()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+
                         </div>
-                        <table class="comment_per" height="20">
-                          <tr>
-                            <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
-                            <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
-                            <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
-                          </tr>
-                        </table>
+                      </article>
+                    </div>
+                    <!--예시댓글1-->
+                    <div class="comment">
+                      <span class="img"><img src="http://placehold.it/50x50" /></span>
+                      <span class="writer_name"><a href="#">관리자관리자관리자관리자관리자관리자35</a>
+                      </span>
+                      <div class="writing_time">2021.04.24 15:30</div>
+                      <span class="comm">
+                        <!--댓글 ellipsis-v-->
+                        <div class="a_o_comment">
+                          <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
+                          <span>|</span>
+                          <a href="#" class="com2"><span>삭제</span></a>
+                        </div>
+                      </span>
+                      <div class="edit_cmt">
+                        <!--댓내용--> <textarea class="cmt" height="auto"
+                          disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
+                        <button onclick="submit_comment()"><i class="fa fa-paper-plane-o"
+                            aria-hidden="true"></i></button>
                       </div>
-
-                      <button onclick="hide_reply_list()" class="extra_reply"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
-                        </div>
-
-                        </div>
-                    </article>
-              </div>
-              <!--예시댓글1-->        <div class="comment">
-                                        <span class="img"><img src="http://placehold.it/50x50"/></span>
-                                        <span class="writer_name"><a href="#">관리자관리자관리자관리자관리자관리자35</a>
-                                        </span>
-                                        <div class="writing_time">2021.04.24 15:30</div>
-                                        <span class="comm">
-                                          <!--댓글 ellipsis-v-->
-                                          <div class="a_o_comment">
-                                            <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
-                                            <span>|</span>
-                                            <a href="#" class="com2"><span>삭제</span></a>
-                                          </div>
-                                        </span>
-                                        <div class="edit_cmt">
-              <!--댓내용-->              <textarea class="cmt" height="auto" disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
-                                      <button onclick="submit_comment()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                      </div>
-                                      <table class="comment_per" height="20">
-                                        <tr>
-                                          <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
-                                          <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
-                                          <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
-                                        </tr>
-                                      </table>
-              <!--<ul class="comment_per">
+                      <table class="comment_per" height="20">
+                        <tr>
+                          <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span
+                                class="good">33</span></button></td>
+                          <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span
+                                class="bad">10</span></button></td>
+                          <td><button class="cmt_comment" onclick="hide_reply_list()"><i
+                                class="far fa-comment-dots"></i><span>10</span></button></td>
+                        </tr>
+                      </table>
+                      <!--<ul class="comment_per">
                 <li><button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>22</span></button></li>
                 <li><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></li>
                 <li><button class="comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span class="commnet">10</span></button></li>-->
-              <!--답댓, 답댓에 대한 추가답댓(reply)을 달수 없음-->
-                                  <article>
-                                  <div  class="reply">
-                                    <input type="text" value="답댓 달기" class="hide_reply" onclick="show_reply_box()"/>
-                                      <div class="write_reply">
-                                        <textarea name="name" rows="8" cols="80" ></textarea>
-                                        <button onclick="submit_reply"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                    </div>
-                                     <div>
-                                            <span class="reply_arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-                <!--동적생성,댓글 예시-->
-                                      <div class="reply_list">
-                  <!--예시대댓글1-->        <div class="comment">
-                                            <span><img src="http://placehold.it/50x50"/></span>
-                                            <span class="writer_name"><a href="#">관리자1</a></span>
-                                            <span class="writing_time">2021.04.24 15:30</span>
-                                            <span class="comm">
-                                              <!--댓글 ellipsis-v-->
-                                              <div class="a_o_comment">
-                                                <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
-                                                <span>|</span>
-                                                <a href="#" class="com2"><span>삭제</span></a>
-                                              </div>
-                                            </span>
-                                            <div class="edit_cmt">
-                  <!--댓내용-->              <textarea class="cmt" height="auto" disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
-                                          <button onclick="submit_comment()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                          </div>
-                                          <table class="comment_per" height="20">
-                                            <tr>
-                                              <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="good">33</span></button></td>
-                                              <td><button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><span class="bad">10</span></button></td>
-                                              <td><button class="cmt_comment"onclick="hide_reply_list()"><i class="far fa-comment-dots"></i><span>10</span></button></td>
-                                            </tr>
-                                          </table>
-                                        </div>
+                      <!--답댓, 답댓에 대한 추가답댓(reply)을 달수 없음-->
+                      <article>
+                        <div class="reply">
+                          <input type="text" value="답댓 달기" class="hide_reply" onclick="show_reply_box()" />
+                          <div class="write_reply">
+                            <textarea name="name" rows="8" cols="80"></textarea>
+                            <button onclick="submit_reply"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                          </div>
+                          <div>
+                            <span class="reply_arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <!--동적생성,댓글 예시-->
+                            <div class="reply_list">
+                              <!--예시대댓글1-->
+                              <div class="comment">
+                                <span><img src="http://placehold.it/50x50" /></span>
+                                <span class="writer_name"><a href="#">관리자1</a></span>
+                                <span class="writing_time">2021.04.24 15:30</span>
+                                <span class="comm">
+                                  <!--댓글 ellipsis-v-->
+                                  <div class="a_o_comment">
+                                    <a href="#" class="com1" onclick="modify_comment()"><span>수정</span></a>
+                                    <span>|</span>
+                                    <a href="#" class="com2"><span>삭제</span></a>
+                                  </div>
+                                </span>
+                                <div class="edit_cmt">
+                                  <!--댓내용--> <textarea class="cmt" height="auto"
+                                    disabled="disabled">글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로버디는 버디버디글로벌 버디는 버디버디글로벌 버디는 버디버디글로벌 </textarea>
+                                  <button onclick="submit_comment()"><i class="fa fa-paper-plane-o"
+                                      aria-hidden="true"></i></button>
+                                </div>
+                                <table class="comment_per" height="20">
+                                  <tr>
+                                    <td><button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span
+                                          class="good">33</span></button></td>
+                                    <td><button class="dislike"><i class="fa fa-thumbs-o-down"
+                                          aria-hidden="true"></i><span class="bad">10</span></button></td>
+                                    <td><button class="cmt_comment" onclick="hide_reply_list()"><i
+                                          class="far fa-comment-dots"></i><span>10</span></button></td>
+                                  </tr>
+                                </table>
+                              </div>
 
-                                    <button onclick="hide_reply_list()" class="extra_reply"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
-                                      </div>
-</div>
-                                      </div>
-                                  </article>
+                              <button onclick="hide_reply_list()" class="extra_reply"><i class="fa fa-angle-double-up"
+                                  aria-hidden="true"></i></button>
                             </div>
-                  </section>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+              </section>
+            </div>
+
+            <section id="cont_center">
+              <!--게시판 헤더-->
+              <div class="board_list_header">
+                <!--게시판 제목-->
+                <h1 class="board_list_title">공지게시판</h1>
+                <span class="board_description">wesju 이용에 관한 <span>안내사항</span>과 이용자가 지켜야 할 <span>공지사항</span>을
+                  게시합니다.</span>
+                <!--클릭 시 키워드에 해당하는 목록 나열-->
+                <!--<ul class="board_list_keyword">
+                      <li>keyword</li>
+                      <li><a href="#">#전체</a></li>
+                      <li><a href="#">#공지</a></li>
+                      <li><a href="#">#이벤트</a></li>
+                      <li><a href="#">#후기</a></li>
+                      <li><a href="#">#ㅋㅋ</a></li>
+                    </ul>-->
+
+              </div>
+              <!------------------------------------------------->
+              <!--                                             -->
+              <!--                                             -->
+              <!--           monitor.ver 게시판1               -->
+              <!--                                             -->
+              <!--                                             -->
+              <!------------------------------------------------->
+              <div class="board_list_table">
+                <table class="board_list_form" style="table-layout:fixed">
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap">제목</th>
+                      <th>조회수</th>
+                      <th style="width:25px;">추천</th>
+                      <th>작성자</th>
+                      <th>날짜</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!--공지글-->
+                    <tr class="top_notice">
+                      <td><span class="color_notice">공지</span></td>
+                      <td><span class="title_ellipsis"><a href="post.html">게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글
+                            제목입니다게시글 제목입니다</a></span>&nbsp<a href="#">(<span
+                            class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
+                      <td>10</td>
+                      <td>1</td>
+                      <td>관리자</td>
+                      <td>2022.02.22</td>
+                    </tr>
+                    <tr class="top_notice">
+                      <td><span class="color_notice">공지</span></td>
+                      <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span
+                            class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
+                      <td>10</td>
+                      <td>1</td>
+                      <td>관리자</td>
+                      <td>2022.02.22</td>
+                    </tr>
+                    <!--일반게시글-->
+                    <tr>
+                      <td>223010</td>
+                      <td><span class="title_ellipsis"><a href="#">게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글
+                            제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i
+                          class="far fa-images"></i></td>
+                      <td>20</td>
+                      <td>1</td>
+                      <td>관리자</td>
+                      <td>2022.02.22</td>
+                    </tr>
+                    <tr>
+                      <td>223010</td>
+                      <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span
+                            class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
+                      <td>20</td>
+                      <td>1</td>
+                      <td>관리자</td>
+                      <td>2022.02.22</td>
+                    </tr>
+                    <tr>
+                      <td>223010</td>
+                      <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span
+                            class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
+                      <td>20</td>
+                      <td>1</td>
+                      <td>관리자</td>
+                      <td>2022.02.22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!------------------------------------------------->
+              <!--                                             -->
+              <!--                                             -->
+              <!--            mobile.ver 게시판2               -->
+              <!--                                             -->
+              <!--                                             -->
+              <!------------------------------------------------->
+              <div class="mb_board_list_table">
+                <table class="mb_board_list_form">
+                  <tbody>
+                    <!--공지o,이미지 있는 버전-->
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <!--공지x,이미지 있는 버전-->
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <!--공지o, 이미지 없는 버전-->
+                    <tr class=board_list_elem>
+                      <td colspan="2">
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <!--공지x,이미지 없는 버전-->
+                    <tr class=board_list_elem>
+                      <td colspan="2">
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td colspan="2">
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum</a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. </a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+                    <tr class=board_list_elem>
+                      <td>
+                        <!--제목-->
+                        <div class="mb_board_title">
+                          <span class="mb_category">공지</span><a href="#">Lorem</a>
+                        </div>
+                        <!--닉네임, 게시일자, 조회수 순-->
+                        <div class="mb_board_title_bottom">
+                          <span class="nickname">관리자</span>
+                          <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
+                          <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
+                          <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
+                          <span class="date">2022.02.22</span>
+                        </div>
+                      </td>
+                      <!--이미지-->
+                      <td colspan="2">
+                        <span class="table_img"><img src="http://placehold.it/120x80"></span>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!--새글쓰기(모니터)-->
+              <div class="board_list_bottom">
+                <a href="#"><span class="new_post_btn">글쓰기</span></a>
+                <!--검색-(모니터)-->
+                <span class="find_post">
+                  <input type="text" class="board_list_search" onfocusin="focus_on_search_box()"
+                    onfocusout="focus_out_search_box()" /><input type="submit" value="search"
+                    class="board_list_search_btn" />
+                </span>
+              </div>
+
+              <!--페이지 이동-->
+              <table class="board_list_page_idx">
+                <tr>
+                  <td style="width:30px"><a href="#">이전</a></td>
+                  <td style="width:20px"><a href="#">1</a></td>
+                  <td style="width:20px"><a href="#">2</a></td>
+                  <td style="width:20px"><a href="#">3</a></td>
+                  <!--  <td style="width:20px"><a href="#">4</a></td>
+                    <td style="width:20px"><a href="#">5</a></td>
+                    <td style="width:20px"><a href="#">6</a></td>
+                    <td style="width:20px"><a href="#">7</a></td>
+                    <td style="width:20px"><a href="#">8</a></td>
+                    <td style="width:20px"><a href="#">9</a></td>
+                    <td style="width:20px"><a href="#">10</a></td>-->
+                  <td style="width:30px"><a href="#">다음</a></td>
+                </tr>
+              </table>
+
+            </section>
+            <section id="cont_right">
+              <!-- <h3>Responsive Site Right Content</h3> -->
+              <article class="column col5 mt5 account notice24">
+                <!--    <h4 class="ir_su col_tit">로그인박스</h4>
+              <p class="login_msg">세종대 커뮤니티사이트에 로그인해보세요.</p>
+              <a href="#" class="link_login">LOGIN</a>
+
+              <div class="login_sub_area">
+                  <div class="login_sub_area_find">
+                      <a href="#">아이디 /</a>
+                      <a href="#">비밀번호 찾기</a>
+                  </div>
+                  <div class="login_sub_area_join">
+                      <a href="#">회원가입</a>>
+                  </div>
+              </div>-->
+                <!--로그인 후 로그인박스 변경-->
+                <h4 class="ir_su col_tit">로그인박스</h4>
+                <img src="img\profile.jpg" alt="" />
+                <p class="login_msg"><span>어린이대공원</span>님</p>
+                <table>
+                  <tr>
+                    <td><a href="#">알림</a></td>
+                    <td>채팅</td>
+                  </tr>
+                  <tr>
+                    <td>내가쓴글</td>
+                    <td>정보수정</td>
+                  </tr>
+                </table>
+                <div class="box_logout"><a href="#" class="link_logout">LOGOUT</a></div>
+                <!--logout박스는 임시로 넣어놓은 것-->
+              </article>
+              <article class="column col6">
+                <h4 class="ir_su col_tit">title</h4>
+                <p class="ir_su col_desc">설명부분</p>
+
+                <h4 class="ir_su col_tit">공지사항이미지</h4>
+                <p class="col_desc"><img src="img/event_banner.gif" class="cont_right_img"></p>
+                <!-- <p class="col_desc rainbow"></span> -->
+              </article>
+              <article class="column col7">
+                <div class="notice25 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>인기글</h5>
+                  <ol type="1">
+                    <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                    <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                  </ol>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                </div>
+              </article>
+              <article class="column col10">
+                <div class="notice26 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>바로가기</h5>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="http://www.sejong.ac.kr/"><img src="img/short_cut1.PNG">
+                        <div class="txt_on_img">세종대</div>
+                      </a></div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img
+                          src="img/short_cut2.PNG">
+                        <div class="txt_on_img">학사정보</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://do.sejong.ac.kr/"><img src="img/short_cut3.PNG">
+                        <div class="txt_on_img">두드림</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="http://classic.sejong.ac.kr/"><img src="img/short_cut4.PNG">
+                        <div class="txt_on_img">대양<br />휴머니티</div>
+                      </a></div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"><a href="https://library.sejong.ac.kr/index.ax"><img
+                          src="img/short_cut5.PNG">
+                        <div class="txt_on_img">학술<br />정보원</div>
+                      </a></div>
+                  </div>
+                  <div class="img10">
+                    <div class="innerimg10"> <a
+                        href="https://portal.sejong.ac.kr/jsp/login/loginSSL.jsp?rtUrl=portal.sejong.ac.kr/comm/member/user/ssoLoginProc.do"><img
+                          src="img/short_cut6.PNG">
+                        <div class="txt_on_img">세종포탈</div>
+                      </a>
+                    </div>
                   </div>
 
-                  <section id="cont_center">
-                    <!--게시판 헤더-->
-                    <div class="board_list_header">
-                      <!--게시판 제목-->
-                      <h1 class="board_list_title">공지게시판</h1>
-  <span class="board_description">wesju 이용에 관한 <span>안내사항</span>과 이용자가 지켜야 할 <span>공지사항</span>을 게시합니다.</span>
-                      <!--클릭 시 키워드에 해당하는 목록 나열-->
-                      <!--<ul class="board_list_keyword">
-                        <li>keyword</li>
-                        <li><a href="#">#전체</a></li>
-                        <li><a href="#">#공지</a></li>
-                        <li><a href="#">#이벤트</a></li>
-                        <li><a href="#">#후기</a></li>
-                        <li><a href="#">#ㅋㅋ</a></li>
-                      </ul>-->
-
-                    </div>
-                    <!------------------------------------------------->
-                    <!--                                             -->
-                    <!--                                             -->
-                    <!--           monitor.ver 게시판1               -->
-                    <!--                                             -->
-                    <!--                                             -->
-                    <!------------------------------------------------->
-                  <div class="board_list_table">
-                    <table class="board_list_form"style="table-layout:fixed" >
-                       <thead>
-                         <tr>
-                           <th>번호</th>
-                           <th style="width:40%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap">제목</th>
-                           <th>조회수</th>
-                           <th style="width:25px;">추천</th>
-                           <th>작성자</th>
-                           <th>날짜</th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                         <tr class="top_notice">
-                            <td>223010</td>
-                            <td><span class="title_ellipsis"><a href="post.html">게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
-                            <td>10</td>
-                            <td>1</td>
-                            <td>관리자</td>
-                            <td>2022.02.22</td>
-                          </tr>
-                            <tr class="top_notice">
-                               <td>223010</td>
-                               <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
-                               <td>10</td>
-                               <td>1</td>
-                               <td>관리자</td>
-                               <td>2022.02.22</td>
-                             </tr>
-                          <tr>
-                             <td>223010</td>
-                             <td><span class="title_ellipsis"><a href="#">게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다게시글 제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
-                             <td>20</td>
-                             <td>1</td>
-                             <td>관리자</td>
-                             <td>2022.02.22</td>
-                           </tr>
-                        <tr>
-                           <td>223010</td>
-                           <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
-                           <td>20</td>
-                           <td>1</td>
-                           <td>관리자</td>
-                           <td>2022.02.22</td>
-                         </tr>
-                      <tr>
-                         <td>223010</td>
-                         <td><span class="title_ellipsis"><a href="#">게시글 제목입니다</a></span>&nbsp<a href="#">(<span class="comment_num">5</span>)</a>&nbsp&nbsp<i class="far fa-images"></i></td>
-                         <td>20</td>
-                         <td>1</td>
-                         <td>관리자</td>
-                         <td>2022.02.22</td>
-                       </tr>
-                         </tbody>
-                         </table>
+                  <!-- <p class="col_desc rainbow"></span> -->
                 </div>
-                <!------------------------------------------------->
-                <!--                                             -->
-                <!--                                             -->
-                <!--            mobile.ver 게시판2               -->
-                <!--                                             -->
-                <!--                                             -->
-                <!------------------------------------------------->
-                <div class="mb_board_list_table">
-                  <table class="mb_board_list_form">
-                     <tbody>
-                       <tr class=board_list_elem>
-                          <td>
-                            <!--제목-->
-                            <div class="mb_board_title">
-                              <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                            </div>
-                            <!--닉네임, 게시일자, 조회수 순-->
-                            <div class="mb_board_title_bottom">
-                              <span class="nickname">관리자</span>
-                              <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                              <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                              <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                              <span class="date">2022.02.22</span>
-                            </div>
-                          </td>
-                          <!--이미지-->
-                          <td>
-                            <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                          </td>
-                        </tr>
-                        <tr class=board_list_elem>
-                           <td>
-                             <!--제목-->
-                             <div class="mb_board_title">
-                               <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                             </div>
-                             <!--닉네임, 게시일자, 조회수 순-->
-                             <div class="mb_board_title_bottom">
-                               <span class="nickname">관리자</span>
-                               <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                               <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                               <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                               <span class="date">2022.02.22</span>
-                             </div>
-                           </td>
-                           <!--이미지-->
-                           <td colspan="2">
-                             <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                           </td>
-                         </tr>
-                         <tr class=board_list_elem>
-                            <td>
-                              <!--제목-->
-                              <div class="mb_board_title">
-                                <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                              </div>
-                              <!--닉네임, 게시일자, 조회수 순-->
-                              <div class="mb_board_title_bottom">
-                                <span class="nickname">관리자</span>
-                                <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                <span class="date">2022.02.22</span>
-                              </div>
-                            </td>
-                            <!--이미지-->
-                            <td colspan="2">
-                              <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                            </td>
-                          </tr>
-                          <tr class=board_list_elem>
-                             <td>
-                               <!--제목-->
-                               <div class="mb_board_title">
-                                 <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                               </div>
-                               <!--닉네임, 게시일자, 조회수 순-->
-                               <div class="mb_board_title_bottom">
-                                 <span class="nickname">관리자</span>
-                                 <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                 <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                 <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                 <span class="date">2022.02.22</span>
-                               </div>
-                             </td>
-                             <!--이미지-->
-                             <td colspan="2">
-                               <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                             </td>
-                           </tr>
-                           <tr class=board_list_elem>
-                              <td>
-                                <!--제목-->
-                                <div class="mb_board_title">
-                                  <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy</a>
-                                </div>
-                                <!--닉네임, 게시일자, 조회수 순-->
-                                <div class="mb_board_title_bottom">
-                                  <span class="nickname">관리자</span>
-                                  <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                  <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                  <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                  <span class="date">2022.02.22</span>
-                                </div>
-                              </td>
-                              <!--이미지-->
-                            </tr>
-                            <tr class=board_list_elem>
-                               <td>
-                                 <!--제목-->
-                                 <div class="mb_board_title">
-                                   <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                                 </div>
-                                 <!--닉네임, 게시일자, 조회수 순-->
-                                 <div class="mb_board_title_bottom">
-                                   <span class="nickname">관리자</span>
-                                   <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                   <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                   <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                   <span class="date">2022.02.22</span>
-                                 </div>
-                               </td>
-                               <!--이미지-->
-                               <td colspan="2">
-                                 <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                               </td>
-                             </tr>
-                             <tr class=board_list_elem>
-                                <td>
-                                  <!--제목-->
-                                  <div class="mb_board_title">
-                                    <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                                  </div>
-                                  <!--닉네임, 게시일자, 조회수 순-->
-                                  <div class="mb_board_title_bottom">
-                                    <span class="nickname">관리자</span>
-                                    <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                    <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                    <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                    <span class="date">2022.02.22</span>
-                                  </div>
-                                </td>
-                                <!--이미지-->
-                                <td colspan="2">
-                                  <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                                </td>
-                              </tr>
-                              <tr class=board_list_elem>
-                                 <td>
-                                   <!--제목-->
-                                   <div class="mb_board_title">
-                                     <span class="mb_category">공지</span><a href="#">Lorem Ipsum</a>
-                                   </div>
-                                   <!--닉네임, 게시일자, 조회수 순-->
-                                   <div class="mb_board_title_bottom">
-                                     <span class="nickname">관리자</span>
-                                     <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                     <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                     <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                     <span class="date">2022.02.22</span>
-                                   </div>
-                                 </td>
-                                 <!--이미지-->
-                                 <td colspan="2">
-                                   <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                                 </td>
-                               </tr>
-                               <tr class=board_list_elem>
-                                  <td>
-                                    <!--제목-->
-                                    <div class="mb_board_title">
-                                      <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                                    </div>
-                                    <!--닉네임, 게시일자, 조회수 순-->
-                                    <div class="mb_board_title_bottom">
-                                      <span class="nickname">관리자</span>
-                                      <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                      <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                      <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                      <span class="date">2022.02.22</span>
-                                    </div>
-                                  </td>
-                                  <!--이미지-->
-                                  <td colspan="2">
-                                    <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                                  </td>
-                                </tr>
-                                <tr class=board_list_elem>
-                                   <td>
-                                     <!--제목-->
-                                     <div class="mb_board_title">
-                                       <span class="mb_category">공지</span><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a>
-                                     </div>
-                                     <!--닉네임, 게시일자, 조회수 순-->
-                                     <div class="mb_board_title_bottom">
-                                       <span class="nickname">관리자</span>
-                                       <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                       <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                       <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                       <span class="date">2022.02.22</span>
-                                     </div>
-                                   </td>
-                                   <!--이미지-->
-                                   <td colspan="2">
-                                     <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                                   </td>
-                                 </tr>
-                                 <tr class=board_list_elem>
-                                    <td>
-                                      <!--제목-->
-                                      <div class="mb_board_title">
-                                        <span class="mb_category">공지</span><a href="#">Lorem</a>
-                                      </div>
-                                      <!--닉네임, 게시일자, 조회수 순-->
-                                      <div class="mb_board_title_bottom">
-                                        <span class="nickname">관리자</span>
-                                        <span class="views"><i class="fas fa-eye"></i>&nbsp30</span>
-                                        <span class="comments"><i class="far fa-comments"></i>&nbsp5</span>
-                                        <span class="thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp30</span>
-                                        <span class="date">2022.02.22</span>
-                                      </div>
-                                    </td>
-                                    <!--이미지-->
-                                    <td colspan="2">
-                                      <span class="table_img"><img src="http://placehold.it/120x80"></span>
-                                    </td>
-                                  </tr>
+              </article>
 
-                    </tbody>
-                  </table>
-              </div>
-                <!--새글쓰기(모니터)-->
-                <div class="board_list_bottom">
-                  <a href="#"><span class="new_post_btn">글쓰기</span></a>
-                  <!--검색-(모니터)-->
-                  <span class="find_post">
-                    <input type="text" class="board_list_search"onfocusin="focus_on_search_box()" onfocusout="focus_out_search_box()" /
-                    ><input type="submit" value="search" class="board_list_search_btn"/>
-                  </span>
+
+              <article class="column col8">
+                <!-- 검색어: 별점주기 스프링 star rating-->
+                <!-- https://blog.naver.com/tnakekd/220313628830 -->
+                <!-- https://miuus.tistory.com/2 -->
+                <div class="notice27 star_rating pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>강의평가</h5>
+
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="star_title">강의제목-OOO교수님</li>
+                    <li class="star_content">
+                      <<span class="star_rate">
+                        3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
+                    </li>
+                  </ul>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
                 </div>
+              </article>
 
-                <!--페이지 이동-->
-                  <table class="board_list_page_idx">
-                    <tr>
-                      <td style="width:30px"><a href="#">이전</a></td>
-                      <td style="width:20px"><a href="#">1</a></td>
-                      <td style="width:20px"><a href="#">2</a></td>
-                      <td style="width:20px"><a href="#">3</a></td>
-                    <!--  <td style="width:20px"><a href="#">4</a></td>
-                      <td style="width:20px"><a href="#">5</a></td>
-                      <td style="width:20px"><a href="#">6</a></td>
-                      <td style="width:20px"><a href="#">7</a></td>
-                      <td style="width:20px"><a href="#">8</a></td>
-                      <td style="width:20px"><a href="#">9</a></td>
-                      <td style="width:20px"><a href="#">10</a></td>-->
-                      <td style="width:30px"><a href="#">다음</a></td>
-                    </tr>
-                    </table>
+              <article class="column col8">
+                <div class="notice28 pr5">
+                  <h5 class="ir_su">Notice1</h5>
+                  <h5>학사일정</h5>
+                  <ul>
+                    <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                    <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
+                    <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
+                  </ul>
+                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+                </div>
+              </article>
+
+            </section>
+          </div>
 
         </section>
-                      <section id="cont_right">
-                          <!-- <h3>Responsive Site Right Content</h3> -->
-                          <article class="column col5 mt5 account notice24">
-                              <!--    <h4 class="ir_su col_tit">로그인박스</h4>
-                                  <p class="login_msg">세종대 커뮤니티사이트에 로그인해보세요.</p>
-                                  <a href="#" class="link_login">LOGIN</a>
-
-                                  <div class="login_sub_area">
-                                      <div class="login_sub_area_find">
-                                          <a href="#">아이디 /</a>
-                                          <a href="#">비밀번호 찾기</a>
-                                      </div>
-                                      <div class="login_sub_area_join">
-                                          <a href="#">회원가입</a>>
-                                      </div>
-                                  </div>-->
-                <!--로그인 후 로그인박스 변경-->
-                          <h4 class="ir_su col_tit">로그인박스</h4>
-                             <img src="img\profile.JPG" alt=""/>
-                              <p class="login_msg"><span>어린이대공원</span>님</p>
-                              <table>
-                                <tr>
-                                  <td><a href="#">알림</a></td>
-                                  <td>채팅</td>
-                                </tr>
-                                <tr>
-                                  <td>내가쓴글</td>
-                                  <td>정보수정</td>
-                                </tr>
-                              </table>
-                              <div class="box_logout"><a href="#" class="link_logout">LOGOUT</a></div><!--logout박스는 임시로 넣어놓은 것-->
-                          </article>
-                          <article class="column col6">
-                                  <h4 class="ir_su col_tit">title</h4>
-                                  <p class="ir_su col_desc">설명부분</p>
-
-                                  <h4 class="ir_su col_tit">공지사항이미지</h4>
-                                  <p class="col_desc"><img src="http://placehold.it/250x150" class="cont_right_img"></p>
-                                  <!-- <p class="col_desc rainbow"></span> -->
-                          </article>
-                          <article class="column col7">
-                              <div class="notice25 pr5">
-                                  <h5 class="ir_su">Notice1</h5>
-                                  <h5>인기글</h5>
-                                  <ol type="1" >
-                                      <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                      <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                  </ol>
-                                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                              </div>
-                          </article>
-                          <article class="column col10">
-                            <div class="notice26 pr5">
-                            <h5 class="ir_su">Notice1</h5>
-                            <h5>바로가기</h5>
-                            <div class="img10"><div class="innerimg10"><a href="#"><img src="img/대양.png"></a></div></div>
-                            <div class="img10"><div class="innerimg10"><a href="#"><img src="http://placehold.it/80x80"></a></div></div>
-                            <div class="img10"><div class="innerimg10"><a href="#"><img src="http://placehold.it/80x80"></a></div></div>
-                            <div class="img10"><div class="innerimg10"><a href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img src="img/학사정보시스템.png"></a></div></div>
-                            <div class="img10"><div class="innerimg10"><a href="#"><img src="img/두드림.png"></a></div></div>
-                          <div class="img10"><div class="innerimg10">  <a href="#"><img src="http://placehold.it/80x80"></a></div></div>
-                                  <!-- <p class="col_desc rainbow"></span> -->
-                            </div>
-                          </article>
-
-
-                          <article class="column col8">
-                                  <!-- 검색어: 별점주기 스프링 star rating-->
-                                  <!-- https://blog.naver.com/tnakekd/220313628830 -->
-                                  <!-- https://miuus.tistory.com/2 -->
-                                  <div class="notice27 star_rating pr5">
-                                      <h5 class="ir_su">Notice1</h5>
-                                      <h5>강의평가</h5>
-                                      <ul>
-                                          <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                          <li class="star_title">강의제목-교수님</li>
-                                          <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
-                                      </ul>
-
-                                      <ul>
-                                          <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                          <li class="star_title">강의제목-교수님</li>
-                                          <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
-                                      </ul>
-
-                                      <ul>
-                                          <li class="star_rate"><a href="#"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                          <li class="star_title">강의제목-교수님</li>
-                                          <li class="star_content">강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.</li>
-                                      </ul>
-                                      <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                  </div>
-                          </article>
-
-                         <article class="column col8">
-                              <div class="notice28 pr5">
-                                  <h5 class="ir_su">Notice1</h5>
-                                  <h5>학사일정</h5>
-                                  <ul>
-                                      <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                      <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                      <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                  </ul>
-                                  <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                              </div>
-                          </article>
-
-                      </section>
-              </div>
-
-         </section>
-         <!--내비(모바일 용) : 오른쪽 하단 글쓰기, 검색 버튼-->
-         <nav class="floating">
-           <div class="remote_control">
-             <div><a href="#"><i class="fas fa-pencil-alt"></i></a></div>
-               <div></div>
-              </div>
-                 <form action="" class="search-bar">
-                	<input type="search" name="search" pattern=".*\S.*" required>
-                	<button class="search-btn" type="submit">
-                		<span>Search</span>
-                	</button>
-              </form>
-           </nav>
       </main>
       <footer id="footer">
-          <div class="container">
-              <ul>
-                 <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
-                 <li>|</li>
-                 <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
-                 <li>|</li>
-                 <li><a href="#">이용약관</a></li>
-             </ul>
-             <div class="sns_link">
-                       <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png"/></a><a href="https://www.facebook.com/sejongpr/"><img src="img/facebook.png"/></a><a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png"/></a>
-             </div>
-             <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
+        <div class="container">
+          <ul>
+            <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
+            <li>|</li>
+            <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
+            <li>|</li>
+            <li><a href="#">이용약관</a></li>
+          </ul>
+          <div class="sns_link">
+            <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png" /></a><a
+              href="https://www.facebook.com/sejongpr/"><img src="img/FACEBOOK.png" /></a><a
+              href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png" /></a>
           </div>
-          <div class="black"></div>
+          <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
+        </div>
+        <div class="black"></div>
       </footer>
-  </body>
-  </html>
+    </div>
+    <div class="parallax_back_layer"></div>
+  </div>
+</body>
+
+</html>
