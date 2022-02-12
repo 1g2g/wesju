@@ -3,8 +3,9 @@
 .editor textarea { height:400px; } 
 .submit_post,.preview_post { width:50px; margin:5px; height:30px; border:1px solid #555; background-color:white; float:right; border-radius: 5px; font-weight: bold; } 
 .ck-editor__editable { min-height: 500px; } 
+.post_category { list-style: none; } 
 .post_category button:hover { border:1px solid #c3200e; } 
-.backward {border:1px solid #c3200e; color:#c3200e; width:50px; margin:5px; height:30px; background-color:white; float:right; border-radius: 5px; font-weight: bold; } 
+.backward { border:1px solid #c3200e; color:#c3200e; width:50px; margin:5px; height:30px; background-color:white; float:right; border-radius: 5px; font-weight: bold; } 
  #header > .container { background-color: white; } 
 
  /*background-color:rgba(195, 32, 14, 0.2); */
@@ -20,14 +21,15 @@
  .post_category .board_categoty { color:black; } 
 
  /*본문 제목*/
- .post_title { font-size: 20px; height:60px; } 
+ .post_title { font-size: 20px; height:60px; width:80%; } 
  .post_title h1 { width:90%; display:inline-block; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; } 
  /*익명 체크*/
  .writer_chk label { padding-left:5px; } 
+ hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #eee; } 
  @media (max-width:768px){
  .wrapper { padding:10px; } 
  #cont_center { width:100%; } 
 
  /*본문 제목*/
- .post_title h1 { width:90%; font-size:23px; }
+ .post_title h1 { width:90%; font-size:23px; } 
  }
