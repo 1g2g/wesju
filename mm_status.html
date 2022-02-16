@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>지원하기</title>
+    <title>지원현황</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
-    <script src="javascript/event.js"defer></script>
+    <script src="javascript/event.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" type="text/css" href="css/event.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b3b05c95b6.js" crossorigin="anonymous"></script>
 
 </head>
+<script>
+    //진행현황 퍼센티지
+    window.onload = function () { document.getElementById('jb').value = '25'; }
+</script>
+
 <body>
     <div class="wrapper">
         <div class="container">
             <div class="page">
                 <h1 class="title">MeetMatch</h1>
-                <p class="open_summary">진행상황을 보려면 바를 클릭해주세요</p>
-                <details>
-                    <summary>
-                      <progress onclick="jbFunc()" id="jb"value="0" min="10" max="100"></progress>
-                    </summary>
+                <p class="progress">매칭결과는 발표날에 공개됩니다.</p>
+                <div data-aos="flip-left" class="details">
+                    <!--<progress id="jb" value="0" min="10" max="100"></progress>-->
+
                     <table border="1px" style="border-color:white">
                         <tr>
                             <td>지원자 id</td>
-                            <td>초대승인현황</td>
-                            <td>매칭현황</td>
-                            <td>선택날짜</td>
+                            <td>성별</td>
+                            <td>매칭결과</td>
+                            <!--매칭결과는 성공/실패-->
+                            <td>발표날짜</td>
                         </tr>
                         <tr>
                             <td>sejongstudent1</td>
-                            <td>yes</td>
-                            <td>no</td>
+                            <td>M</td>
+                            <td>-</td>
                             <td>22/03/02</td>
                         </tr>
                         <tr>
                             <td>sj2</td>
-                            <td>no</td>
-                            <td>no</td>
+                            <td>M</td>
+                            <td>-</td>
                             <td>22/03/02</td>
                         </tr>
                     </table>
-                    <div class="geeks cancel_event">
-                        <a href="#"onMouseOver='this.innerHTML="MeetMatch 취소하기"'; onMouseOut='this.innerHTML="MeetMatch 취소하기"'><i class="fas fa-mouse"></i></a>
-                    </div>
-                </details>
+                </div>
+                <div class="geeks cancel_event">
+                    <a href="#" onMouseOver='this.innerHTML="MeetMatch 취소하기"' ;
+                        onMouseOut='this.innerHTML="MeetMatch 취소하기"'><i class="fas fa-mouse"></i></a>
+                </div>
             </div>
             <div class="page">
             </div>
         </div>
-    </div>  
+    </div>
     <script>
         AOS.init();
         //https://michalsnik.github.io/aos/
     </script>
-  </body>
-  </html>
+</body>
+
+</html>
