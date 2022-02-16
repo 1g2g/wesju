@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>지원하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
+    <script src="javascript/event.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/event.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b3b05c95b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="page">
+                <h1 class="title">MeetMatch</h1>
+                <div class="inrow">
+                    <p class="select_date">성별을 입력해주세요</p>
+                    <input type="radio" value="M" name="gender"><label>M</label>
+                    &nbsp
+                    <input type="radio" value="F" name="gender"><label>F</label>
+                </div>
+                <div class="inrow"> 
+                    <label>개인정보 제공에 동의하십니까?&nbsp</label>
+                    <input onclick="collect_personal()" type="checkbox" class="agree">
+                    <label>Yes</label>
+                </div>
+                <!--다음 페이지 넘어감-->
+                <div class="turn_next"><a href="#page2"><i class="fa-solid fa-angle-down"></i></a></div>
+            </div>
+            <div class="page">
+                    <a name="page2">
+                        <h1 class="title">MeetMatch</h1>
+                    </a>
+                <div data-aos="flip-left" class="select_data">
+                    <div class="inrow select">
+                        <p class="select_date">인원을 선택해주세요</p>
+                        <select class="personnel" name="personnel" onchange="select_personnel()">
+                            <option value="1">1명</option>
+                            <option value="2">2명</option>
+                            <option value="4">4명</option>
+                        </select>
+                    </div>
+                    <div class="enter_info">
+                        <div class="info">
+                            <label>멤버 아이디</label>
+                            <!--input의 id가 유효하면 i에 display:flex 처리-->
+                            <div class="inrow input_check chk1">
+                                <input type="text">&nbsp<i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="inrow input_check chk2">
+                                <input type="text">&nbsp<i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="inrow input_check chk3">
+                                <input type="text">&nbsp<i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="inrow input_check chk4">
+                                <input type="text">&nbsp<i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="geeks submit">
+                    <!--아이디 유효하지 않으면 제출 못 함-->
+                    <a href="#"  onclick="mm_submit()"onMouseOver='this.innerHTML="Submit"'; onMouseOut='this.innerHTML="Submit"'><i class="fas fa-mouse"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        AOS.init();
+        //https://michalsnik.github.io/aos/
+    </script>
+</body>
+
+</html>
