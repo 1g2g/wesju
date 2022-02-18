@@ -72,6 +72,9 @@ table td { font-size: 15px; padding: 10px; vertical-align: top; border: 1px soli
 table td :first-child { width:35%; } 
 table tr:first-child { text-align: center; } 
 .cancel_event { margin-top:50px; } 
+/*list*/
+.list tr:hover{background-color: rgb(40, 161, 135)}
+.list tr:first-child{background:none;}
 @media (max-width:768px) and (min-width:320px){
  .glitch { font-size:10vw; } 
  .page h1 { font-size:7vw; display: block;; } 
