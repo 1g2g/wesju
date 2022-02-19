@@ -6,6 +6,7 @@ document.querySelector('.parallax_page').addEventListener('scroll', function () 
     let fullHeight = document.body.scrollHeight;
     let windowWidth = window.innerWidth;
     const nav = document.getElementById('cont_right');
+    console.log(fullHeight);
     //content의 너비보다 창이 넓으면 cont_right가 스크롤 이동에 따라 움직임
     if (scrollLocation >= 469 && windowWidth >= 1162) {
         nav.style.position = "fixed";
@@ -23,7 +24,8 @@ document.querySelector('.parallax_page').addEventListener('scroll', function () 
     else {
         nav.style.position = "static";
     }
-    if (scrollLocation >= 1550) {
+    if (scrollLocation >= 1420) {//cont_center높이
         nav.style.bottom = "60px";//1522+1588/2, footer높이 60
     }
+    console.log(scrollLocation);
 });
