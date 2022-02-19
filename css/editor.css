@@ -14,22 +14,54 @@
  a { color:black; } 
  a:hover { color:#c3002e; text-decoration: none; } 
  /*post_header*/
- #post_header { height:120px; margin-left: 5px; margin-top:20px; } 
+ #post_header { height:120px;  margin-top:20px; } 
  .post_category li { float:left; margin-top: 10px; } 
  .post_category { height:30px; } 
  .post_category li:nth-child(3) a { color:#c3002e; } 
  .post_category .board_categoty { color:black; } 
+ .post_category{border-radius: 5px; }
 
  /*본문 제목*/
  .post_title { font-size: 20px; height:60px; width:100%; } 
  .post_title h1 { width:90%; display:inline-block; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; } 
  /*익명 체크*/
- .writer_chk label { padding-left:5px; } 
- hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #eee; } 
+ .writer_chk label { padding-left:5px;  margin: 10px 0; } 
+  
+ .editor{position:relative;top:15px;} 
+ /*rating ver
+ .rating .post_title{width:100%;height:50px;display: flex;}
+ .rating #post_main_title{flex:1;}
+ .rating .rating_star{flex:0.1;    padding-left: 25px;font-size: 18px;width:50px;position:relative;  left:30px;border:1.5px solid #c3200e;border-radius: 3px;}
+ .rating .max_rate{position:relative;   right: 30px; line-height: 50px;}
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   background-color: red;color:aqua;
+ }  */
  @media (max-width:768px){
  .wrapper { padding:10px; } 
  #cont_center { width:100%; } 
-
+ .backward{float:left;margin-left:0px;}
+ .post_category{    width: 100%;margin: 5px 0;}
  /*본문 제목*/
  .post_title h1 { width:90%; font-size:23px; } 
+  /*rating ver
+  .rating .post_title{}
+  .rating .rating_star{padding:10px}
+  .rating .max_rate{right:10%;}
+  .rating .post_title{width:100%;display: flex;}
+  .rating #post_main_title{flex:1;}
+  .rating .rating_star{flex: 0.25;
+    padding-left: 3%;
+    font-size: 18px;
+    width: 80px;
+    position: relative;
+    left: 30px;
+    border: 1.5px solid #c3200e;
+    border-radius: 3px;}
+  .rating .max_rate{position:relative; right: 5%; line-height: 50px;} */
+   /*익명 체크*/
+ .writer_chk label { padding-left:5px;  }  
+  .editor{top:55px;}
+
+  
  }
