@@ -1,5 +1,4 @@
- @charset "UTF-8";
- /* <!-- making a tab : https://blog.naver.com/cjsun1314/221581244076 --> */
+ @charset "UTF-8"; /* <!-- making a tab : https://blog.naver.com/cjsun1314/221581244076 --> */
 
  /* ****************************************************************** */
  /* */
@@ -66,7 +65,8 @@
  #cont_center { float:left; width: 900px; background-color: white; min-height: 1000px; } 
  #cont_right { width: 259px; overflow:hidden; border-left:1px solid #dbdbdb; background-color: white; } /* #cont_right : overflow:hidden이 float:left가 작동하게 합니다. 이 속성이 없을시 아래로 내려갑니다. */
  #footer { position:relative; border-top:1px solid #dbdbdb; background-color:#c3002e; /*height:40px; line-height:40px; radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */ } 
- #footer .container>.copyright { font-size: 12px; color:white; display: block; clear:both; display: inline-block; width:80%; margin-top:6px; } 
+ :is(#footer) .container>.copyright,.email_address { font-size: 12px; color:white; display: block; clear:both; display: inline-block; width:80%; margin-top:6px; } 
+ .email_address { width:60%; } 
  #footer a { color:white; } 
  #footer ul { display: block; margin:6px 0; list-style: none; } 
  #footer li { float:left; color:white; margin-right:10px; list-style: none; } 
@@ -99,8 +99,8 @@
  .header > .header_menu .header_menu_intro { display:inline-block; height:10px; } /* display:inlie-block 이 header_menu_signinbox를 float:left 없이 옆으로 정렬하게 합니다.*/
  .header > .header_menu .header_menu_intro_a { font-size:11px; font-family:"돋움",Dotum,"돋움체",DotumChe; } 
  .header > .header_menu a:hover { color:black; } 
- .header > .header_menu .header_menu_signinbox { clear:both; background-color:white; display:inline-block; border:1px solid grey; border-radius:5px; position:relative;  } 
- /*.header_menu_signinbox_span{width:80px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); }*/
+ .header > .header_menu .header_menu_signinbox { clear:both; background-color:white; display:inline-block; border:1px solid grey; border-radius:5px; position:relative; } 
+ /*.header_menu_signinbox_span { width:80px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); } */
  .header > .header_menu .header_menu_signinbox a { padding:4px; } 
  /*로그인 후*/
  .enter_wesju { margin-left: -20px; } 
@@ -218,7 +218,8 @@
  /*col별*/
  /*이미지->비디오*/
  .col1 iframe { width:890px; height:400px; } 
- .col1 img { height:150px; width:890px; } 
+ .col { overflow:hidden; } 
+ .col1 img { height:200px; width:890px; object-fit:cover; } 
 
  /*로고 display*/
  .col3 .slide { padding:15px; } 
@@ -446,7 +447,7 @@
  .innerimg10 img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%; object-fit: cover; } 
 
  /*footer*/
- #footer .container,#footer .black{padding:0 5px;}
+ #footer .container,#footer .black { padding:0 5px; } 
  #footer .container>.copyright { width:100%; } 
  #footer .sns_link { display: none; } 
  }
