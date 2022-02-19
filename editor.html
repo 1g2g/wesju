@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>에디터</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/link.css">
   <link rel="stylesheet" type="text/css" href="css/chatList.css">
@@ -399,9 +398,10 @@
             <div class="wrapper">
               <!--제목 및 본문 정보-->
               <section id="post_header" onclick="select_category()">
-                <ul class="post_category">
-                  <li>
-                    <select onchange="option_change()" class="upper_cate">
+                <button class="submit_post">제출하기</button>
+                <button class="preview_post">미리보기</button>
+                <button class="backward">뒤로가기</button>
+                    <select onchange="option_change()" class="post_category">
                       <optgroup label="커뮤니티1">
                         <option>자유게시판</option>
                         <option>인기게시판</option>
@@ -441,19 +441,13 @@
                         <option>질문하기</option>
                       </optgroup>
                     </select>
-                  </li>
-
-                  <button class="submit_post">제출하기</button>
-                  <button class="preview_post">미리보기</button>
-                  <button class="backward">뒤로가기</button>
-                </ul>
                 <br />
                 <div class="post_title">
                   <input type="text" id="post_main_title" value="제목을 입력하세요 (20자 제한)"maxlength = "20" onfocus="this.value=''; return true" />
                 </div>
                 <div class="writer_chk"><input type="checkbox" /><label>익명</label></div>
               </section>
-              <hr />
+               
               <!--본문-->
               <section class="editor">
                 <textarea id="textarea" class="ckeditor" placeholder="내용입니다." autofocus required wrap="hard" rows=""
