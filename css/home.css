@@ -1,1002 +1,458 @@
-<!DOCTYPE html>
-<html lang="en">
+ @charset "UTF-8"; /* <!-- making a tab : https://blog.naver.com/cjsun1314/221581244076 --> */
 
-<head>
-    <!-- when Korean is breaking -->
-    <!-- https://tysoso.tistory.com/6 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>wesju홈</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/69fe52bc75.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css/link.css">
-    <link rel="stylesheet" type="text/css" href="css/chatList.css">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <script src="javascript/chat.js" defer></script>
-    <script src="javascript/join.js" defer></script>
-    <script src="javascript/link.js" defer></script>
-    <script src="javascript/home.js" defer></script>
-    <style></style>
-    <script>
+ /* ****************************************************************** */
+ /* */
+ /* Reset.css */
+ /* */
+ /* ****************************************************************** */
+ :root { --text-color:#f0f4f5; /* sejong crimson red : #c3002e sejong ivory :#fffde4 */
+ --background-color:#c3002e; --content-font-color:#111; --content-li-before-color:#111; --content-h5-border-bottom-color:#333; --space-gray:#ececec; --white-gray:#f7f7f7; --accent-color:white; } 
+ body,div,ul,li,dl,dd,dt,ol,h1,h2,h3,h4,h5,h6,input,fieldset,legend,p,select,table,th,td,tr,textarea,button,form,figure,figcaption { margin:0; padding:0; } 
 
-    </script>
+ /* a link reset */
+ a { color: #222; text-decoration: none; } 
+ a:hover { color: #4c6a96; } 
+ /* font reset */
+ body, input, textarea, select, button, table,th,td { font-family: "나눔 고딕", "Nanum Gothic","나눔 바른 고딕", "Nanum Barun Gothic", "맑은 고딕", "Malgun Gothic", helvetica, sans-serif; font-size:12px; line-height:1.7; } 
 
-</head>
+ /* bullet sign reset */
+ /* dl,ul,ol,menu,li { list-style:none; } */
 
-<body>
-    <!-- desktop header -->
-    <div class="parallax_page">
-        <div id="group2" class="parallax">
-            <div class="overlay"></div>
-            <header id="header">
-                <div class="container">
-                    <div class="header">
-                        <div class="header_title">
-                            <a href="#" class="header_title_img">
-                                <div>위세종<span>wesju</span></div>
-                            </a>
-                            <!-- <a href="#" class="header_title_img"><img src="https://via.placeholder.com/200x60" width="200" height="60" alt="wesejong"/></a> 나중에는 아마 이미지를 사용할것입니다. 이미지 관련해서 아래가 뜨는것은 https://blog.naver.com/jhc9639/222174944051-->
-                        </div>
-                        <div class="header_search">
-                            <input type="text" placeholder="search..." />
-                            <button type="button">검색</button>
-                        </div>
-                        <div class="header_menu">
-                            <div class="header_menu_intro">
-                                <a href="#" class="header_menu_intro_a notice" onmouseover="show_alarm()">알림<span
-                                        class="unread">˚</span></a>
-                                <a href="#" class="header_menu_intro_a chat" onmouseover="show_chat()">채팅</a>
-                                <a href="#" class="header_menu_intro_a mypost" onmouseover="show_post()">내가쓴글</a>
-                                <a href="#" class="header_menu_intro_a privacypolicy">정보수정</a>
+ /* IR 효과는 그냥 주석이라 생각하자 */
+ .ir_pm { display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px; } /* 의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method) */
+ .ir_wa { display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%; } /* 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때(WA IR) */
+ .ir_su { overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px; } /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */
 
-                                <!--로그인 전-->
-                                <div class="header_menu_signinbox">
-                                    <a href="#"
-                                        class="header_menu_intro_a header_signinbox_span signin"><span>로그인</span></a>
-                                    <span class="header_menu_intro header_signinbox_span">|</span>
-                                    <a href="#"
-                                        class="header_menu_intro_a header_signinbox_span join"><span>회원가입</span></a>
-                                </div>
+ /* margin */
+ .mt5 { margin-top:5px !important; } 
+ .mt10 { margin-top:10px !important; } 
+ .mt15 { margin-top:15px !important; } 
 
-                                <!--로그인 후
-                                <div class="header_menu_signinbox enter_wesju">
-                                    <span class="header_menu_intro_a header_signinbox_span">"<a href="#">어린이대공원</a>"님
-                                        환영합니다.</span>-->
+ /* padding */
+ .pr5 { padding-right:5px !important; } 
 
-                            </div>
-                            <!--알림목록-->
-                            <section>
-                                <div class="alarm_list">
-                                    <table>
-                                        <tr>
-                                            <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.
-                                                </span><a href="#" class="alarm_list_cmt"><i
-                                                        class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다."
-                                                </a></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.
-                                                </span><a href="#" class="alarm_list_cmt"><i
-                                                        class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다."
-                                                </a></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.
-                                                </span><a href="#" class="alarm_list_cmt"><i
-                                                        class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다."
-                                                </a></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자1가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.
-                                                </span><a href="#" class="alarm_list_cmt"><i
-                                                        class="fas fa-arrow-right"></i> "안녕하세요 컴퓨터공학과 18학번 세종대왕입니다."
-                                                </a></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자3가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자5가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자6가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>이용자2가 <a href="#">자유게시판</a> 게시글 "<a href="#">공지사항</a>"에 댓글을
-                                                    남겼습니다.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>관리자로부터 채팅이 왔습니다.</span></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </section>
-                            <!--채팅목록-->
-                            <section>
-                                <div class="chat_list">
-                                    <table>
-                                        <tr onclick="open_chat()">
-                                            <td><img src="img/profile.jpg" /></td>
-                                            <td><span class="contactor">이용자2</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="img/profile.jpg" /></td>
-                                            <td><span class="contactor">관리자</span></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </section>
-                            <!--내가쓴글 목록-->
-                            <section>
-                                <div class="post_list">
-                                    <table>
-                                        <tr>
-                                            <td> 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. </td>
-                                            <td>2015.03.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>공지사항2</span></td>
-                                            <td>2015.03.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>공지사항3</span></td>
-                                            <td>2015.03.22</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </section>
+ /* ************************************************************************** */
+ /* */
+ /* 배경 스크롤 속도 조절 */
+ /*참고 : https://keithclark.co.uk/articles/pure-css-parallax-websites/demo3/ */
+ /* */
+ /* ************************************************************************** */
+ /*배경 스크롤*/
+ html,body { position:fixed; height:100%; width:100%; overflow-y: hidden; height: -webkit-fill-available; transform: translate3d(0,0,0); -webkit-transform:translateZ(0); -webkit-overflow-scrolling:touch; scroll-behavior: smooth; /*height: -webkit-fill-available; */ } 
+ .parallax_page { height: 100vh; /*height:calc(var(--vh,1vh)*100); */
+ min-height: -webkit-fill-available; width: 100vw; -webkit-overflow-scrolling: touch; overflow-x: hidden; overflow-y: scroll; scroll-behavior: smooth; } 
+ .parallax_back_layer { overflow: hidden; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url(../img/06.jpg); background-size:cover; filter: grayscale(100%); opacity: 0.2; min-height:1000px; z-index: -3; } 
+ /* .parallax_page { height: 100vh; overflow-x: hidden; overflow-y: scroll; -webkit-perspective: 100px; perspective: 100px; } 
+ .parallax { position: relative; height: 100vh; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; } 
+ .parallax_base_layer { -webkit-transform: translateZ(0); transform: translateZ(0); position: absolute; top: 0; left: 0; right: 0; bottom: 0; } 
+ .parallax_back_layer { -webkit-transform: translateZ(-100px) scale(2); transform: translateZ(-100px) scale(2); overflow: hidden; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url(../img/06.jpg); background-size:cover; filter: grayscale(100%); opacity: 0.2; height:2000px; z-index: -3; } 
+ */
+ /* ****************************************************************** */
+ /* */
+ /* LAYOUT */
+ /* */
+ /* ****************************************************************** */
 
-                        </div>
-                        <div class="header_icon">
-                            <!-- I have no idea
-                    <ul>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                        <li><a href="#"><span>HTML5</span></a></li>
-                    </ul>     -->
-                        </div>
+ #header { background-color:#ffffff; } 
+ #header > .container { background-color:blue; } 
 
-                    </div>
-                </div>
-            </header>
+ #mobile_header { background-color:#ffffff; } 
+ #mobile_header > .mobile_container { background-color:blue; vertical-align:bottom; } 
 
-            <!-- mobile header -->
-            <header id="mobile_header">
-                <div class="mobile_container">
-                    <div class="mobile_header">
-                        <div class="mobile_header_sidebar">
-                            <!-- https://kutar37.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94-%EC%99%B8%EB%B6%80%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%88%A8%EA%B8%B0%EA%B8%B0 -->
-                            <!-- http://v2.eyoom.net/bbs/board.php?bo_table=js&wr_id=7 -->
-                            <!-- https://www.youtube.com/watch?v=O9l75KOB2pE -->
+ #nav { background-color:#c3002e; /*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */ } 
 
-                            <!-- hamburger left menu -->
-                            <a href="#" onclick="drop_down_mobile_menu()"><i
-                                    class="hamburger sidebarCollapse fas fa-bars 4px"></i></a>
+ #contents .container { border-right:1px solid #dbdbdb; border-left:1px solid #dbdbdb; } 
+ #cont_center { float:left; width: 900px; background-color: white; min-height: 1000px; } 
+ #cont_right { width: 259px; overflow:hidden; border-left:1px solid #dbdbdb; background-color: white; } /* #cont_right : overflow:hidden이 float:left가 작동하게 합니다. 이 속성이 없을시 아래로 내려갑니다. */
+ #footer { position:relative; border-top:1px solid #dbdbdb; background-color:#c3002e; /*height:40px; line-height:40px; radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */ } 
+ :is(#footer) .container>.copyright,.email_address { font-size: 12px; color:white; display: block; clear:both; display: inline-block; width:80%; margin-top:6px; } 
+ .email_address { width:60%; } 
+ #footer a { color:white; } 
+ #footer ul { display: block; margin:6px 0; list-style: none; } 
+ #footer li { float:left; color:white; margin-right:10px; list-style: none; } 
+ #footer li::marker { display: none; list-style: none; } 
+ /*#footer li::after { content:""; } */
 
-                            <!-- when you click hamburger -->
-                            <div class="sidebar">
-                                <div class="sidebar_signinbox">
-                                    <a href="#" class="sidebar_signinbox_span signin"><span><i
-                                                class="fas fa-sign-in-alt 5px"></i>로그인</span></a>
-                                    <a href="#" class="sidebar_signinbox_span join"><span>회원가입</span></a>
-                                </div>
+ .sns_link { float:right; margin:5px; display: inline-block; } 
+ .sns_link img { margin:0 10px; float:left; width:35px; height:35px; border-radius: 20px; } 
 
-                                <div class="sidebar_nav"></div>
-                                <!--소메뉴 클릭 시 메뉴바 닫히면서 링크따라 이동-->
-                                <div class="sidebar_img">
-                                    <img src="img/교포1.jpg">
-                                </div>
-                                <div class="sidebar_ul">
-                                    <ul>
-                                        <li class="parent_menu home"><a href="#"><i class="fas fa-home"></i>HOME</a>
-                                        </li>
-                                        <li class="parent_menu parent_menu_havesub features"><a href="#"><i
-                                                    class="fas fa-smile"></i>Community<i
-                                                    class="fas fa-angle-up"></i></a>
-                                            <ul class="sub_ul sub1">
-                                                <li class="sub_menu"><a href="#">전체보기<span
-                                                            class="new_post mb_new_post">&nbspnew</span></a></li>
-                                                <!--새로운 게시글 없는 자유게시판-->
-                                                <!--<li class="sub_menu"><a href="#">자유게시판</a></li>-->
-                                                <li class="sub_menu"><a href="#">인기게시판</a></li>
-                                                <li class="sub_menu"><a href="#">세종숲</a></li>
-                                                <li class="sub_menu"><a href="#">질문게시판</a></li>
-                                                <li class="sub_menu"><a href="#">코딩게시판</a></li>
-                                                <li class="sub_menu"><a href="#">홍보게시판</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent_menu parent_menu_havesub Dashboard"><a href="#"><i
-                                                    class="fas fa-smile"></i>Community<i
-                                                    class="fas fa-angle-up"></i></a>
-                                            <ul class="sub_ul sub2">
-                                                <li class="sub_menu"><a href="#">세종톡</a></li>
-                                                <li class="sub_menu"><a href="#">중고거래게시판</a></li>
-                                                <li class="sub_menu"><a href="#">일상게시판</a></li>
-                                                <li class="sub_menu"><a href="#">연애게시판</a></li>
-                                                <li class="sub_menu"><a href="#">고민게시판</a></li>
-                                                <li class="sub_menu"><a href="#">정치게시판</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent_menu parent_menu_havesub Information"><a href="#"><i
-                                                    class="fas fa-smile"></i>College Life<i
-                                                    class="fas fa-angle-up"></i></a>
-                                            <ul class="sub_ul sub3">
-                                                <li class="sub_menu"><a href="#">새내기</a></li>
-                                                <li class="sub_menu"><a href="#">동아리</a></li>
-                                                <li class="sub_menu"><a href="#">맛집</a></li>
-                                                <li class="sub_menu"><a href="#">스터디</a></li>
-                                                <li class="sub_menu"><a href="#">졸업생</a></li>
-                                                <li class="sub_menu"><a href="#">자취방</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent_menu parent_menu_havesub Information"><a href="#"><i
-                                                    class="fas fa-smile"></i>Information<i
-                                                    class="fas fa-angle-up"></i></a>
-                                            <ul class="sub_ul sub5">
-                                                <li class="sub_menu"><a href="#">학사일정</a></li>
-                                                <li class="sub_menu"><a href="#">학생회게시판</a></li>
-                                                <li class="sub_menu"><a href="#">학교소식</a></li>
-                                                <li class="sub_menu"><a href="#">족보</a></li>
-                                                <li class="sub_menu"><a href="#">강의평가</a></li>
-                                                <li class="sub_menu"><a href="#">졸업요건</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent_menu parent_menu_havesub Guide"><a href="#"><i
-                                                    class="fas fa-smile"></i>etc<i class="fas fa-angle-up"></i></a>
-                                            <ul class="sub_ul sub5">
-                                                <li class="sub_menu"><a href="#">취업후기</a></li>
-                                                <li class="sub_menu"><a href="#">학업상담</a></li>
-                                                <li class="sub_menu"><a href="#">공지사항</a></li>
-                                                <li class="sub_menu"><a href="#">문의사항</a></li>
-                                                <li class="sub_menu"><a href="#">피드백하기</a></li>
-                                                <li class="sub_menu"><a href="#">369게임</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+ #footer .black { position:relative; bottom:-5px; background-color: black; height:5px; width:100%; } 
+ /* container */
+ .container { width: 1160px; height:auto; margin:0 auto; overflow:hidden; } 
+ .mobile_container { width: 1160px; height:auto; margin:0 auto; overflow:hidden; } 
 
-                                </div>
+ /* desktopheader */
+ #header { position:fixed; width:100%; margin-top:-50px; z-index: 100; box-shadow: 2px 2px 5px #888888; } 
+ nav { margin-top:50px; } 
+ .header { height: 50px; background-color:#ffffff; } 
+ .header > .header_title { float:left; width: 150px; height: 50px; background-color:white; } 
+ .header > .header_title a { width: 150px; height: 50px; background-color:white; font-size:30px; font-family:'Open Sans',sans-serif; } 
+ .header > .header_title a span { font-size:20px; font-family:'Open Sans',sans-serif; } 
+ .header > .header_title a:hover { color:black; } 
 
-                            </div>
-                        </div>
-                        <div class="mobile_header_title">
-                            <a href="#" class="mobile_header_title_img"><span class="kor_logo">위세종</span><span
-                                    class="mobile_span">wesju</span></a>
-                        </div>
+ .header > .header_search { float:left; text-align:center; line-height:60px; width: 400px; height: 50px; } 
+ .header > .header_search input[type=text] { width: 350px; height: 20px; border-radius:4px; font-size:12px; padding: 2px 2px 2px 2px; border:2px solid var(--background-color) } 
+ .header > .header_search button { background-color: var(--background-color); width: 30px; height: 25px; line-height:25px; border:1px solid gray; color:white; } 
 
-                        <div class="mobile_header_sidebar2">
-                            <a href="#" class="mobile_signin_a mobile_header_signinbox_span signin"
-                                onclick="drop_down_mobile_menu_right()"><i class="fas fa-fingerprint"></i></a>
-                            <div class="sidebar_right">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-bell-o"></i>알림</a></li>
-                                    <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i>채팅</a></li>
-                                    <li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내가쓴글</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>정보수정</a></li>
-                                </ul>
-                                <div class="sidebar_img2"><img src="img/교포1.jpg"></div>
+ .header > .header_menu .header_menu_intro>a { color:#7c7c7c; display:inline-block; transition:0.3s ease; padding:4px 14px; height:32px; line-height: 32px; text-align: center; margin:5px; } 
 
-                            </div>
-                            <!--<i class="far fa-bell"></i>-->
-                        </div>
-                    </div>
-                </div>
-            </header>
+ .header > .header_menu .header_menu_intro { display:inline-block; height:10px; } /* display:inlie-block 이 header_menu_signinbox를 float:left 없이 옆으로 정렬하게 합니다.*/
+ .header > .header_menu .header_menu_intro_a { font-size:11px; font-family:"돋움",Dotum,"돋움체",DotumChe; } 
+ .header > .header_menu a:hover { color:black; } 
+ .header > .header_menu .header_menu_signinbox { clear:both; background-color:white; display:inline-block; border:1px solid grey; border-radius:5px; position:relative; } 
+ /*.header_menu_signinbox_span { width:80px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); } */
+ .header > .header_menu .header_menu_signinbox a { padding:4px; } 
+ /*로그인 후*/
+ .enter_wesju { margin-left: -20px; } 
+ 
+ 
+ /* mobile_header */
+ #mobile_header { display:none; position:relative; } /* position:absolute를 사용하기 위해 relative(기준점을 사용)해야하지만, relative가 상위에 없을경우 맨위가 기준이므로 static 써도댑니다.*/
+ .mobile_container { height: 50px; width: 100%; } 
+ .mobile_header { height:100%; background-color:#c3200e; /*background: radial-gradient(circle, rgba(195,0,46,1) 57%, rgba(140,0,195,1) 100%); */ } 
+
+ .mobile_container { /*position:fixed; */top:0; z-index:999999; } /* position:fixed 에서 z-index는 필수입니다. */
+ .mobile_header > .mobile_header_sidebar { float:left; font-size:30px; width: 15%; height:100%; vertical-align:middle; } /* float를 사용하기 위해서는 height를 설정해야합니다. */
+ /*햄버거 버튼*/
+ .mobile_header > .mobile_header_sidebar>a { color:white; margin-left:10px; } 
+ .mobile_header > .mobile_header_sidebar > .hamburger { } 
 
 
-            <nav id="nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="nav">
-                            <h2 class="ir_su">Category</h2>
-                            <div>
-                                <h3><i class="fas fa-university"></i>커뮤니티</h3>
-                                <ol>
-                                    <li><a href="#"><span>전체보기</span><span class="new_post">&nbspnew</span></span></a>
-                                    </li>
-                                    <!--새로운 글 없는 자게-->
-                                    <!--<li><a href="#"><span>자유게시판</span></a></li>-->
-                                    <li><a href="#"><span>인기게시판</span></a></li>
-                                    <li><a href="#"><span>세종숲</span></a></li>
-                                    <li><a href="#"><span>질문게시판</span></a></li>
-                                    <li><a href="#"><span>코딩게시판</span></a></li>
-                                    <li><a href="#"><span>홍보게시판</span></a></li>
-                                </ol>
-                            </div>
-                            <div>
-                                <h3><i class="fas fa-university"></i>커뮤니티</h3>
-                                <ol>
-                                    <li><a href="#"><span>세종톡</span></a></li>
-                                    <li><a href="#"><span>중고거래게시판</span></a></li>
-                                    <li><a href="#"><span>일상게시판</span></a></li>
-                                    <li><a href="#"><span>연애게시판</span></a></li>
-                                    <li><a href="#"><span>고민게시판</span></a></li>
-                                    <li><a href="#"><span>정치게시판</span></a></li>
-                                </ol>
-                            </div>
-                            <div>
-                                <h3><i class="fas fa-university"></i>대학생활</h3>
-                                <ol>
-                                    <li><a href="#"><span>새내기</span></a></li>
-                                    <li><a href="#"><span>동아리</span></a></li>
-                                    <li><a href="#"><span>맛집</span></a></li>
-                                    <li><a href="#"><span>스터디</span></a></li>
-                                    <li><a href="#"><span>졸업생</span></a></li>
-                                    <li><a href="#"><span>자취방</span></a></li>
-                                </ol>
-                            </div>
-                            <div>
-                                <h3><i class="fas fa-university"></i>학교정보</h3>
-                                <ol>
-                                    <li><a href="#"><span>학사일정</span></a></li>
-                                    <li><a href="#"><span>학생회게시판</span></a></li>
-                                    <li><a href="#"><span>학교소식</span></a></li>
-                                    <li><a href="#"><span>족보</span></a></li>
-                                    <li><a href="#"><span>강의평가</span></a></li>
-                                    <li><a href="#"><span>졸업요건</span></a></li>
-                                </ol>
-                            </div>
-                            <div>
-                                <h3><i class="fas fa-university"></i>기타</h3>
-                                <ol>
-                                    <li><a href="#"><span>취업후기</span></a></li>
-                                    <li><a href="#"><span>학업상담</span></a></li>
-                                    <li><a href="#"><span>공지사항</span></a></li>
-                                    <li><a href="#"><span>문의사항</span></a></li>
-                                    <li><a href="#"><span>피드백하기</span></a></li>
-                                    <li><a href="#"><span>369게임</span></a></li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <article id="toggle">
-                        <div class="container">
-                            <div class="toggle">
-                                <span></span>
-                                <a href="#" class="btn" onclick="drop_down_monitor_menu()">
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </nav>
+ /*title*/
+ .mobile_header > .mobile_header_title { float:left; text-align:center; width: 70%; height:80%; padding-top:5px; } 
+ .mobile_header > .mobile_header_title > a { width: 100%; color:#f7f7f7; font-size:25px; text-align:center; margin:0 auto; } 
+ .mobile_header > .mobile_header_title a:hover { color:black; } 
 
-            <main>
-                <section id="contents">
-                    <div class="container" class="parallax_base_layer">
-                        <!-- ir_su는 그냥 주석임 -->
-                        <h2 class="ir_su">Responsive Site Content</h2>
-                        <section id="cont_center">
-                            <h3 class="ir_su">Response Site Left Content</h3>
-                            <article class="column col1">
-                                <h4 class="ir_su col_tit">공지사항이미지</h4>
-                                <p class="col_desc"><span class="ir_su">공지사항 이미지가 들어갈곳입니다.<br /></span>
-                                    <!--<img src="img\main.png">-->
-                                </p>
-                                <!-- <p class="col_desc rainbow"></span>
-                        </p> -->
-                                <!--자동재생
+ /*.mobile_header > .mobile_signin_a { position:absolute; right:5px; top:2px; font-size:30px; color:white } */
 
-                        <iframe width="890" height="400" src="https://www.youtube.com/embed/nsQKgQHuygU?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <iframe width="890" height="400" src="https://www.youtube.com/embed/nsQKgQHuygU"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>-->
-                                <img
-                                    src="http://www.sejongpr.ac.kr/ImageFileView?imgPath=photoboard&imgName=15_1.PNG&imgGubun=F">
-                            </article>
-
-                            <article class="column col2">
-                                <!-- <h4 class="ir_su col_tit">Notice</h4>
-                        <p class="ir_su col_desc">게시판 영역의 한줄효과와 두줄효과게시판입니다.</p> -->
-                                <!-- 게시판  -->
-                                <div class="notice1 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>세종숲</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <!-- 게시판  -->
-                                <div class="notice2 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>새내기게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <div class="notice3">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>질문게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1] </a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                            </article>
-
-                            <article class="column col3">
-                                <!-- <h4 class="col_tit">title</h4>
-                            <p class="col_desc">설명부분</p>  -->
-                                <div class="slide" id="slide_">
-                                    <button class="prev" type="button"><i class="fas fa-chevron-left"></i></button>
-                                    <!--학생회 링크 모음-->
-                                    <ul id="slide_ul">
-                                        <li><img src="img\컴공.jpg" alt="" />
-                                            <p>컴퓨터공학과</p>
-                                        </li>
-                                        <li><img src="img\소프트.jpg" alt="" />
-                                            <p>소프트웨어학과</p>
-                                        </li>
-                                        <li><img src="img\정보보호.jpg" alt="" />
-                                            <p>정보보호학과</p>
-                                        </li>
-                                        <li><img src="img\지능.jpg" alt="" />
-                                            <p>지능기전공학</p>
-                                        </li>
-                                        <li><img src="img\컴공.jpg" alt="" />
-                                            <p>컴퓨터공학과</p>
-                                        </li>
-                                        <li><img src="img\소프트.jpg" alt="" />
-                                            <p>소프트웨어학과</p>
-                                        </li>
-                                        <li><img src="img\정보보호.jpg" alt="" />
-                                            <p>정보보호학과</p>
-                                        </li>
-                                        <li><img src="img\지능.jpg" alt="" />
-                                            <p>지능기전공학</p>
-                                        </li>
-                                    </ul>
-                                    <button class="next" type="button"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                            </article>
-
-                            <article class="column col4">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
-
-                                <div class="notice4 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>동아리게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <!-- 게시판  -->
-                                <div class="notice5 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>족보게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <div class="notice6">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>코딩게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
+ /* 반응형웹에서는 width height를 Percentage(%)로 표현해주어야 모바일에서 기기의 크기에 맞게 세팅됩니다. */
+ .mobile_header > .mobile_header_sidebar > .sidebar { font-family:'Open Sans',sans-serif; width: 70%; overflow:auto; position:fixed; top: 0; left: -80%; height: 100%; z-index:999; background-color: white; color:#fff; transition: all 0.3s; } /* To make a scroll when Position is fixed(Position:fixed), add overflow:auto */
 
 
-                            <article class="column col5">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
+ .mobile_header > .mobile_header_sidebar > .sidebar.active { left: 0; } 
 
-                                <!-- 게시판  -->
-                                <div class="notice7 photo7 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>맛집게시판</h5>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다..</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다.이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ .overlay { position:fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index:998; display:none; } /* Overlay 는 mobile_sidebar를 닫을 수 있게 해줍니다. */
 
-                                <!-- 게시판  -->
-                                <div class="notice8 photo8 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>일상게시판</h5>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다.이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은
-                                                한줄효과입니다.이줄과입니다. </a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                            </article>
-                            <!-- <br/><br/><br/><br/> -->
-                            <article class="column col6">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
-
-                                <div class="notice9 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>연애게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <!-- 게시판  -->
-                                <div class="notice10 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>고민게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <div class="notice11">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>정치게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
-                            <article class="column col7">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
-
-                                <!-- 게시판  -->
-                                <div class="notice12 photo9 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>중고거래게시판</h5>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />제목은 40자 글자제한이
-                                                존재합니다.제목은 40자 글자제한이 존재합니다.</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <!-- 게시판  -->
-                                <div class="notice13 photo10 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>자취방게시판</h5>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다.이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x100" alt="" />이줄은 한줄효과입니다.이줄은
-                                                한줄효과입니다.이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                            </article>
-                            <!-- <br/><br/><br/><br/> -->
-                            <article class="column col6">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
-
-                                <div class="notice14 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>스터디</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <!-- 게시판  -->
-                                <div class="notice15 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>취업후기</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-
-                                <div class="notice16">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>학업상담</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
-                            <article class="column col5">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
-
-                                <!-- 게시판  -->
-                                <div class="notice17 photo8 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>홍보게시판</h5>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x400" width="200" alt="" /></a>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x400" alt="" /></a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x400" alt="" /></a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="#"><img src="http://placehold.it/200x400" alt="" /></a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ /* To make width height working, display:block or float:left is needed*/
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .signin { font-size:55%; float:left; margin-left:4.9%; border-radius:5px; text-align:center; line-height:50px; width: 45%; height: 50px; color:white; border-right:0.5px dotted gray; background-color:var(--background-color); } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_signinbox > .join { font-size:55%; float:left; border-radius:5px; text-align:center; line-height:50px; width: 45%; height: 50px; color:white; background-color:var(--background-color); } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_nav { clear:both; width: 100%; height: 40px; background-color: white; } 
 
 
-                            </article>
-                            <!-- <br/><br/><br/><br/> -->
-                            <article class="column col6">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
 
-                                <div class="notice18 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>학생회게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu { font-size:50%; display:block; border-top:1px solid var(--background-color); } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul i { color:var(--background-color); margin-right:5px; } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul .fa-angle-up { float:right; padding-top:5px; } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a { border-bottom:1px solid var(--background-color); } 
+ /* box-sizing:border-box makes a padding or margin in the box */
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu > a { padding:3px 8px; width: 100%; display:inline-block; background-color:white; box-sizing:border-box; border-left:1px solid #e5e5e5; } 
 
-                                <!-- 게시판  -->
-                                <div class="notice19 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>졸업생</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > a { display:inline-block; background-color:white; box-sizing:border-box; border-left:1px solid #e5e5e5; } 
 
-                                <div class="notice20 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>공지게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
-                            <!-- <br/><br/><br/><br/> -->
-                            <!-- <article class="column col6">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul { padding-left:30px; } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li { border:1px solid #e5e5e5; vertical-align:middle; } 
+ .mobile_header > .mobile_header_sidebar > .sidebar > .sidebar_ul > ul > .parent_menu_havesub > ul > li > a { padding:3px 8px; width: 100%; display:inline-block; background-color: var(--white-gray); box-sizing:border-box; } 
 
-                                <div class="notice21 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>졸업생게시판</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ /*오른쪽 알림,채팅,내가쓴글*/
+ .mobile_signin_a { margin-right: -25px; color:white; text-align: center; } 
+ .sidebar_right { font-family:'Open Sans',sans-serif; width: 40%; overflow:auto; position:fixed; top: 0; right:0%; height: 100%; z-index:999; background-color: white; color:#fff; transition: all 0.3s; display: none; } 
+ .mobile_header_sidebar2 { float:right; font-size:30px; width: 15%; vertical-align:middle; text-align: center; } 
+ .sidebar_right { text-align: left; } 
+ /*sidebar_rigt의 ul*/
+ .sidebar_right li { font-size:15px; display:block; } 
+ .sidebar_right i { color:var(--background-color); margin-right:5px; } 
+ .sidebar_right li a { padding:10px;; width: 100%; display:inline-block; background-color:white; box-sizing:border-box; border-left:1px solid #e5e5e5; border-bottom:1px solid var(--background-color); } 
+ /* ****************************************************************** */
+ /* */
+ /* NAV */
+ /* */
+ /* ****************************************************************** */
+ #nav { display:block; } 
+ .nav { overflow:hidden; padding:10px 0; display:block; margin:0 auto } 
+ .nav > div { float:left; width:19%; } /* 카테고리가 5개이므로 19% X 5 = 95 */
+ .nav > div ol { overflow:hidden; } 
+ .nav > div { border-left:1px dotted gray; padding-left:8px; } 
+ .nav > div:last-child { border-right:1px dotted gray; } 
+ .nav > div h3 { font-size:18px; color:white; font-weight:bold; margin-bottom:4px; } 
+ .nav > div li a { color:white; transition:color 0.1s ease; } 
+ .nav > div li a:hover { color:black; } 
+ .nav > div:last-child li { width:100%; } 
+ .nav > dlv li:before { content:''; width: 3px; height: 3px; background-color:#25a2d0; border-radius:50%; position:absolute; left:0; top:6px; } 
 
-                                게시판 
-                                <div class="notice22 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>공지사항</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
+ /* toggle */
+ .toggle { text-align: center; } 
+ .toggle span { font-size:14px; font-weight:bold; padding: 5px 0; } 
+ .toggle .btn { display:inline-block; width: 30px; height: 30px; font-size:15px; line-height: 30px; background-color:white; transition: all 0.3s ease; border-radius:50%; margin-bottom:5px; } 
+ .toggle .btn:hover { box-shadow:0 0 0 3px rgba(71,154,191,0.9) inset, 0 0 0 100px rgba(0,0,0,0.1) inset; } 
 
-                                <div class="notice23">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>기타</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>-->
-                        </section>
-                        <section id="cont_right">
-                            <!-- <h3>Responsive Site Right Content</h3> -->
-                            <article class="column col5 mt5 account notice24">
-                                <!--    <h4 class="ir_su col_tit">로그인박스</h4>
-                            <p class="login_msg">세종대 커뮤니티사이트에 로그인해보세요.</p>
-                            <a href="#" class="link_login">LOGIN</a>
+ /* ****************************************************************** */
+ /* */
+ /* CONTENTS */
+ /* */
+ /* ****************************************************************** */
 
-                            <div class="login_sub_area">
-                                <div class="login_sub_area_find">
-                                    <a href="#">아이디 /</a>
-                                    <a href="#">비밀번호 찾기</a>
-                                </div>
-                                <div class="login_sub_area_join">
-                                    <a href="#">회원가입</a>>
-                                </div>
-                            </div>-->
-                                <!--로그인 후 로그인박스 변경-->
-                                <h4 class="ir_su col_tit">로그인박스</h4>
-                                <img src="img\profile.jpg" alt="" />
-                                <p class="login_msg"><span>어린이대공원</span>님</p>
-                                <table>
-                                    <tr>
-                                        <td><a href="#">알림</a></td>
-                                        <td>채팅</td>
-                                    </tr>
-                                    <tr>
-                                        <td>내가쓴글</td>
-                                        <td>정보수정</td>
-                                    </tr>
-                                </table>
-                                <div class="box_logout"><a href="#" class="link_logout">LOGOUT</a></div>
-                                <!--logout박스는 임시로 넣어놓은 것-->
-                            </article>
-                            <article class="column col6">
-                                <h4 class="ir_su col_tit">title</h4>
-                                <p class="ir_su col_desc">설명부분</p>
+ #contents>.container { background-color: white; } 
 
-                                <h4 class="ir_su col_tit">공지사항이미지</h4>
-                                <p class="col_desc"><img src="img/event_banner.gif" class="cont_right_img"></p>
-                                <!-- <p class="col_desc rainbow"></span> -->
-                            </article>
-                            <article class="column col7">
-                                <div class="notice25 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>인기글</h5>
-                                    <ol type="1">
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ol>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
-                            <article class="column col10">
-                                <div class="notice26 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>바로가기</h5>
-                                    <div class="img10">
-                                        <div class="innerimg10"><a href="http://www.sejong.ac.kr/"><img
-                                                    src="img/short_cut1.PNG">
-                                                <div class="txt_on_img">세종대</div>
-                                            </a></div>
-                                    </div>
-                                    <div class="img10">
-                                        <div class="innerimg10"><a
-                                                href="https://sjpt.sejong.ac.kr/main/view/Login/doSsoLogin.do?p="><img
-                                                    src="img/short_cut2.PNG">
-                                                <div class="txt_on_img">학사정보</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="img10">
-                                        <div class="innerimg10"><a href="https://do.sejong.ac.kr/"><img
-                                                    src="img/short_cut3.PNG">
-                                                <div class="txt_on_img">두드림</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="img10">
-                                        <div class="innerimg10"><a href="http://classic.sejong.ac.kr/"><img
-                                                    src="img/short_cut4.PNG">
-                                                <div class="txt_on_img">대양<br />휴머니티</div>
-                                            </a></div>
-                                    </div>
-                                    <div class="img10">
-                                        <div class="innerimg10"><a href="https://library.sejong.ac.kr/index.ax"><img
-                                                    src="img/short_cut5.PNG">
-                                                <div class="txt_on_img">학술<br />정보원</div>
-                                            </a></div>
-                                    </div>
-                                    <div class="img10">
-                                        <div class="innerimg10"> <a
-                                                href="https://portal.sejong.ac.kr/jsp/login/loginSSL.jsp?rtUrl=portal.sejong.ac.kr/comm/member/user/ssoLoginProc.do"><img
-                                                    src="img/short_cut6.PNG">
-                                                <div class="txt_on_img">세종포탈</div>
-                                            </a>
-                                        </div>
-                                    </div>
+ .column { padding:4px; border-bottom: 1px solid #dbdbdb; } 
+ .column .col_tit { font-size:20px; color:black; padding-bottom:5px; } 
+ .column .col_desc { border-bottom: 1px dashed #dbdbdb; padding-bottom:0px; margin-bottom:0px; color:#878787; line-height:18px; } 
 
-                                    <!-- <p class="col_desc rainbow"></span> -->
-                                </div>
-                            </article>
+ .new_post { font-size:12px; font-weight:bolder; font-variant: small-caps; color:white; } 
+ .mb_new_post { color:#c3200e; } 
+
+ /* it makes div auto control */
+ /* http://uxuiz.cafe24.com/wp/archives/1445 */
+ .column.col1 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col2 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col3 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col4 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col5 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col6 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col7 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col8 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col9 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col10 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col11 { border-bottom:0; overflow:hidden; height:auto; } 
+ .column.col12 { border-bottom:0; overflow:hidden; height:auto; } 
+
+ /*col별*/
+ /*이미지->비디오*/
+ .col1 iframe { width:890px; height:400px; } 
+ .col { overflow:hidden; } 
+ .col1 img { height:200px; width:890px; object-fit:cover; } 
+
+ /*로고 display*/
+ .col3 .slide { padding:15px; } 
+ .col3 img { width:100px; height:100px; box-shadow: 2px 0.5px 5px #CCC; border-radius: 50px; margin:10px; } 
+ .col3 img:hover { transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out; } 
+ .col3 .slide ul { margin-left: 30px; margin-right: 30px; width:1000000px; } 
+ .col3 p { z-index: 100; font-size: 12px; text-align: center; margin-top:3px; } 
+ /* .col3 { background-color: #c3200e; } 
+ .col3 img { width:100px; height:100px; border-radius: 50px; margin:5px; } 
+ .col3 .slide ul { margin-left: 30px; margin-right: 30px; } 
+ .col3 p { z-index: 100; font-size: 12px; text-align: center; color:white; text-shadow: 1px; } */
+ /* 게시판1,2 HTML Reference입니다. 절대삭제하지말것 */
+ /* <article class="column row1 col2">
+ <h4 class="col_tit">Notice</h4>
+ <p class="col_desc">게시판 영역의 한줄효과와 두줄효과게시판입니다.</p>
+ <!-- 게시판 -->
+ <div class="notice1 mt10">
+ <h5>Notice1</h5>
+ <ul>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
+ </ul>
+ <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+ </div>
+ <!-- 게시판 -->
+ <div class="notice2 mt10">
+ <h5>Notice2</h5>
+ <ul>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다..</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다..</a></li>
+ <li><a href="#">이줄은 한줄효과입니다.이줄은 한줄효과입니다이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다.이줄은 한줄효과입니다..</a></li>
+ </ul>
+ <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
+ </div>
+ </article> */
+ /* 게시판1 Reference one-line effect */
+ /* .notice1 { position:relative; } 
+ .notice1 h5 { font-size: 14px; color:#2f7fa6; padding-bottom:5px; } 
+ .notice1 li { position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-left:8px; } 
+ .notice1 li:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: #449ce2; position:absolute; left:0; top:6px; } 
+ .notice1 .more { position:absolute; right:0; top:3px; color:#878787; text-transform: uppercase; font-size:10px; } */
+
+ /* 게시판2 Reference two-line effect */
+ /* .notice2 { position:relative; } 
+ .notice2 h5 { font-size:14px; color:#2f7fa6; padding-bottom:5px; } 
+ .notice2 li { position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; } 
+ .notice2 li:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: #449ce2; position:absolute; left:0; top:6px; } 
+ .notice2 .more { position:absolute; right:0; top:3px; color:#878787; text-transform: uppercase; font-size:10px; } */
+
+ /* 게시판1 */
+ .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23 { position:relative; float:left; width: 32%; } 
+ :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); margin-bottom:5px; } 
+ :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-left:8px; display: inline-block; width:100%; height:20px; line-height: 20px; } 
+ /*text로 이뤄진 제목에만 list style 적용*/
+ :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) li:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; } 
+ :is(.notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23) .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
 
 
-                            <article class="column col8">
-                                <!-- 검색어: 별점주기 스프링 star rating-->
-                                <!-- https://blog.naver.com/tnakekd/220313628830 -->
-                                <!-- https://miuus.tistory.com/2 -->
-                                <div class="notice27 star_rating pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>강의평가</h5>
+ /* 게시판7,8,12,13 for Photo */
+ /* https://webdir.tistory.com/483 */
+ /* ul을 div역할을 하게했습니다. */
+ /* 한줄보기 혹은 두줄보기를 하기 위해서는 가로길이가 정확히 정해져있어야합니다.*/
+ /* 그러므로 display:inline-block을 통해 ul을 좌우 정렬하게하고, width를 정해줘서 그값을 벗어나면 한줄보기를 가능하게했습니다. */
+ .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10 { position:relative; float:left; width: 49%; } 
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) ul { display:inline-block; width:49%; height:140px; } 
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) li { font-size:12px; overflow:hidden; margin-left: 6px; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; height:143px; width:100%; /*overflow: hidden; transform: translate3d(0,0,0); -webkit-transform:translateZ(0); */
+ /*-webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-transform:translate3d(0,0,0); -moz-transform:translate3d(0,0,0); */ } /* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) img { margin-top:5px; width:100%; height:100px; } 
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
 
-                                    <ul>
-                                        <li class="star_title">강의제목-OOO교수님</li>
-                                        <li class="star_content">
-                                            <span class="star_rate">
-                                                3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li class="star_title">강의제목-OOO교수님</li>
-                                        <li class="star_content">
-                                            <span class="star_rate">
-                                                3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li class="star_title">강의제목-OOO교수님</li>
-                                        <li class="star_content">
-                                            <span class="star_rate">
-                                                3.5</span>/4.5>강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.강의평가내용입니다.
-                                        </li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
 
-                            <article class="column col8">
-                                <div class="notice28 pr5">
-                                    <h5 class="ir_su">Notice1</h5>
-                                    <h5>학사일정</h5>
-                                    <ul>
-                                        <li><a href="#">이줄은 한줄효과입니다.이줄과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입니다이줄은 한줄효과입니다.[3]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                        <li><a href="#">이줄은 한입니다.한줄효과입니다.[1]</a></li>
-                                        <li><a href="#">이줄은 한줄효과입입이줄은 한줄효과입니다.</a></li>
-                                    </ul>
-                                    <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle"></i></a>
-                                </div>
-                            </article>
 
-                        </section>
-                    </div>
 
-                </section>
-            </main>
-            <footer id="footer">
-                <div class="container">
-                    <ul>
-                        <li><a href="http://www.sejong.ac.kr/">세종대학교</a></li>
-                        <li>|</li>
-                        <li><a href="http://www.sejongstudent.com/xe/">총학생회</a></li>
-                        <li>|</li>
-                        <li><a href="#">이용약관</a></li>
-                        <!--<li>|</li>
-                        <li><a href="#">wesejong@wesejong.cafe24.com</a></li>-->
-                    </ul>
-                    <!--<div class="email_address">contact : wesejong@wesejong.cafe24.com</div>-->
-                    <div class="sns_link">
-                        <a href="mailto:wesejong@wesejong.cafe24.com"><img src="img/mail.PNG" /></a>
-                        <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png" /></a>
-                        <a href="https://www.facebook.com/sejongpr/"><img src="img/FACEBOOK.png" /></a>
-                        <a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png" /></a>
-                    </div>
-                    <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
-                </div>
-                <div class="black"></div>
-            </footer>
-        </div>
-        <div class="parallax_back_layer"></div>
-    </div>
-</body>
+ /*게시판 17:홍보게시판*/
+ .notice17.photo8 { position:relative; float:left; width: 99%; } 
+ .notice17.photo8 h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ .notice17.photo8 ul { display:inline-block; width:24.5%; height:290px; } 
+ .notice17.photo8 li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; height:290px; } /* 두줄보기를 했을때 높이가 정해져있지 않아서 한쪽은 한줄보기, 다른한쪽은 두줄보기였을때 높이를 맞추기 위해 자동으로 정렬되는문제는 height:100%를 주어서 맞춰주었습니다.*/
+ .notice17.photo8 img { margin-top:5px; width:100%; height:280px; } 
+ .notice17.photo8 .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
+ /* 이미지 슬라이드 */
+ img { display:block; border:0; } 
+ button { border:0; background:none; } 
 
-</html>
+ .slide { width: 100%; overflow:hidden; position:relative; } 
+ .slide ul { width:2000px; font-size:0; } /* font-size:0 inline block ul에 사용시 li(이미지) 간 간격을 없애줌*/
+ .slide ul li { display:inline-block; } /* display inline block이 이미지크기에 맞게끔 영역잡게함 */
+ .slide button.prev { position:absolute; left:20px; top:40px; z-index: 10; text-shadow: 1px 1px 1px rgb(85, 84, 84); } 
+ .slide button.next { position:absolute; right:40px;; top:40px; z-index: 10; text-shadow: 1px 1px 1px rgb(85, 84, 84); } 
+ .slide button { font-size:23px; color:rgb(218, 210, 210) } 
+ /*---------------------*/
+ /* cont_right */
+ /*---------------------*/
+ /* cont_right 부분에 어떤것을 붙여야할지 큰 고민이되고 있습니다. */
+ /* cont_right 부분에 시선을 충분히 분산시킬 것이 필요합니다. */
+ /* 다른 커뮤니티사이트들의 예시 레이아웃입니다.
+ 마이피누 : 구글검색 - 공지사항 - 최근글 - 일간조회 BEST - 주간추천 Best
+ 고파스 : 로그인박스 - 현재동시접속자 - 광고이미지박스 - 코로나19 - 오늘의 학사일정 - 강의평가 - 강의.필기.족보 - 광고이미지 - 게임 등등
+ 쿵 : 교내링크바로가기 - 건대쿵페이스북 - 포인트게임,출석체크 - 주간댓글수조회수 TOP6 - 광고이미지 - KUNG 커머스
+ 위세종 : 로그인박스(네이버참고) -
+ */
+
+ .account { background-color: #f7f9fa; padding:16px 16px 12px 17px; border: 1px solid #dae1e6; } 
+ .login_msg { padding-left:5px; color:grey; } 
+ #cont_right > .column.col5 { border-bottom:1px solid #dae1e6; overflow:hidden; height:auto; } 
+ .link_login { display:block; padding:10px 0px; margin-top:10px; background-color: #c3002e; border:1px solid #c3002e; border-radius:2px; font-size:13px; color:#fff; font-weight:700; text-align:center; } /* display:block makes a href width=100% */
+ .link_login { display:block; padding:10px 0px; margin-top:10px; background-color: var(--background-color); border:1px solid var(--background-color); border-radius:2px; font-size:13px; color:#fff; font-weight:700; text-align:center; } /* display:block makes a href width=100% */
+ .login_sub_area { margin:14px 8px 0px 4px; height:auto; } 
+ .login_sub_area_find { float:left; } 
+ .login_sub_area_find > a { color:#404040; } 
+ .login_sub_area_join { float:right; } 
+ .login_sub_area_join > a { color:#404040; } 
+
+ /*로그인 후 로그인 박스 변경*/
+ .notice24 img { width:80px; height:80px; border-radius: 40px; display:inline-block; vertical-align:top; float:left; } 
+ .notice24 p { display: inline; vertical-align: middle; text-align: center; } 
+ .notice24 table { display: inline-block; border-collapse: collapse; float:left; margin:10px; } 
+ .notice24 td { border: 1px solid #888888; text-align: center; width:60px; background-color: white; box-shadow: 1px 1px 2px gray; } 
+ .notice24 a { color:black; } 
+ .notice24 td:hover { background-color:#CCC; } 
+ .notice24 .box_logout { vertical-align:middle; } 
+ .notice24 .link_logout { display: inline-block; background-color: #c3002e; border:1px solid #c3002e; border-radius:2px; font-size:13px; color:#fff; font-weight:700; text-align:center; width:200px; padding:10px; } 
+
+ /*로그인 박스 아래 이미지*/
+ .cont_right_img { width:250px; height:150px; } 
+ /*column col 6*/
+ .notice25 ol { list-style-position:inside; } 
+
+
+ /*column 7학교 관련 링크
+ .col10 img { width:80px; height:80px; float:left; overflow: hidden; } */
+ .col10 .img10 { width:80px; float:left; } 
+ .innerimg10 { position: relative; padding-top: 100%; /* 1:1 ratio */ overflow: hidden; } 
+ .innerimg10 img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%; object-fit: cover; } 
+ .txt_on_img { width:80px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); font-size: 18px; font-weight: bold; } 
+ /* 게시판20 */
+ /* .notice20 { position:relative; float:left; width: 98%; } 
+ .notice20 h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ .notice20 li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:3px; padding-left:8px; } 
+ .notice20 li:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; } 
+ .notice20 .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } */
+
+ /* 게시판25,26 인기글 바로가기 */
+ :is(.notice25,.notice26) { position:relative; float:left; width: 98%; } 
+ :is(.notice25,.notice26) h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ :is(.notice25,.notice26) li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:5px; padding-left:8px; } 
+ :is(.notice25,.notice26) .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
+
+ /* 게시판27:강의평가 */
+ .notice27.star_rating { position:relative; float:left; width: 98%; } 
+ .notice27.star_rating ul { border-bottom:1px dotted #f7f9fa; } 
+ .notice27.star_rating .fa-star { color:#F5E007; } 
+ .notice27.star_rating h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ .notice27.star_rating li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:5px; padding-left:8px; } 
+ .notice27.star_rating .star_title:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; } 
+ .notice27.star_rating ul > .star_title { font-size:12px; } 
+ .notice27.star_rating ul > .star_content { font-size:11px; color:#777; } 
+ .notice27.star_rating .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
+
+ /* 게시판28:학사일정 */
+ .notice28 { position:relative; float:left; width: 98%; } 
+ .notice28 h5 { font-size: 15px; color:var(--content-font-color); padding-bottom:0px; border-bottom:1px solid var(--content-h5-border-bottom-color); } 
+ .notice28 li { font-size:12px; position:relative; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-top:5px; padding-left:8px; } 
+ .notice28 li:before { content:''; width: 3px; height: 3px; border-radius:50%; background-color: var(--content-li-before-color); position:absolute; left:0; top:9px; } 
+ .notice28 .more { position:absolute; right:7px; top:6px; color:#878787; text-transform: uppercase; font-size:10px; } 
+
+
+ /* media query 0 ~ 768px tablet*/
+ @media (max-width:768px) { /*배경*/
+ .parallax_back_layer { background: white; } 
+ /* container */
+ .container { width: 100%; } 
+ .mobile_container { width:100%; } 
+
+ /* header */
+ .header .header_menu .header_menu_intro { display:none; } 
+
+ #header { display:none; } 
+ #mobile_header { display:block; } 
+ #mobile_header .sidebar_img { background-color: red; margin-top:-30px; } 
+ #mobile_header :is(.sidebar_img,.sidebar_img2) img { width:100%; height:auto; } 
+ /* nav menu */
+ nav { margin-top:0px; } 
+ #toggle { display:none; } 
+ .nav { display:none; } 
+
+ .nav > div { float:none; width: 100%; } 
+ .nav > div:last-child { width: 100%; } 
+ .nav > div li { float:left; width: 33.3333%; } 
+ .nav > div:last-child li { width: 33.3333%; } 
+ .nav > div { text-align:center; } 
+
+ /* content */
+ .col1 img { width:100%; height:150px; } 
+ .col1 iframe { width:100%; height:200px; } 
+ #contents .container { border-left:0; border-right:0; } 
+ /* #contents .board_list_header { margin-top:130px; } */
+ #cont_center { float:none; clear:both; width: 100%; height:auto; } /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
+ #cont_right { float:none; clear:both; width: 100%; height:auto; } 
+ .col3 .slide ul { margin-left: 0px; margin-right: 10px; } 
+
+ .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10,.notice17.photo8 { float:none; clear:both; width: 100%; } 
+ .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23,.notice24 { float:none; clear:both; width: 100%; } 
+
+ .notice24, .cont_right_img { display:none; } 
+ .notice17.photo8 ul { display:inline-block; width:49%; height:240px; } 
+
+ /***************************/
+ /* 이미지 반응형 */
+ /***************************/
+ /* 게시판7,8,12,13 for Photo */
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) { list-style: none; } 
+ :is( .notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10) img { width:100%; height:100px; object-fit: cover; } 
+ /*게시판 17:홍보게시판*/
+ .notice17.photo8 ul { height:180px; } 
+ .notice17.photo8 li { height:180px; } 
+ .notice17.photo8 img { width:100%; height:180px; object-fit: cover; } 
+ /*학교 관련 링크*/
+ .col10 .img10 { width:33%; } 
+ .innerimg10 { position: relative; padding-top: 100%; overflow: hidden; } 
+ .innerimg10 img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 100%; height: 100%; object-fit: cover; } 
+
+ /*footer*/
+ #footer .container,#footer .black { padding:0 5px; } 
+ #footer .container>.copyright { width:100%; } 
+ #footer .sns_link { display: none; } 
+ }
+ /*스크롤바*/
+ ::-webkit-scrollbar { width: 10px; height: 5px; background: white; } 
+ ::-webkit-scrollbar-thumb:hover { background-color:#aaa; } 
+ ::-webkit-scrollbar-thumb { border-radius: 10px; background-color: #ccc; } 
+ ::-webkit-scrollbar-track { background: #ffffff; } 
