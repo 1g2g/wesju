@@ -1,8 +1,10 @@
 /*공통*/
 html { width:100%; height:100vh; overflow: auto; scroll-snap-type: y mandatory; background-color: black; } 
 a { text-decoration: none; color:white; } 
-.page { scroll-snap-align: center; display: inline-block; width:100%; height:100vh; display:flex; flex-direction: column; justify-content: center; font-size: 38px; align-items: center; background-color: black; color:white; } 
-.page h1 { font-size:3.5vw; display: block;; } 
+ 
+.page { scroll-snap-align: center; display: inline-block; width:100%; height:100vh; display:flex; flex-direction: column; justify-content: center; font-size: 38px; align-items: center; background-color: black; color:white;overflow-x: hidden; } 
+.page h1 { font-size:3.5vw; display: block; } 
+.page h1:hover { text-shadow:1px 1px 6px rgb(170, 169, 169); } 
 .title_kor { transform: translateX(0); transition:all 2s ease-out 1s; /* property duration function delay */ -webkit-transition:all 2s ease-out 1s; -moz-transition:all 2s ease-out 1s; -ms-transition:all 2s ease-out 1s; -o-transition:all 2s ease-out 1s; } 
 .page button { display: block; border:3px solid white; color:white; background: none; width:15%; height:45px; font-size: 18px; font-weight: bold; } 
  
@@ -63,41 +65,50 @@ to { transform: translate(0) }
 input[type="text"] { width:100%; padding:5px; font-size: 15px; border-radius: 4px; border-color: rgb(164, 194, 130);; } 
  input[type="text"]:focus { outline-color:rgb(165, 87, 87); } 
  /*mm_applicationdetails*/
- .details { width:60%; text-align: center; } 
- progress { width:80%;margin:0 auto; } 
+.details { width:60%; text-align: center; } 
+ progress { width:80%; margin:0 auto; } 
  summary::marker { display: none; content: ""; } 
 .progress { font-size: 12px; } 
-table { width:100%; border-collapse: collapse; line-height: 1.5; margin-top:20px;} 
+table { width:100%; border-collapse: collapse; line-height: 1.5; margin-top:20px; } 
 table td { font-size: 15px; padding: 10px; vertical-align: top; border: 1px solid #ccc; width:15%; text-align: center; vertical-align: middle; } 
 table td :first-child { width:35%; } 
 table tr:first-child { text-align: center; } 
 .cancel_event { margin-top:50px; } 
-/*mm_applicationdetailshistory:리스트*/
-.list tr:hover{background-color: rgb(92, 189, 156);}
-.list tr:first-child{background:none;}
-.list table{
-    border-color: white;
-    table-layout: fixed;
-    text-overflow: ellipsis;
-}
+.fa-arrow-left { width: 100%; font-size: 28px; } 
+/*mm_applicationhistory*/ 
+.list tr:hover { background-color: rgb(92, 189, 156); } 
+.list tr:first-child { background:none; } 
+.list table { border-color: white; table-layout: fixed; text-overflow: ellipsis; } 
+/*applyresult*/
+.extra_contents { font-size: 14px; } 
+.flex { display:flex; justify-content: center; align-items: center; height:150px; } 
+.flex button { width: 155px; margin: 5px; border: 1.5px solid; font-size: 16px; } 
+.flex button:hover { border:2px solid; } 
 @media (max-width:768px) and (min-width:320px){
  .glitch { font-size:10vw; } 
  .page h1 { font-size:7vw; display: block;; } 
- .details,table { width:100%; } ㄹ
+ .details,table { width:100%; } 
  /*apply*/
  .select_data { width:80%; } 
  /*mm_applicationdetails:자세히보기*/
- progress { width:100%; }
- .details td:first-child{text-overflow:ellipsis; overflow:hidden;}
+ progress { width:100%; } 
+ @-webkit-keyframes animate-stripes { 100% { background-position: -100px 0px; } 
+ }
+ 
+ @keyframes animate-stripes { 100% { background-position: -100px 0px; } 
+ }
+ 
  /**/
  /*table { width:100%; transform:rotate(-90deg); } 
  table td { transform:rotate(90deg); } 
- table tr:first-child { width:40%; }*/
-/*mm_applicationdetailshistory:리스트*/
-.list table td{vertical-align: middle;}
-.list table .list table td:nth-child(2){width:5%;}
-.list table td:nth-child(4){width:15%;}
-.list table td:nth-child(2){text-overflow:ellipsis; overflow:hidden;}
-/*:is(.list table) td:nth-child(4),td:nth-child(6){font-size: 3vw;}
-:is(.list table tr:first-child) td{font-size: 3vw;}*/
-} 
+ table tr:first-child { width:40%; } */
+/*mm_applicationhistory:리스트*/
+.details td:first-child { text-overflow:ellipsis; overflow:hidden; } 
+.list table td { vertical-align: middle; } 
+.list table .list table td:nth-child(2) { width:5%; } 
+.list table td:nth-child(4) { width:15%; } 
+.list table td:nth-child(2) { text-overflow:ellipsis; overflow:hidden; } 
+/*:is(.list table) td:nth-child(4),td:nth-child(6) { font-size: 3vw; } 
+:is(.list table tr:first-child) td { font-size: 3vw; } */
+
+/*applyresult*/ }
