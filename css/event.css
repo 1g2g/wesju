@@ -45,7 +45,7 @@ to { transform: translate(0) }
  .geeks { margin:30px auto; padding: 10px; width: 200px; font-size: 15px; } 
  .geeks i { font-size: 38px; } 
 .select_date { display: inline; } 
- /*apply*/
+ /*manage*/
  input[type="radio"] { color:white; } 
  label { font-size: 18px; display: flex; } 
 .inrow { display: flex; align-items: center; margin-bottom: 20px; } 
@@ -59,8 +59,10 @@ to { transform: translate(0) }
  100% { bottom: 10px; } 
  }
 .personnel { font-size: 15px; background-size: 20px; padding: 5px 20px 5px 10px; border-radius: 4px; outline: 0 none; } 
-.input_check { margin:0 2px; color:rgb(131, 209, 13); justify-content:space-between; } 
+.input_check { margin:0 2px; justify-content:space-between; } 
 .input_check i { font-size: 18px; display: none; } 
+.fa-check{ color:rgb(131, 209, 13);}
+.fa-x{color:#c3200e}
 .chk2,.chk3,.chk4 { display: none; } 
 input[type="text"] { width:100%; padding:5px; font-size: 15px; border-radius: 4px; border-color: rgb(164, 194, 130);; } 
  input[type="text"]:focus { outline-color:rgb(165, 87, 87); } 
@@ -76,7 +78,7 @@ table tr:first-child { text-align: center; }
 .cancel_event { margin-top:50px; } 
 .fa-arrow-left { width: 100%; font-size: 28px; } 
 /*mm_applicationhistory*/ 
-.list tr:hover { background-color: rgb(92, 189, 156); } 
+.list tr:hover { background-color:rgb(37, 206, 206); } 
 .list tr:first-child { background:none; } 
 .list table { border-color: white; table-layout: fixed; text-overflow: ellipsis; } 
 /*applyresult*/
