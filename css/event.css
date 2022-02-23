@@ -2,7 +2,7 @@
 html { width:100%; height:100vh; overflow: auto; scroll-snap-type: y mandatory; background-color: black; } 
 a { text-decoration: none; color:white; } 
  
-.page { scroll-snap-align: center; display: inline-block; width:100%; height:100vh; display:flex; flex-direction: column; justify-content: center; font-size: 38px; align-items: center; background-color: black; color:white;overflow-x: hidden; } 
+.page { scroll-snap-align: center; display: inline-block; width:100%; height:100vh; display:flex; flex-direction: column; justify-content: center; font-size: 38px; align-items: center; background-color: black; color:white; overflow-x: hidden; } 
 .page h1 { font-size:3.5vw; display: block; } 
 .page h1:hover { text-shadow:1px 1px 6px rgb(170, 169, 169); } 
 .title_kor { transform: translateX(0); transition:all 2s ease-out 1s; /* property duration function delay */ -webkit-transition:all 2s ease-out 1s; -moz-transition:all 2s ease-out 1s; -ms-transition:all 2s ease-out 1s; -o-transition:all 2s ease-out 1s; } 
@@ -45,6 +45,15 @@ to { transform: translate(0) }
  .geeks { margin:30px auto; padding: 10px; width: 200px; font-size: 15px; } 
  .geeks i { font-size: 38px; } 
 .select_date { display: inline; } 
+/*explanation*/
+.go_list { position: absolute; right:15px; /*display: none; */
+ animation: Rmotion 0.5s linear 0s infinite alternate; } 
+ @keyframes Rmotion { 
+ 0% { right: 25px; } 
+ 100% { right: 15px; } 
+ }
+.go_list a { display: flex; align-items: center; } 
+.go_list span { font-size: 12px; } 
  /*manage*/
  input[type="radio"] { color:white; } 
  label { font-size: 18px; display: flex; } 
@@ -53,16 +62,16 @@ to { transform: translate(0) }
 .select_data { width:350px; } 
 .select { justify-content: center; } 
 .turn_next { position: absolute; bottom:10px; /*display: none; */
- animation: motion 0.5s linear 0s infinite alternate; } 
- @keyframes motion { 
+ animation: Bmotion 0.5s linear 0s infinite alternate; } 
+ @keyframes Bmotion { 
  0% { bottom: 20px; } 
  100% { bottom: 10px; } 
  }
 .personnel { font-size: 15px; background-size: 20px; padding: 5px 20px 5px 10px; border-radius: 4px; outline: 0 none; } 
 .input_check { margin:0 2px; justify-content:space-between; } 
 .input_check i { font-size: 18px; display: none; } 
-.fa-check{ color:rgb(131, 209, 13);}
-.fa-x{color:#c3200e}
+.fa-check { color:rgb(131, 209, 13); } 
+.fa-x { color:#c3200e } 
 .chk2,.chk3,.chk4 { display: none; } 
 input[type="text"] { width:100%; padding:5px; font-size: 15px; border-radius: 4px; border-color: rgb(164, 194, 130);; } 
  input[type="text"]:focus { outline-color:rgb(165, 87, 87); } 
@@ -90,6 +99,15 @@ table tr:first-child { text-align: center; }
  .glitch { font-size:10vw; } 
  .page h1 { font-size:7vw; display: block;; } 
  .details,table { width:100%; } 
+/*explanation*/
+.go_list { position: relative; right:-5px; top:30px; 
+ animation: Rmotion 0.5s linear 0s infinite alternate; display:flex; } 
+ @keyframes Rmotion { 
+ 0% { right: 5px; } 
+ 100% { right: -5px; } 
+ }
+ .go_list a { display: flex; align-items: center; } 
+ .go_list span { font-size: 12px; } 
  /*apply*/
  .select_data { width:80%; } 
  /*mm_applicationdetails:자세히보기*/
@@ -113,4 +131,4 @@ table tr:first-child { text-align: center; }
 /*:is(.list table) td:nth-child(4),td:nth-child(6) { font-size: 3vw; } 
 :is(.list table tr:first-child) td { font-size: 3vw; } */
 
-/*applyresult*/ }
+/*applyresult*/ } 
