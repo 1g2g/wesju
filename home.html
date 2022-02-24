@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css/link.css">
     <link rel="stylesheet" type="text/css" href="css/chatList.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <script src="javascript/chat.js" defer></script>
     <script src="javascript/join.js" defer></script>
     <script src="javascript/link.js" defer></script>
@@ -404,7 +407,7 @@
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>-->
                                 <img
-                                    src="http://www.sejongpr.ac.kr/ImageFileView?imgPath=photoboard&imgName=15_1.PNG&imgGubun=F">
+                                    src="img/main_banner.png">
                             </article>
 
                             <article class="column col2">
@@ -460,29 +463,116 @@
                                     <button class="prev" type="button"><i class="fas fa-chevron-left"></i></button>
                                     <!--학생회 링크 모음-->
                                     <ul id="slide_ul">
-                                        <li><img src="img\컴공.jpg" alt="" />
+                                        <!--소융대-->
+                                        <li class="software">
+                                            <a href="http://home.sejong.ac.kr/~cedpt/">소융대</a>
                                             <p>컴퓨터공학과</p>
                                         </li>
-                                        <li><img src="img\소프트.jpg" alt="" />
+                                        <li>
+                                            <a href="#">소융대</a>
                                             <p>소프트웨어학과</p>
                                         </li>
-                                        <li><img src="img\정보보호.jpg" alt="" />
+                                        <li>
+                                            <a href="#">소융대</a>
                                             <p>정보보호학과</p>
                                         </li>
-                                        <li><img src="img\지능.jpg" alt="" />
-                                            <p>지능기전공학</p>
+                                        <li>
+                                            <a href="#">소융대</a>
+                                            <p>데이터사이언스과</p>
                                         </li>
-                                        <li><img src="img\컴공.jpg" alt="" />
-                                            <p>컴퓨터공학과</p>
+                                        <li>
+                                            <a href="#">소융대</a>
+                                            <p>지능기전공학부</p>
                                         </li>
-                                        <li><img src="img\소프트.jpg" alt="" />
-                                            <p>소프트웨어학과</p>
+                                        <li>
+                                            <a href="#">소융대</a>
+                                            <p>창의소프트학부</p>
                                         </li>
-                                        <li><img src="img\정보보호.jpg" alt="" />
-                                            <p>정보보호학과</p>
+                                        <li>
+                                            <a href="#">소융대</a>
+                                            <p>인공지능학과</p>
                                         </li>
-                                        <li><img src="img\지능.jpg" alt="" />
-                                            <p>지능기전공학</p>
+                                        <!--인문대-->
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~kordpt/">인문대</a>
+                                            <p>국어국문학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~interdpt/">인문대</a>
+                                            <p>국제학부</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~histdpt/">인문대</a>
+                                            <p>역사학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~edudpt/">인문대</a>
+                                            <p>교육학과</p>
+                                        </li>
+                                        <!--사과대-->
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~admdpt/">사과대</a>
+                                            <p>행정학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~nnbdpt/">사과대</a>
+                                            <p>미디어커뮤니케이션학과</p>
+                                        </li>
+                                        <!--경영경제-->
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~entdpt/">경영경제</a>
+                                            <p>경제학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~mnadpt/">경영경제</a>
+                                            <p>경영학과</p>
+                                        </li>
+                                        <!--자연과학-->
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~appmath/">자연과학</a>
+                                            <p>수학통계학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~phyastrodpt/">자연과학</a>
+                                            <p>물리천문학과</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~chemdpt/">자연과학</a>
+                                            <p>화학과</p>
+                                        </li>
+                                        <!--호관대-->
+                                        <li class="hotel">
+                                            <a href="http://home.sejong.ac.kr/~biolodpt/">호관대</a>
+                                            <p>호텔관광외식경영학부</p>
+                                        </li>
+                                        <!--생과대-->
+                                        <li>
+                                            <a href="http://home.sejong.ac.kr/~bioindustry/">생과대</a>
+                                            <p>생명시스템학부</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">생과대</a>
+                                            <p>스마트생명산업융합대학</p>
+                                        </li>
+                                        <!--전정대-->
+                                        <li>
+                                            <a href="#">인문대</a>
+                                            <p></p>
+                                        </li>
+                                        <!--공대-->
+                                        <li>
+                                            <a href="#">인문대</a>
+                                            <p></p>
+                                        </li>
+                                        <!--예체능-->
+                                        <li>
+                                            <a href="#">인문대</a>
+                                            <p></p>
+                                        </li>
+                                        <!--법학부-->
+                                        <li>
+                                            <a href="#">인문대</a>
+                                            <p></p>
                                         </li>
                                     </ul>
                                     <button class="next" type="button"><i class="fas fa-chevron-right"></i></button>
@@ -985,9 +1075,11 @@
                     <!--<div class="email_address">contact : wesejong@wesejong.cafe24.com</div>-->
                     <div class="sns_link">
                         <a href="mailto:wesejong@wesejong.cafe24.com"><img src="img/mail.PNG" /></a>
-                        <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img src="img/blog.png" /></a>
+                        <a href="https://m.blog.naver.com/PostList.nhn?blogId=sejong_univ"><img
+                                src="img/blog.png" /></a>
                         <a href="https://www.facebook.com/sejongpr/"><img src="img/FACEBOOK.png" /></a>
-                        <a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img src="img/youtube.png" /></a>
+                        <a href="https://www.youtube.com/channel/UCWudhN8zaGEeiSd3z2B1ijw"><img
+                                src="img/youtube.png" /></a>
                     </div>
                     <i class="copyright">COPYRIGHTⓒ 2022 WESJU ADMINISTRATOR. ALL RIGHT RESERVED.</i>
                 </div>
