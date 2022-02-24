@@ -3,11 +3,10 @@ html { width:100%; height:100vh; overflow: auto; scroll-snap-type: y mandatory; 
 a { text-decoration: none; color:white; } 
  
 .page { scroll-snap-align: center; display: inline-block; width:100%; height:100vh; display:flex; flex-direction: column; justify-content: center; font-size: 38px; align-items: center; background-color: black; color:white; overflow-x: hidden; } 
-.page h1 { font-size:3.5vw; display: block; } 
+.page h1 { font-size:3.5vw; display: block;text-align: center; } 
 .page h1:hover { text-shadow:1px 1px 6px rgb(170, 169, 169); } 
 .title_kor { transform: translateX(0); transition:all 2s ease-out 1s; /* property duration function delay */ -webkit-transition:all 2s ease-out 1s; -moz-transition:all 2s ease-out 1s; -ms-transition:all 2s ease-out 1s; -o-transition:all 2s ease-out 1s; } 
 .page button { display: block; border:3px solid white; color:white; background: none; width:15%; height:45px; font-size: 18px; font-weight: bold; } 
- 
 .geeks { position: relative; width: 300px; text-align: center; } 
 .geeks::before { content: ""; position: absolute; top: -2px; left: -2px; width: 0; height: 0; background: transparent; border: 2px solid transparent; } 
 .geeks:hover::before { animation: animate 1s linear forwards; content: ""; } 
@@ -46,6 +45,11 @@ to { transform: translate(0) }
  .geeks i { font-size: 38px; } 
 .select_date { display: inline; } 
 /*explanation*/
+ .ex p{font-size: 18px;text-align: center;}
+ .ex span{font-weight: 800;}
+ .schedule,.caution{margin-top: 50px;}
+ .schedule p{font-size: 15px;}
+.caution p{font-size: 12px;}
 .go_list { position: absolute; right:15px; /*display: none; */
  animation: Rmotion 0.5s linear 0s infinite alternate; } 
  @keyframes Rmotion { 
