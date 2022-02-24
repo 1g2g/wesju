@@ -24,7 +24,7 @@ document.querySelector('.parallax_page').addEventListener('scroll', function () 
     else {
         nav.style.position = "static";
     }
-    if (scrollLocation >= 1260) {//cont_center높이
+    if (scrollLocation >= 1360) {//cont_center높이
         nav.style.bottom = "60px";//1522+1588/2, footer높이 60
     }
     console.log(scrollLocation);
