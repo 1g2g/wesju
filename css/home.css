@@ -223,16 +223,27 @@
 
  /*로고 display*/
  .col3 .slide { padding:15px; } 
- .col3 .slide a{display:inline-block;width:100px; height:100px;border-radius: 50px; margin:10px;color:#222; box-shadow: 2px 0.5px 5px #CCC;
-font-size: 30px;font-family: 'Do Hyeon', sans-serif;
-    text-align: center;
-    line-height: 100px;}
-    .col3 .slide a:hover { transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out; }
+ .col3 .slide a { display:inline-block; width:100px; height:100px; border-radius: 50px; margin:10px; text-shadow: 1px 1px 1px #222; color: white; box-shadow: 2px 0.5px 5px #CCC; font-size: 30px; font-family: 'Do Hyeon', sans-serif; text-align: center; line-height: 100px; } 
+
+ /*학부 색 지정*/
+ .dept1 a { background-color: rgb(65, 105, 225); } 
+ .dept2 a { background: rgb(34,193,195); background: linear-gradient(123deg, rgba(34,193,195,1) 0%, rgba(102,51,153,1) 55%); } 
+ .dept3 a { background-color: #ffb67e; } 
+ .dept4 a { background: rgb(34,193,195); background: linear-gradient(29deg, rgba(34,193,195,1) 0%, rgba(216,112,148,1) 55%); } 
+ .dept5 a { background-color: darkcyan } 
+ .dept6 a { background: rgb(189,186,189); background: linear-gradient(59deg, rgba(189,186,189,1) 0%, rgba(91,106,162,1) 88%); } 
+ .dept7 a { background-color: seagreen } 
+ .dept8 a { background-color:navy } 
+ .dept9 a { background: rgb(240,177,237); background: linear-gradient(225deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
+ .dept11 a { background: rgb(240,177,237); background: linear-gradient(59deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
+ .dept10 a { background: rgb(137,236,238); background: linear-gradient(90deg, rgba(137,236,238,1) 0%, rgba(238,194,187,1) 88%); } 
+ .dept12 a { background-color:rgb(207, 39, 72) } 
+ .col3 .slide a:hover { transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out; } 
  /*
  <li><img src="img\컴공.jpg" alt="" /> <p>컴퓨터공학과</p> </li>
  .col3 img { width:100px; height:100px; box-shadow: 2px 0.5px 5px #CCC; border-radius: 50px; margin:10px; } 
  .col3 img:hover { transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out; } */
- .col3 .slide ul { margin-left: 30px; margin-right: 30px; width:1000000px; } 
+ .col3 .slide ul { width:1000000px; } 
  .col3 p { z-index: 100; font-size: 12px; text-align: center; margin-top:3px; } 
  /* .col3 { background-color: #c3200e; } 
  .col3 img { width:100px; height:100px; border-radius: 50px; margin:5px; } 
