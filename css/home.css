@@ -455,9 +455,9 @@
  .col1 img { width:100%; height:120px; } 
  .col1 iframe { width:100%; height:200px; } 
  #contents .container { border-left:0; border-right:0; } 
- .column.col2, .column.col4, .column.col6, .column.col8, .column.col10 { height:544.63px; } 
-:is(.column.col2, .column.col4, .column.col6, .column.col8, .column.col10) div { height:178.89px; } 
- .column.col5,.column.col7 { height:377.78px; } 
+ .column.col2, .column.col4, .column.col6, .column.col8, .column.col10 { height:474px; } 
+:is(.column.col2, .column.col4, .column.col6, .column.col8, .column.col10) div { height:158px; } 
+ .column.col5,.column.col7 { height:350px; } 
  :is(.column.col5,.column.col7) div { height:174.89px; } 
  .column.col9 { height:397.79px; } 
 
