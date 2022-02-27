@@ -217,7 +217,7 @@
  .column.col13 { border-bottom:0; overflow:hidden; height:auto; } 
  .column.col14 { border-bottom:0; overflow:hidden; height:184.73px; } 
  .column.col15 { border-bottom:0; overflow:hidden; height:161.45px; } 
- 
+
  /*col별*/
  /*이미지->비디오*/
  .col1 iframe { width:890px; height:400px; } 
@@ -229,19 +229,33 @@
  .col3 .slide a { display:inline-block; width:100px; height:100px; border-radius: 50px; margin:10px; text-shadow: 1px 1px 1px #222; color: white; box-shadow: 2px 0.5px 5px #CCC; font-size: 30px; font-family: 'Do Hyeon', sans-serif; text-align: center; line-height: 100px; } 
 
  /*학부 색 지정*/
- .dept1 a { background-color: rgb(65, 105, 225); } 
- .dept2 a { background: rgb(34,193,195); background: linear-gradient(123deg, rgba(34,193,195,1) 0%, rgba(102,51,153,1) 55%); } 
- .dept3 a { background-color: #ffb67e; } 
- .dept4 a { background: rgb(34,193,195); background: linear-gradient(29deg, rgba(34,193,195,1) 0%, rgba(216,112,148,1) 55%); } 
- .dept5 a { background-color: darkcyan } 
- .dept6 a { background: rgb(189,186,189); background: linear-gradient(59deg, rgba(189,186,189,1) 0%, rgba(91,106,162,1) 88%); } 
- .dept7 a { background-color: seagreen } 
- .dept8 a { background-color:navy } 
- .dept9 a { background: rgb(240,177,237); background: linear-gradient(225deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
- .dept11 a { background: rgb(240,177,237); background: linear-gradient(59deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
- .dept10 a { background: rgb(137,236,238); background: linear-gradient(90deg, rgba(137,236,238,1) 0%, rgba(238,194,187,1) 88%); } 
- .dept12 a { background-color:rgb(207, 39, 72) } 
+ .dept1 a { background-color: rgb(216, 216, 216); } 
+ .dept2 a { background: rgb(190, 190, 190); } 
+ .dept3 a { background-color:rgb(75, 75, 75); } 
+ .dept4 a { background: rgb(108, 109, 109); } 
+ .dept5 a { background-color: rgb(89, 92, 92) } 
+ .dept6 a { background: rgb(70, 64, 70); } 
+ .dept7 a { background-color: rgb(43, 43, 43) } 
+ .dept8 a { background-color: #8a8887; } 
+ .dept9 a { background: rgb(0, 0, 0); } 
+ .dept11 a { background: rgb(215, 216, 206); } 
+ .dept10 a { background: rgb(109, 106, 110); } 
+ .dept12 a { background-color:rgb(217, 216, 218) } 
+ 
  .col3 .slide a:hover { transform:scale(1.1); box-shadow: 5px 5px 5px #888; transition: all 0.3s ease-in-out; } 
+ /*학부 색 지정*/
+ .dept1 a:hover { background-color: rgb(65, 105, 225); } 
+ .dept2 a:hover { background: rgb(34,193,195); background: linear-gradient(123deg, rgba(34,193,195,1) 0%, rgba(102,51,153,1) 55%); } 
+ .dept3 a:hover { background-color: #ffb67e; } 
+ .dept4 a:hover { background: rgb(34,193,195); background: linear-gradient(29deg, rgba(34,193,195,1) 0%, rgba(216,112,148,1) 55%); } 
+ .dept5 a:hover { background-color: darkcyan } 
+ .dept6 a:hover { background: rgb(189,186,189); background: linear-gradient(59deg, rgba(189,186,189,1) 0%, rgba(91,106,162,1) 88%); } 
+ .dept7 a:hover { background-color: seagreen } 
+ .dept8 a:hover { background-color:navy } 
+ .dept9 a:hover { background: rgb(240,177,237); background: linear-gradient(225deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
+ .dept11 a:hover { background: rgb(240,177,237); background: linear-gradient(59deg, rgba(240,177,237,1) 0%, rgba(112,131,204,1) 88%); } 
+ .dept10 a:hover { background: rgb(137,236,238); background: linear-gradient(90deg, rgba(137,236,238,1) 0%, rgba(238,194,187,1) 88%); } 
+ .dept12 a:hover { background-color:rgb(207, 39, 72) } 
  /*
  <li><img src="img\컴공.jpg" alt="" /> <p>컴퓨터공학과</p> </li>
  .col3 img { width:100px; height:100px; box-shadow: 2px 0.5px 5px #CCC; border-radius: 50px; margin:10px; } 
@@ -441,6 +455,12 @@
  .col1 img { width:100%; height:120px; } 
  .col1 iframe { width:100%; height:200px; } 
  #contents .container { border-left:0; border-right:0; } 
+ .column.col2, .column.col4, .column.col6, .column.col8, .column.col10 { height:544.63px; } 
+:is(.column.col2, .column.col4, .column.col6, .column.col8, .column.col10) div { height:178.89px; } 
+ .column.col5,.column.col7 { height:377.78px; } 
+ :is(.column.col5,.column.col7) div { height:174.89px; } 
+ .column.col9 { height:397.79px; } 
+
  /* #contents .board_list_header { margin-top:130px; } */
  #cont_center { float:none; clear:both; width: 100%; height:auto; } /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
  #cont_right { float:none; clear:both; width: 100%; height:auto; } 
