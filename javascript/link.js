@@ -93,21 +93,32 @@ window.onload = function(){
   document.querySelector('.prev').addEventListener('click',function(){
     if(current <= 0) {return;}
     current-=1;
-    const tunnel = document.querySelector('.slide ul');
+    var tunnel = document.querySelector('.slide ul');
     var compute = window.getComputedStyle(tunnel);
     var left=parseInt(compute.marginLeft, 10);
     left+=300;
-    console.log(left);
     tunnel.style.marginLeft=left+"px";
+    /*
+    tunnel.animate([{
+        marginLeft:left+"px"
+    }],500);
+    let th=0;
+    tick();
+    function tick(){
+      requestAnimationFrame(tick);
+      th+=(left-th)*0.1;
+      tunnel.style.transform='translate(${th}px,0px)';
+      console.log(th);
+    }*/
 
   });
   document.querySelector('.next').addEventListener('click',function(){
-    if(current > max-maximage-1) {return;}
+    if(current >=max/maximage) {return;}//클릭 수 제한
     current+=1;
     const tunnel = document.querySelector('.slide ul');
     var compute = window.getComputedStyle(tunnel);
     var right=parseInt(compute.marginLeft, 10);
-    right-=300;
+    right-=300; 
     console.log(right);
     tunnel.style.marginLeft=right+"px";
   });
