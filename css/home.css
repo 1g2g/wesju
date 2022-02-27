@@ -226,7 +226,7 @@
 
  /*로고 display*/
  .col3 .slide { padding:15px; } 
- .col3 .slide a { display:inline-block; width:100px; height:100px; border-radius: 50px; margin:10px; text-shadow: 1px 1px 1px #222; color: white; box-shadow: 2px 0.5px 5px #CCC; font-size: 30px; font-family: 'Do Hyeon', sans-serif; text-align: center; line-height: 100px; } 
+ .col3 .slide a { display:inline-block; width:100px; height:100px; border-radius: 50px; margin:10px 13px; text-shadow: 1px 1px 1px #222; color: white; box-shadow: 2px 0.5px 5px #CCC; font-size: 30px; font-family: 'Do Hyeon', sans-serif; text-align: center; line-height: 100px; } 
 
  /*학부 색 지정*/
  .dept1 a { background-color: rgb(216, 216, 216); } 
