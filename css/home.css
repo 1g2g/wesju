@@ -452,7 +452,7 @@
  .nav > div { text-align:center; } 
 
  /* content */
- .col1 img { width:100%; height:120px; } 
+ .col1 img { width:100%;object-fit: contain;height:auto;} 
  .col1 iframe { width:100%; height:200px; } 
  #contents .container { border-left:0; border-right:0; } 
  .column.col2, .column.col4, .column.col6, .column.col8, .column.col10 { height:474px; } 
