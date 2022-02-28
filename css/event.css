@@ -101,7 +101,7 @@ table tr:first-child { text-align: center; }
 .flex button:hover { border:2px solid; } 
 @media (max-width:768px) and (min-width:320px){
     html { overflow:scroll; scroll-snap-type: y mandatory;-webkit-overflow-scrolling: touch;}
-    .page { scroll-snap-align: center;}
+    .page { scroll-snap-align: none;}
  .glitch { font-size:10vw; } 
  .page h1 { font-size:7vw; display: block;; } 
  .details,table { width:100%; } 
