@@ -199,7 +199,17 @@
 
  .new_post { font-size:12px; font-weight:bolder; font-variant: small-caps; color:white; } 
  .mb_new_post { color:#c3200e; } 
-
+ #cont_right .unread{color:#c3200e;    font-weight: 800;}
+.unread_alarm{    font-size: 8px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    vertical-align: super;
+    font-weight: 800;   margin-left: 2px;
+    padding-bottom: 1px}
+  
+    .alarm_cnt{
+        padding: 0 2.5px;margin-left: 1px;}
  /* it makes div auto control */
  /* http://uxuiz.cafe24.com/wp/archives/1445 */
  .column.col1 { border-bottom:0; overflow:hidden; height:auto; } 
