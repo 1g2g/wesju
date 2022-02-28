@@ -84,9 +84,11 @@ function email_certi(){//이메일 인증
   }else{
   alert('인증메일이 발송되었습니다.');
   const email=document.querySelector('#cor_mem_email');
-    const btn=document.querySelector('.email_cert_btn');
+  const btn=document.querySelector('.email_cert_btn');
+  const junk=document.querySelector('#junk');
   email.style.display="block";
   btn.style.display="block";
+  junk.style.display="block";
   timer();
 }
 }
