@@ -29,3 +29,6 @@ document.querySelector('.parallax_page').addEventListener('scroll', function () 
     }
     console.log(scrollLocation);
 });
+function open_find_idpw(){//채팅하기 창을 열어줌
+    window.open('forgot.html','_blank','width=570,  height=500, toolbar=no, menubar=no, scrollbars=no, resizable=yes');return false;alert('g');
+  }
