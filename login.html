@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/join.css">
   <link rel="stylesheet" href="css/login.css">
   <script src="javascript/login.js" defer></script>
+  <script src="javascript/home.js" defer></script>
 </head>
 
 <body>
@@ -29,9 +30,9 @@
           </div>
           <!--로그인 정보 분실 또는 신규회원 가입-->
           <div class="help_login">
-            <a href="#" class="find_id_link">아이디 찾기</a>
+            <a href="#" class="find_id_link" onclick="open_find_idpw()">아이디 찾기</a>
             <span>|</span>
-            <a href="#" class="find_pw_link">비밀번호 찾기</a>
+            <a href="#" class="find_pw_link" onclick="open_find_idpw()">비밀번호 찾기</a>
             <a href="#" class="signup_link">회원가입</a>
           </div>
         </article>
