@@ -28,6 +28,7 @@ header span { font-size: 30px; }
 .email_input>span { position:static; margin-top:-40px; margin-right:25px; float:right; } 
 #cor_mem_email,.email_cert_btn { display: none; } 
 #timer { position:relative; top:-26px; } 
+#junk { position: relative; top: -30px; display:none; color:gray; } 
 .email_input button { height:30px; min-width: 30px; border: 2px solid #CCCCCC; color:#555555; border-radius: 10px; padding:3px; margin-left:5px; background-color: white; } 
 .email_input button:hover { border: 2px solid #c3200e; color:#c3200e; } 
 .email_cert_btn { position: relative; top:-40px; left: 81.5%; } 
