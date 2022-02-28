@@ -199,17 +199,10 @@
 
  .new_post { font-size:12px; font-weight:bolder; font-variant: small-caps; color:white; } 
  .mb_new_post { color:#c3200e; } 
- #cont_right .unread{color:#c3200e;    font-weight: 800;}
-.unread_alarm{    font-size: 8px;
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    vertical-align: super;
-    font-weight: 800;   margin-left: 2px;
-    padding-bottom: 1px}
-  
-    .alarm_cnt{
-        padding: 0 2.5px;margin-left: 1px;}
+ #cont_right .unread { color:#c3200e; font-weight: 800; } 
+.unread_alarm { font-size: 8px; background-color: black; border-radius: 10px; color: white; vertical-align: super; font-weight: 800; margin-left: 2px; padding-bottom: 1px } 
+ 
+ .alarm_cnt { padding: 0 2.5px; margin-left: 1px; } 
  /* it makes div auto control */
  /* http://uxuiz.cafe24.com/wp/archives/1445 */
  .column.col1 { border-bottom:0; overflow:hidden; height:auto; } 
@@ -462,7 +455,7 @@
  .nav > div { text-align:center; } 
 
  /* content */
- .col1 img { width:100%;object-fit: contain;height:auto;} 
+ .col1 img { width:100%; object-fit: contain; height:auto; } 
  .col1 iframe { width:100%; height:200px; } 
  #contents .container { border-left:0; border-right:0; } 
  .column.col2, .column.col4, .column.col6, .column.col8, .column.col10 { height:474px; } 
@@ -474,7 +467,7 @@
  /* #contents .board_list_header { margin-top:130px; } */
  #cont_center { float:none; clear:both; width: 100%; height:auto; } /*float:none clear:both 는 float를 없애주고, clear:both를 통해 float한 박스들의 바로 아래박스에게 float 영향을 없도록 해주는것입니다.*/
  #cont_right { float:none; clear:both; width: 100%; height:auto; } 
- .col3 .slide ul { margin-left: 0px; margin-right: 10px;     height: 143.39px;} 
+ .col3 .slide ul { margin-left: 0px; margin-right: 10px; height: 143.39px; } 
 
  .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice7.photo7,.notice8.photo8,.notice12.photo9,.notice13.photo10,.notice17.photo8 { float:none; clear:both; width: 100%; } 
  .notice1,.notice2,.notice3,.notice4,.notice5,.notice6,.notice9,.notice10,.notice11,.notice14,.notice15,.notice16,.notice18,.notice19,.notice20,.notice21,.notice22,.notice23,.notice24 { float:none; clear:both; width: 100%; } 
