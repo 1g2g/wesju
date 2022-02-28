@@ -38,7 +38,7 @@ main>.container{
 }
 /*알람리스트*/
 .info_alarm_list,.info_chat_list ,.info_post_list {
-  display:inline-block; width:720px;max-height:800px;overflow-y: scroll;border: 1px solid #cccccc;background-color: white;position:absolute; margin-left: 80px;margin-top:10px;
+  display:inline-block; width:720px;max-height:800px;overflow-y: scroll;border: 1px solid #cccccc;background-color: white;position:absolute; margin-left: 80px;margin-top:10px;min-height:80px;
 }
 :is(.info_alarm_list,.info_chat_list ,.info_post_list) table{
     border-collapse: collapse;
@@ -66,7 +66,7 @@ main>.container{
 }
 @media (max-width:768px) and (min-width:319px){
   #cont_alarm .info_list{
-    width:100%;padding:1%;padding-top:80px;min-height: 900px;
+    width:100%;padding:1%;padding-top:30px;min-height: 900px;
   }
   /*링크*/
   .link_box{
