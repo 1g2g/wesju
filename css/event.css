@@ -100,7 +100,8 @@ table tr:first-child { text-align: center; }
 .flex button { width: 155px; margin: 5px; border: 1.5px solid; font-size: 16px; } 
 .flex button:hover { border:2px solid; } 
 @media (max-width:768px) and (min-width:320px){
-    .page { scroll-snap-align: revert;}
+    html { overflow:scroll; scroll-snap-type: y mandatory;-webkit-overflow-scrolling: touch;}
+    .page { scroll-snap-align: center;}
  .glitch { font-size:10vw; } 
  .page h1 { font-size:7vw; display: block;; } 
  .details,table { width:100%; } 
