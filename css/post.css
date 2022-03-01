@@ -56,8 +56,9 @@ a:hover{ color:#c3002e; text-decoration: none; }
 .comm { /*댓글에 대한 반응 버튼 table, 댓글 수정 삭제 버튼*/
  float:right; } 
 /*댓글에 대한 반응 대댓글*/
-.comment_per {margin-left: 60px; } 
+.comment_per {margin-left: 60px; color:black;} 
 .comment_per i, .comment_per span { font-size: 15px; margin:auto 2px; } 
+.comment_per td{color:black;}
 /*원댓글 내용*/
 .cmt { display:inline-block; width:95%; font-size: 14px; margin-left: 5px; border: none; background-color: white; color:black; height:100%; overflow-y : hidden; } 
 .show_reply_with_arrow {margin-left: 60px; } 
