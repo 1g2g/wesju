@@ -2,8 +2,8 @@
 * { list-style: none; color:black;} 
 .wrapper { padding:20px; } 
 p{color:black;}
-a { color:black; } 
-a:hover { color:#c3002e; text-decoration: none; } 
+a{ color:black; } 
+a:hover{ color:#c3002e; text-decoration: none; } 
 /*post_header*/
 #post_header { height:140px; margin-left: 5px; } 
 .post_category li { float:left; margin:5px; } 
@@ -33,7 +33,7 @@ a:hover { color:#c3002e; text-decoration: none; }
 /*본문*/
 #post_content { padding:30px 0; } 
 #post_content img { max-width: 100%; } 
-#post_content p,#post_comment{color:black;}
+#post_content,#post_comments{color:black;}
 /*본문-좋아요*/
 .evaluate_post {margin:30px auto; display: block; text-align: center;}
 .like_it,.hate_it {display: inline-block; margin:10px; } 
@@ -43,7 +43,7 @@ a:hover { color:#c3002e; text-decoration: none; }
 .like_it button:hover,.hate_it button:hover { transition: .2s; box-shadow:2px 2px 8px #CCCCCC; } 
 .like_it button:focus { border: 2px solid #c3002e; } 
 .hate_it button:focus { border: 2px solid #283598; } 
-.like_it_num,.hate_it_num { font-size: 18px; } 
+.like_it_num,.hate_it_num { font-size: 18px;color:black; } 
 /* 댓글*/
 #post_comments h1 { font-size: 20px; margin: 10px auto; } 
 /*댓글*/
