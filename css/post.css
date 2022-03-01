@@ -33,7 +33,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 /*본문*/
 #post_content { padding:30px 0; } 
 #post_content img { max-width: 100%; } 
-#post_content a,#post_content p,#post_content i{color:black;}
+#post_content a,#post_content p,#post_comments i{color:black;}
 /*본문-좋아요*/
 .evaluate_post {margin:30px auto; display: block; text-align: center;}
 .like_it,.hate_it {display: inline-block; margin:10px; } 
@@ -89,6 +89,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 .tb_btm h1 { font-size: 20px; } 
 .board_list_form { margin-left:0; width:97%; } 
 .board_list_title{color:black;}
+.cmt{color:black;}
  @media (max-width:768px) and (min-width:320px){
  .wrapper { padding:30px 0 10px 5px; } 
  #contents { width:100%; } 
