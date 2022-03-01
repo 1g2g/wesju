@@ -64,6 +64,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 .show_reply_with_arrow {margin-left: 60px; } 
 .reply_arrow { font-size: 18px; } 
 /*댓글 좋아요 싫어요*/
+.like,.dislick,.cmt_comment{color:black;}
 .like:hover { color:#c3002e; } 
 .dislike:hover { color:blue; } 
 /*답댓*/
