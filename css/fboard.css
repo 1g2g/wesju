@@ -60,6 +60,7 @@
  /*게시판 목록의 글제목*/
  .category { color:#c3002e; font-weight: bold; margin-right:8px; } 
  .board_title { font-size: 14px; margin-left: 8px; } 
+ .board_list_title{color:black;}
 /****************************/
 /* mb_board */
 /****************************/
