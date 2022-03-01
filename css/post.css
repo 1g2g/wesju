@@ -64,7 +64,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 .show_reply_with_arrow {margin-left: 60px; } 
 .reply_arrow { font-size: 18px; } 
 /*댓글 좋아요 싫어요*/
-.like,.dislick,.cmt_comment{color:black;}
+.like,.dislike,.cmt_comment{color:black;}
 .like:hover { color:#c3002e; } 
 .dislike:hover { color:blue; } 
 /*답댓*/
@@ -76,7 +76,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 .hide_reply { width:99%; height:30px; } 
 .write_comment,.write_reply { width:97%; height:100px; border: 1px solid #C7695E; border-radius: 10px; padding:10px; background-color: white; } 
 .write_reply { display: none; } 
-.write_comment textarea,.write_reply textarea { width:88%; height:80px; vertical-align: middle; padding:5px; outline: none; border:none; padding:10px; margin-right: 10px; } 
+.write_comment textarea,.write_reply textarea { width:88%; height:80px; vertical-align: middle; padding:5px; outline: none; border:none; padding:10px; margin-right: 10px; color:black;} 
 .write_comment textarea:focus,.write_reply textarea:focus { outline: none; } 
 .write_comment>button,.write_reply button,.edit_cmt button { width:60px; height:60px; background-color:#c3002e; vertical-align: middle; border-radius: 60px; color:white; box-shadow: 2px 2px 8px #888888; font-size: 20px; margin-left: 10px; } 
 
