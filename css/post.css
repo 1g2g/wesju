@@ -1,7 +1,7 @@
 /*background-color:rgba(195, 32, 14, 0.2); */
 * { list-style: none; } 
 .wrapper { padding:20px; } 
-a{ color:black; } 
+a{ color:black; text-decoration: none; } 
 a:hover{ color:#c3002e; text-decoration: none; } 
 /*post_header*/
 #post_header { height:140px; margin-left: 5px; } 
