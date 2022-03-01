@@ -1,5 +1,5 @@
 
-.board_list_title {margin:20px; font-size: 25px; text-align: center; font-weight: lighter;color:black; } 
+.board_list_title {margin:20px; font-size: 25px; text-align: center; font-weight: lighter;color:black !important; } 
 .mb_board_list_table { display: none; } 
 /*게시판 설명*/
 .board_list_header { text-align: center; } 
@@ -60,7 +60,7 @@
  /*게시판 목록의 글제목*/
  .category { color:#c3002e; font-weight: bold; margin-right:8px; } 
  .board_title { font-size: 14px; margin-left: 8px; } 
- .board_list_title{color:black;}
+ .board_list_title {color:black !important;}
 /****************************/
 /* mb_board */
 /****************************/
@@ -74,7 +74,7 @@
  .mb_board_list_form td { border-bottom:1px solid #DDDDDD; } 
  /*게시판 목록의 글제목*/
  .mb_category { color:#c3002e; font-weight: bold; padding-right: 5px; } 
- .mb_board_title { font-size: 14px; margin-left: 8px; display: inline-block; width:100%; } 
+ .mb_board_title { font-size: 14px; margin-left: 8px; display: inline-block; width:100%; color:black;} 
  .comments { color:#888888; } 
  /*게시판 목록의 글제목 하단*/
  .mb_board_title_bottom { margin-left: 4px; } 
