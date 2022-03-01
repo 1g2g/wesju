@@ -3,6 +3,7 @@
 .wrapper { padding:20px; } 
 a{  text-decoration: none; } 
 a:hover{ color:#c3002e; text-decoration: none; } 
+
 /*post_header*/
 #post_header { height:140px; margin-left: 5px; } 
 .post_category li { float:left; margin:5px; } 
@@ -32,7 +33,7 @@ a:hover{ color:#c3002e; text-decoration: none; }
 /*본문*/
 #post_content { padding:30px 0; } 
 #post_content img { max-width: 100%; } 
-#post_content a,#post_content p{color:black;}
+#post_content a,#post_content p,#post_content i{color:black;}
 /*본문-좋아요*/
 .evaluate_post {margin:30px auto; display: block; text-align: center;}
 .like_it,.hate_it {display: inline-block; margin:10px; } 
