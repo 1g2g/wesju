@@ -1,3 +1,0 @@
-html : info board1,2,3 chat post
-css : info home chat board1,2,3 post
-js: post
